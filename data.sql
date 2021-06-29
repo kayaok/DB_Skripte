@@ -540,7 +540,7 @@ INSERT INTO sportgeraete VALUES('SG_006','Crosstrainer', 'Sport-Thieme', '374455
 INSERT INTO sportgeraete VALUES('SG_007','Crosstrainer', 'Sport-Thieme', '374454534-6',TO_DATE('2020-05-01','YYYY-MM-DD'), TO_DATE('2021-03-13','YYYY-MM-DD'), '189,54', 'F');
 INSERT INTO sportgeraete VALUES('SG_008','Crosstrainer', 'Sport-Thieme', '374457654-6',TO_DATE('2020-05-01','YYYY-MM-DD'), TO_DATE('2021-03-13','YYYY-MM-DD'), '189,54', 'F');
 INSERT INTO sportgeraete VALUES('SG_009','Hantelbank', 'Sport-Thieme', '016260269-3',TO_DATE('2018-04-30','YYYY-MM-DD'),TO_DATE('2021-01-26','YYYY-MM-DD') , '498,02', 'T');
-INSERT INTO sportgeraete VALUES('SG_010','Hantelbank', 'Sport-Thieme', '016260692-3',TO_DATE('2018-04-30','YYYY-MM-DD'),TO_DATE(,'2021-01-26''YYYY-MM-DD') , '498,02', 'F');
+INSERT INTO sportgeraete VALUES('SG_010','Hantelbank', 'Sport-Thieme', '016260692-3',TO_DATE('2018-04-30','YYYY-MM-DD'),TO_DATE('2021-01-26','YYYY-MM-DD') , '498,02', 'F');
 INSERT INTO sportgeraete VALUES('SG_011','Schulterpresse','Sport-Thieme', '314258743-8',TO_DATE('2020-01-08','YYYY-MM-DD'),TO_DATE('2020-11-19','YYYY-MM-DD') , '458,10', 'F');
 INSERT INTO sportgeraete VALUES('SG_012','Hantelstange', 'Balanced-Body', '552930987-0',TO_DATE('2018-11-28','YYYY-MM-DD'), TO_DATE('2020-08-27','YYYY-MM-DD'), '18,40', 'T');
 INSERT INTO sportgeraete VALUES('SG_013','Hantelstange', 'Balanced-Body', '552930938-0',TO_DATE('2018-11-28','YYYY-MM-DD'), TO_DATE('2020-08-27','YYYY-MM-DD'), '18,40', 'F');
