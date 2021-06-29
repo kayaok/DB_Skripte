@@ -6,8 +6,10 @@ CREATE TABLE kunden
 (
     kunde_id              CHAR(5) --k_000
         CONSTRAINT kunde_id_nn NOT NULL,
-    name              VARCHAR(40)
-        CONSTRAINT kunde_name_nn NOT NULL,
+    vorname              VARCHAR(20)
+        CONSTRAINT kunde_vorname_nn NOT NULL,
+    nachname              VARCHAR(20)
+        CONSTRAINT kunde_nachname_nn NOT NULL,
     geschlecht            CHAR
         CONSTRAINT kunde_geschlecht_nn NOT NULL,
     geburtsdatum          DATE
@@ -20,13 +22,11 @@ CREATE TABLE kunden
         CONSTRAINT kunde_ort_nn NOT NULL,
     telefonnummer         VARCHAR(20),
     email                 VARCHAR(40),
-    kontoinhaber_name  VARCHAR(20)
-        CONSTRAINT kunde_kontoinhaber_name_nn NOT NULL,
     kontonummer           VARCHAR(25)
         CONSTRAINT kunde_kontonummer_nn NOT NULL,
-    bank                  VARCHAR(20)
+    bank                  VARCHAR(50)
         CONSTRAINT kunde_bank_nn NOT NULL,
-    iban                  VARCHAR(20)
+    iban                  VARCHAR(40)
         CONSTRAINT kunde_iban_nn NOT NULL,
     bic                   VARCHAR(15)
         CONSTRAINT kunde_bic_nn NOT NULL,
@@ -165,8 +165,10 @@ CREATE TABLE mitarbeiter
 (
     mitarbeiter_id        CHAR(4) --m_00
         CONSTRAINT mitarbeiter_id_nn NOT NULL,
-    name               VARCHAR(20)
-        CONSTRAINT mitarbeiter_name_nn NOT NULL,
+    vorname               VARCHAR(20)
+        CONSTRAINT mitarbeiter_vorname_nn NOT NULL,
+    nachname               VARCHAR(20)
+        CONSTRAINT mitarbeiter_nachname_nn NOT NULL,
     geschlecht            CHAR
         CONSTRAINT mitarbeiter_geschlecht_nn NOT NULL,
     geburtsdatum          DATE
@@ -180,8 +182,6 @@ CREATE TABLE mitarbeiter
     telefonnummer         VARCHAR(20),
     firmeneintritt        DATE
         CONSTRAINT mitarbeiter_eintritt_nn NOT NULL,
-    kontoinhaber_name  VARCHAR(20)
-        CONSTRAINT mitarbeiter_ki_name_nn NOT NULL,
     kontonummer           VARCHAR(25)
         CONSTRAINT mitarbeiter_kontonummer_nn NOT NULL,
     bank                  VARCHAR(20)
