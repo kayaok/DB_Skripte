@@ -530,19 +530,19 @@ CREATE TABLE steht_unter_Vertrag
 
 CREATE TABLE leitet
 (
-    kurse_id   CHAR(6),
+    kurs_id   CHAR(6),
     trainer_id CHAR(4)
 );
 
 CREATE TABLE ist_Teilnehmer
 (
-    kurse_id CHAR(6),
+    kurs_id CHAR(6),
     kunde_id CHAR(5)
 );
 
 CREATE TABLE besteht_aus
 (
-    kurse_id            CHAR(6),
+    kurs_id            CHAR(6),
     trainingseinheit_id CHAR(5)
 );
 
@@ -641,7 +641,7 @@ ALTER TABLE steht_unter_Vertrag
 
 ALTER TABLE leitet
     ADD (CONSTRAINT kurse_trainer_1_fk
-             FOREIGN KEY (kurse_id)
+             FOREIGN KEY (kurs_id)
                  REFERENCES kurse (kurs_id),
          CONSTRAINT kurse_trainer_2_fk
              FOREIGN KEY (trainer_id)
@@ -650,7 +650,7 @@ ALTER TABLE leitet
 
 ALTER TABLE besteht_aus
     ADD (CONSTRAINT kurse_te_1_fk
-             FOREIGN KEY (kurse_id)
+             FOREIGN KEY (kurs_id)
                  REFERENCES kurse (kurs_id),
          CONSTRAINT kurse_te_2_fk
              FOREIGN KEY (trainingseinheit_id)
