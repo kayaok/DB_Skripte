@@ -522,19 +522,19 @@ CREATE TABLE wird_eingeteilt_in
     arbeitseinteilung_id CHAR(6)
 );
 
-CREATE TABLE steht_unter_Vertrag
+CREATE TABLE steht_unter_vertrag
 (
     mitarbeiter_id    CHAR(4),
     arbeitsvertrag_id CHAR(5)
 );
 
-CREATE TABLE leitet
+CREATE TABLE leitet_kurs
 (
     kurs_id   CHAR(6),
     trainer_id CHAR(4)
 );
 
-CREATE TABLE ist_Teilnehmer
+CREATE TABLE ist_teilnehmer
 (
     kurs_id CHAR(6),
     kunde_id CHAR(5)
@@ -630,7 +630,7 @@ ALTER TABLE wird_eingeteilt_in
                  REFERENCES arbeitseinteilungen (arbeitseinteilung_id)
         );
 
-ALTER TABLE steht_unter_Vertrag
+ALTER TABLE steht_unter_vertrag
     ADD (CONSTRAINT ma_av_1_fk
              FOREIGN KEY (mitarbeiter_id)
                  REFERENCES mitarbeiter (mitarbeiter_id),
@@ -639,7 +639,7 @@ ALTER TABLE steht_unter_Vertrag
                  REFERENCES arbeitsvertraege (arbeitsvertrag_id)
         );
 
-ALTER TABLE leitet
+ALTER TABLE leitet_kurs
     ADD (CONSTRAINT kurse_trainer_1_fk
              FOREIGN KEY (kurs_id)
                  REFERENCES kurse (kurs_id),
@@ -666,11 +666,11 @@ ALTER TABLE ist_definiert_durch
                  REFERENCES kategorien (kategorie_id)
         );
 
-ALTER TABLE ist_Teilnehmer
+ALTER TABLE ist_teilnehmer
     ADD (CONSTRAINT kunde_kurse_1_fk
              FOREIGN KEY (kunde_id)
                  REFERENCES kunden (kunde_id),
          CONSTRAINT kunde_kurse_2_fk
-             FOREIGN KEY (kurse_id)
+             FOREIGN KEY (kurs_id)
                  REFERENCES kurse (kurs_id)
         );
