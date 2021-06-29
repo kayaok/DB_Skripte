@@ -118,7 +118,7 @@ CREATE TABLE buchungsverlauf
 
 CREATE UNIQUE INDEX bunchungsverlauf_id_pk ON
     buchungsverlauf (
-                  buchungsverlauf_id
+                     buchungsverlauf_id
         );
 
 ALTER TABLE buchungsverlauf
@@ -184,9 +184,9 @@ CREATE TABLE mitarbeiter
         CONSTRAINT mitarbeiter_eintritt_nn NOT NULL,
     kontonummer           VARCHAR(25)
         CONSTRAINT mitarbeiter_kontonummer_nn NOT NULL,
-    bank                  VARCHAR(20)
+    bank                  VARCHAR(50)
         CONSTRAINT mitarbeiter_bank_nn NOT NULL,
-    iban                  VARCHAR(20)
+    iban                  VARCHAR(40)
         CONSTRAINT mitarbeiter_iban_nn NOT NULL,
     bic                   VARCHAR(15)
         CONSTRAINT mitarbeiter_bic_nn NOT NULL
