@@ -471,9 +471,9 @@ INSERT INTO kunden VALUES ('C_017', 'Renaud', 'Goricke', 'M', TO_DATE('2003-02-2
 INSERT INTO kunden VALUES ('C_018', 'Ewen', 'Fieldhouse', 'W',TO_DATE('1974-06-03','YYYY-MM-DD'), '11 Graedel Center', '84242', 'Kirchheim', '136-101-2947', 'efieldhouseh@house.gov', '3554568601994999', 'Commerzbank Esslingen', 'RS96 8568 2229 8589 5679 80', '5121495188', '83248',                                       'CC_018', 'KK_03','M_05');
 INSERT INTO kunden VALUES ('C_019', 'Shane', 'Tayler', 'W', TO_DATE('1980-09-07','YYYY-MM-DD'), '98 Longview Circle', '70794', 'Filderstadt', '393-601-2272', 'stayleri@fotki.com', '675971911381757030', 'Volksbank Tuebingen', 'BE05 3532 8340 4353', '1428661964', '342357654',                                              'CC_019', 'KK_04','M_08');
 INSERT INTO kunden VALUES ('C_020', 'Alla', 'Plom', 'W', TO_DATE('2002-04-18','YYYY-MM-DD'), '34825 Fairfield Street', '70794', 'Filderstadt', '755-220-6157', 'aplomj@senate.gov', '3551728126143075', 'Volksbank Tuebingen', 'DE26 4076 4280 5549 3250 60', '8073295865', '6543223456',                                          'CC_020', 'KK_05','M_08');
-INSERT INTO kunden VALUES ('C_021', 'Saloma', 'Billington', 'W', TO_DATE(,'1966-10-03''YYYY-MM-DD'), '215 Clyde Gallagher Lane', '72070', 'Tuebingen', '545-684-8284', 'sbillingtonk@who.int', '4844191902682615', 'Kreissparkasse Reutlingen', 'RO61 LTBT OMO5 QTBW IPPS G5SH', '9145201315', '87654345114',             'CC_021', 'KK_01','M_06');
+INSERT INTO kunden VALUES ('C_021', 'Saloma', 'Billington', 'W', TO_DATE('1966-10-03','YYYY-MM-DD'), '215 Clyde Gallagher Lane', '72070', 'Tuebingen', '545-684-8284', 'sbillingtonk@who.int', '4844191902682615', 'Kreissparkasse Reutlingen', 'RO61 LTBT OMO5 QTBW IPPS G5SH', '9145201315', '87654345114',             'CC_021', 'KK_01','M_06');
 INSERT INTO kunden VALUES ('C_022', 'Scarlett', 'Neiland', 'W', TO_DATE('1961-11-16','YYYY-MM-DD'), '5 Tomscot Alley', '72070', 'Tuebingen', '263-920-3319', 'sneilandl@wisc.edu', '5610909989414683471', 'Commerzbank Esslingen', 'CR24 9959 9737 3032 4311 1', '9060258320', '42678723',                                         'CC_022', 'KK_02','M_05');
-INSERT INTO kunden VALUES ('C_023', 'Morlee', 'Whetland', 'W', TO_DATE(,'1971-02-25''YYYY-MM-DD'), '181 Browning Trail', '72070', 'Tuebingen', '639-239-1190', 'mwhetlandm@tinyurl.com', '3573361733944075', 'Kreissparkasse Reutlingen', 'FR15 3978 6840 32FM YXSN NCEJ G06', '1963569296', '3252484',                     'CC_023', 'KK_03','M_05');
+INSERT INTO kunden VALUES ('C_023', 'Morlee', 'Whetland', 'W', TO_DATE('1971-02-25','YYYY-MM-DD'), '181 Browning Trail', '72070', 'Tuebingen', '639-239-1190', 'mwhetlandm@tinyurl.com', '3573361733944075', 'Kreissparkasse Reutlingen', 'FR15 3978 6840 32FM YXSN NCEJ G06', '1963569296', '3252484',                     'CC_023', 'KK_03','M_05');
 INSERT INTO kunden VALUES ('C_024', 'Danika', 'Redrup', 'W', TO_DATE('1973-11-30','YYYY-MM-DD'), '31 Sutteridge Avenue', '72654', 'Neckartenzlingen', '634-111-5788', 'dredrupn@upenn.edu', '3552522694084400', 'Commerzbank Esslingen', 'ES94 8467 4921 5571 1869 2405', '9351926044', '674533221',                               'CC_024', 'KK_04','M_08');
 INSERT INTO kunden VALUES ('C_025', 'Gwynne', 'Buckston', 'W', TO_DATE('1988-05-03','YYYY-MM-DD'), '3536 South Court', '72654', 'Neckartenzlingen', '356-526-6409', 'gbuckstono@jigsy.com', '3567660433898590', 'Commerzbank Esslingen', 'SM19 W112 5432 807U ISYT ISWH U1V', '4783268703', '31487654323',                          'CC_025', 'KK_05','M_06');
 INSERT INTO kunden VALUES ('C_026', 'Jewel', 'Glanville', 'W', TO_DATE('1972-04-19','YYYY-MM-DD'), '17962 Dunning Plaza', '73230', 'Kirchheim', '825-647-0335', 'jglanvillep@netvibes.com', '3554637768008024', 'Kreissparkasse Reutlingen', 'BR55 5218 7183 1744 1537 6750 929U G', '6709294625', '3494646134',                 'CC_026', 'KK_01','M_05');
@@ -519,13 +519,13 @@ VALUES ('KRS_06', 'Kapoeira', 120, 22,
 -- Populate table leitet_kurs
 ------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO leitet_kurs VALUES ('AV_05', 'KRS_00');
-INSERT INTO leitet_kurs VALUES ('AV_06', 'KRS_01');
-INSERT INTO leitet_kurs VALUES ('AV_08', 'KRS_02');
-INSERT INTO leitet_kurs VALUES ('AV_05', 'KRS_03');
-INSERT INTO leitet_kurs VALUES ('AV_06', 'KRS_04');
-INSERT INTO leitet_kurs VALUES ('AV_08', 'KRS_05');
-INSERT INTO leitet_kurs VALUES ('AV_05', 'KRS_06');
+INSERT INTO leitet_kurs VALUES ('KRS_00', 'M_05');
+INSERT INTO leitet_kurs VALUES ('KRS_01', 'M_06');
+INSERT INTO leitet_kurs VALUES ('KRS_02', 'M_08');
+INSERT INTO leitet_kurs VALUES ('KRS_03', 'M_05');
+INSERT INTO leitet_kurs VALUES ('KRS_04', 'M_06');
+INSERT INTO leitet_kurs VALUES ('KRS_05', 'M_08');
+INSERT INTO leitet_kurs VALUES ('KRS_06', 'M_05');
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table sportgeraete
