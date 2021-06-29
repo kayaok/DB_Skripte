@@ -1,0 +1,10 @@
+insert into steht_unter_Vertrag values ('M_01','AV_01');
+insert into steht_unter_Vertrag values ('M_02','AV_02');
+insert into steht_unter_Vertrag values ('M_03','AV_03');
+insert into steht_unter_Vertrag values ('M_04','AV_04');
+insert into steht_unter_Vertrag values ('M_05','AV_05');
+insert into steht_unter_Vertrag values ('M_06','AV_06');
+insert into steht_unter_Vertrag values ('M_07','AV_07');
+insert into steht_unter_Vertrag values ('M_08','AV_08');
+insert into steht_unter_Vertrag values ('M_09','AV_09');
+commit;
