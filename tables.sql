@@ -109,10 +109,10 @@ CREATE TABLE buchungsverlaeufe
 (
     buchungsverlauf_id CHAR(7) --bv_0000
         CONSTRAINT buchungsverlauf_id_nn NOT NULL,
-    status             NUMBER
-        CONSTRAINT kundenkarte_status_nn NOT NULL,
     zeitpunkt          DATE
         CONSTRAINT buchungsverlauf_zeitpunkt_nn NOT NULL,
+    status             NUMBER
+        CONSTRAINT kundenkarte_status_nn NOT NULL,
     kundenkarte_id     CHAR(6)
 );
 
