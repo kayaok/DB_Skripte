@@ -426,74 +426,61 @@ INSERT INTO kundenkarten VALUES ('CC_029', 91);
 INSERT INTO kundenkarten VALUES ('CC_030', 370);
 
 ------------------------------------------------------------------------------------------------------------------------
+-- Populate table mitarbeiter
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO mitarbeiter VALUES ('M_01', 'John', 'White', 'M', TO_DATE('1993-11-21', 'YYYY-MM-DD'), '2567 Fairfield Trail', '10505', 'Partido', '429-253-6451', TO_DATE('2018-05-31', 'YYYY-MM-DD'), '4905111521802833530', 'Kreissparkasse Reutlingen', 'CY98 8265 1216 U7YJ IO7H BYPG 7TKJ', '5794577622');
+INSERT INTO mitarbeiter VALUES ('M_02', 'Ann', 'Richfield', 'W', TO_DATE('1963-05-21', 'YYYY-MM-DD'), '38611 Chinook Trail', '35783', 'Adorjan', '257-966-4681', TO_DATE('2017-02-26', 'YYYY-MM-DD'), '4913458837624582', 'Volksbank Esslingen', 'AE67 7159 7140 0060 4918 096', '0375143017');
+INSERT INTO mitarbeiter VALUES ('M_03', 'Birgitta', 'Ford', 'W', TO_DATE('2000-02-01', 'YYYY-MM-DD'), '2 Park Meadow Crossing', '27508', 'Pizarro', '720-560-6783', TO_DATE('2019-03-02', 'YYYY-MM-DD'), '3539438117305926', 'Kreissparkasse Reutlingen', 'SA68 017S AXJU XGSV K5FM UODT', '6168138420');
+INSERT INTO mitarbeiter VALUES ('M_04', 'Joe', 'Hayball', 'M', TO_DATE('1990-04-21','YYYY-MM-DD'), '416 Corben Center', '91044', 'Évry', '174-901-6314', TO_DATE('2013-02-23', 'YYYY-MM-DD'), '36616504490435', 'Volksbank Esslingen', 'CR11 6772 2103 0916 5410 9', '9052299420');
+INSERT INTO mitarbeiter VALUES ('M_05', 'Nichol', 'Caddie', 'W', TO_DATE('1996-09-08','YYYY-MM-DD'), '55 Shasta Circle', '23456', 'Nancheng', '736-311-6065', TO_DATE('2021-06-23', 'YYYY-MM-DD'), '3575066775849862', 'Kreissparkasse Reutlingen', 'EE34 2799 1496 6641 5869', '3723113745');
+INSERT INTO mitarbeiter VALUES ('M_06', 'Mike', 'Works', 'M', TO_DATE('1994-10-23','YYYY-MM-DD'), '9 Hauk Alley', '46926', 'Fengqiao', '866-656-5629', TO_DATE('2016-01-23', 'YYYY-MM-DD'), '3542201933015953', 'Volksbank Esslingen', 'EE03 0469 3847 3223 5259', '5722486647');
+INSERT INTO mitarbeiter VALUES ('M_07', 'Alexander', 'Keedy', 'M', TO_DATE('1992-07-09','YYYY-MM-DD'), '0 Cambridge Junction', '62400', 'Camocim', '936-498-8488', TO_DATE('2017-06-01', 'YYYY-MM-DD'), '5108758794541089', 'Kreissparkasse Reutlingen', 'BR49 4039 9267 3208 4117 2372 832E L', '6283119190');
+INSERT INTO mitarbeiter VALUES ('M_08', 'Mary', 'Baal', 'W', TO_DATE('2005-05-16','YYYY-MM-DD'), '06 Kingsford Trail', '5782', 'Kumagunnam', '971-136-0196', TO_DATE('2021-06-01', 'YYYY-MM-DD'), '6709308779133280089', 'Commerzbank Böblingen', 'MU50 BPRZ 1170 5450 9760 4580 652Z LO', '7619692177');
+INSERT INTO mitarbeiter VALUES ('M_09', 'Susan', 'Filer', 'W', TO_DATE('1991-12-03','YYYY-MM-DD'), '0 Kings Trail', '14936', 'Bayt al ‘Awābī', '366-470-1994', TO_DATE('2015-04-26', 'YYYY-MM-DD'), '4041596338772', 'Volksbank Esslingen', 'AD67 2643 1046 JPZH ZY6P OZXO', '4591229556');
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table trainer
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO trainer VALUES ('M_05','A');
+INSERT INTO trainer VALUES ('M_06','C');
+INSERT INTO trainer VALUES ('M_08','B');
+
+------------------------------------------------------------------------------------------------------------------------
 -- Populate table kunden
 ------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO kunden VALUES ('C_001', 'Edward', 'Beedell', 'M', TO_DATE('2003-03-06', 'YYYY-MM-DD'), '3434 Ludington Road', '72555', 'Metzingen', '349-664-0426', 'ebeedell0@artisteer.com', '201472312178856', 'Kreissparkasse Reutlingen', 'AE47 8291 2055 4254 6814 121', '1270086561', '2345654334',                           'KV_001', 'KK_01','M_05');
-INSERT INTO kunden VALUES ('C_002', 'Cobb', 'Rechert', 'M', TO_DATE('1960-05-08','YYYY-MM-DD'), '5707 Dahle Lane', '72764', 'Reutlingen', '559-780-7427', 'crechert1@dedecms.com', '374283446353401', 'Volksbank Tuebingen', 'AE22 7776 7586 9708 0072 060', '5941514867', '765434567',                                        'KV_002', 'KK_02','M_05');
-INSERT INTO kunden VALUES ('C_003', 'Kincaid', 'Bruffell', 'M', TO_DATE('1997-03-15','YYYY-MM-DD'), '6 Stuart Plaza', '72070', 'Tuebingen', '804-578-2321', 'kbruffell2@narod.ru', '374288814456298', 'Kreissparkasse Reutlingen', 'MT95 FLLR 0524 8P7Z 9DFX CERP OI4L 8EX', '1507925840', '765498765',                       'KV_003', 'KK_03','M_13');
-INSERT INTO kunden VALUES ('C_004', 'Odey', 'Heigho', 'M', TO_DATE('1993-07-15','YYYY-MM-DD'), '069 Starling Center', '70794', 'Filderstadt', '617-311-9109', 'oheigho3@360.cn', '3587150308041712', 'Kreissparkasse Reutlingen', 'SI97 9575 7390 8904 381', '8849256787', '234566',                                                 'KV_004', 'KK_04','M_06');
-INSERT INTO kunden VALUES ('C_005', 'Lorrin', 'Butterwick', 'M', TO_DATE('1989-04-17','YYYY-MM-DD'), '29 Atwood Crossing', '72654', 'Neckartenzlingen', '107-668-0849', 'lbutterwick4@who.int', '30268482031579', 'Volksbank Tuebingen', 'HU54 7024 0989 8888 1601 9252 3398', '3312674980', '65432354',                                'KV_005', 'KK_05','M_08');
-INSERT INTO kunden VALUES ('C_006', 'Melodie', 'Tadman', 'W', TO_DATE('1979-07-08','YYYY-MM-DD'), '61 Mockingbird Pass', '72622', 'Nuertingen', '325-447-9871', 'mtadman5@msu.edu', '3558991730162153', 'Kreissparkasse Reutlingen', 'DK35 3976 9707 4443 96', '7291311918', '34256534',                                            'KV_006', 'KK_01','M_06');
-INSERT INTO kunden VALUES ('C_007', 'Ossie', 'Dat', 'W',TO_DATE( '1981-08-24','YYYY-MM-DD'), '56 Riverside Junction', '73230', 'Kirchheim', '504-995-2187', 'odat6@ca.gov', '3563157786886078', 'Volksbank Tuebingen', 'SM42 O356 3567 320E LE4W WSLK QQP', '3467202799', '3423462',                                       'KV_007', 'KK_02','M_08');
-INSERT INTO kunden VALUES ('C_008', 'Shelley', 'Woolam', 'W', TO_DATE('1997-06-21','YYYY-MM-DD'), '86 Dennis Hill', '72764', 'Reutlingen', '769-455-5316', 'swoolam7@google.pl', '675971503749615545', 'Commerzbank Esslingen', 'FR09 8363 1485 82SC NHCL O1UZ D86', '0088637506','5432456',                                    'KV_008', 'KK_03','M_06');
-INSERT INTO kunden VALUES ('C_009', 'Ashlee', 'Chstney', 'W', TO_DATE('1986-12-15','YYYY-MM-DD'), '71 Lerdahl Terrace', '72764', 'Reutlingen', '986-887-8186', 'achstney8@chronoengine.com', '5100134301200312', 'Volksbank Tuebingen', 'GT74 PWWM 8AIK WSJD 3WHQ 9LJG YCZS', '9603555584', '345654',                              'KV_009', 'KK_04','M_13');
-INSERT INTO kunden VALUES ('C_010', 'Rockey', 'Stapele', 'W', TO_DATE('2002-05-20','YYYY-MM-DD'), '035 Quincy Trail', '72764', 'Reutlingen', '370-444-9021', 'rstapele9@e-recht24.de', '4026400321100954', 'Kreissparkasse Reutlingen', 'DK73 6552 1457 7113 46', '1859805795', '218542',                                         'KV_010', 'KK_05','M_05');
-INSERT INTO kunden VALUES ('C_011', 'Gideon', 'Annon', 'M', TO_DATE('1973-08-06','YYYY-MM-DD'), '266 Gina Pass', '72764', 'Reutlingen', '123-181-7464', 'gannona@exblog.jp', '4917981460579175', 'Volksbank Tuebingen', 'DO50 7IDN 1918 6038 7729 3274 7258', '3164876106', '454332',                                            'KV_011', 'KK_01','M_14');
-INSERT INTO kunden VALUES ('C_012', 'Spike', 'Jaukovic', 'M', TO_DATE('1969-05-04','YYYY-MM-DD'), '9 Crescent Oaks Trail', '72555', 'Metzingen', '506-212-9422', 'sjaukovicb@walmart.com', '4905028235441236854', 'Kreissparkasse Reutlingen', 'FR82 8212 3140 56ZF CUP2 R0AH P49', '9273820891', '524573',                    'KV_012', 'KK_02','M_05');
-INSERT INTO kunden VALUES ('C_013', 'Lyndel', 'Brockie', 'W', TO_DATE('1982-05-25','YYYY-MM-DD'), '143 Vera Way', '72555', 'Metzingen', '557-135-7150', 'lbrockiec@yale.edu', '6706989677694710852', 'Volksbank Tuebingen', 'PL76 2964 8362 3582 4258 2087 0634', '9847018863', '9872345',                                      'KV_013', 'KK_03','M_08');
-INSERT INTO kunden VALUES ('C_014', 'Pancho', 'Abramzon', 'M', TO_DATE('1960-07-02','YYYY-MM-DD'), '665 Eastwood Lane', '72555', 'Metzingen', '878-143-7305', 'pabramzond@tumblr.com', '3574328611904199', 'Commerzbank Esslingen', 'CH43 5469 8SJD ISVF RZE7 9', '2072540356', '3456765',                                'KV_014', 'KK_04','M_14');
-INSERT INTO kunden VALUES ('C_015', 'Culver', 'Jukes', 'M',TO_DATE('1968-02-29','YYYY-MM-DD') , '640 Jackson Junction', '72622', 'Nuertingen', '183-961-1505', 'cjukese@google.co.uk', '5375071592293440', 'Volksbank Tuebingen', 'GT85 Q2SP HQND CDUC CJVZ WQMF GANA', '0592061558', '45672',                                  'KV_015', 'KK_05','M_06');
-INSERT INTO kunden VALUES ('C_016', 'Orelle', 'Sizeland', 'W', TO_DATE('1992-03-01','YYYY-MM-DD'), '23045 3rd Street', '72622', 'Nuertingen', '223-493-0493', 'osizelandf@reddit.com', '3584841244961814', 'Kreissparkasse Reutlingen', 'AD39 7657 2906 YUIN KRDN SKMY', '4345174740', '452842',                            'KV_016', 'KK_01','M_14');
-INSERT INTO kunden VALUES ('C_017', 'Renaud', 'Goricke', 'M', TO_DATE('2003-02-20','YYYY-MM-DD'), '8604 Luster Lane', '2442', 'Kirchheim', '422-608-6380', 'rgorickeg@microsoft.com', '3565814365140594', 'Commerzbank Esslingen', 'IS07 5405 4488 6321 3775 6623 11', '7477752442', '76432326',                               'KV_017', 'KK_02','M_08');
-INSERT INTO kunden VALUES ('C_018', 'Ewen', 'Fieldhouse', 'W',TO_DATE('1974-06-03','YYYY-MM-DD'), '11 Graedel Center', '84242', 'Kirchheim', '136-101-2947', 'efieldhouseh@house.gov', '3554568601994999', 'Commerzbank Esslingen', 'RS96 8568 2229 8589 5679 80', '5121495188', '83248',                                       'KV_018', 'KK_03','M_05');
-INSERT INTO kunden VALUES ('C_019', 'Shane', 'Tayler', 'W', TO_DATE('1980-09-07','YYYY-MM-DD'), '98 Longview Circle', '70794', 'Filderstadt', '393-601-2272', 'stayleri@fotki.com', '675971911381757030', 'Volksbank Tuebingen', 'BE05 3532 8340 4353', '1428661964', '342357654',                                              'KV_019', 'KK_04','M_14');
-INSERT INTO kunden VALUES ('C_020', 'Alla', 'Plom', 'W', TO_DATE('2002-04-18','YYYY-MM-DD'), '34825 Fairfield Street', '70794', 'Filderstadt', '755-220-6157', 'aplomj@senate.gov', '3551728126143075', 'Volksbank Tuebingen', 'DE26 4076 4280 5549 3250 60', '8073295865', '6543223456',                                          'KV_020', 'KK_05','M_08');
-INSERT INTO kunden VALUES ('C_021', 'Saloma', 'Billington', 'W', TO_DATE(,'1966-10-03''YYYY-MM-DD'), '215 Clyde Gallagher Lane', '72070', 'Tuebingen', '545-684-8284', 'sbillingtonk@who.int', '4844191902682615', 'Kreissparkasse Reutlingen', 'RO61 LTBT OMO5 QTBW IPPS G5SH', '9145201315', '87654345114',             'KV_021', 'KK_01','M_06');
-INSERT INTO kunden VALUES ('C_022', 'Scarlett', 'Neiland', 'W', TO_DATE('1961-11-16','YYYY-MM-DD'), '5 Tomscot Alley', '72070', 'Tuebingen', '263-920-3319', 'sneilandl@wisc.edu', '5610909989414683471', 'Commerzbank Esslingen', 'CR24 9959 9737 3032 4311 1', '9060258320', '42678723',                                         'KV_022', 'KK_02','M_14');
-INSERT INTO kunden VALUES ('C_023', 'Morlee', 'Whetland', 'W', TO_DATE(,'1971-02-25''YYYY-MM-DD'), '181 Browning Trail', '72070', 'Tuebingen', '639-239-1190', 'mwhetlandm@tinyurl.com', '3573361733944075', 'Kreissparkasse Reutlingen', 'FR15 3978 6840 32FM YXSN NCEJ G06', '1963569296', '3252484',                     'KV_023', 'KK_03','M_05');
-INSERT INTO kunden VALUES ('C_024', 'Danika', 'Redrup', 'W', TO_DATE('1973-11-30','YYYY-MM-DD'), '31 Sutteridge Avenue', '72654', 'Neckartenzlingen', '634-111-5788', 'dredrupn@upenn.edu', '3552522694084400', 'Commerzbank Esslingen', 'ES94 8467 4921 5571 1869 2405', '9351926044', '674533221',                               'KV_024', 'KK_04','M_13');
-INSERT INTO kunden VALUES ('C_025', 'Gwynne', 'Buckston', 'W', TO_DATE('1988-05-03','YYYY-MM-DD'), '3536 South Court', '72654', 'Neckartenzlingen', '356-526-6409', 'gbuckstono@jigsy.com', '3567660433898590', 'Commerzbank Esslingen', 'SM19 W112 5432 807U ISYT ISWH U1V', '4783268703', '31487654323',                          'KV_025', 'KK_05','M_06');
-INSERT INTO kunden VALUES ('C_026', 'Jewel', 'Glanville', 'W', TO_DATE('1972-04-19','YYYY-MM-DD'), '17962 Dunning Plaza', '73230', 'Kirchheim', '825-647-0335', 'jglanvillep@netvibes.com', '3554637768008024', 'Kreissparkasse Reutlingen', 'BR55 5218 7183 1744 1537 6750 929U G', '6709294625', '3494646134',                 'KV_026', 'KK_01','M_13');
-INSERT INTO kunden VALUES ('C_027', 'Flinn', 'Gammade', 'M', TO_DATE('1960-04-06','YYYY-MM-DD'), '592 Stone Corner Park', '72070', 'Tuebingen', '885-899-0077', 'fgammadeq@sogou.com', '3574326855216023', 'Kreissparkasse Reutlingen', 'PS11 VAIP 6DHO J7ZG 3XLE OOQY EAHI G', '9211279763', '3259831123',                        'KV_027', 'KK_02','M_05');
-INSERT INTO kunden VALUES ('C_028', 'Nevsa', 'Druce', 'W',TO_DATE('1974-01-30','YYYY-MM-DD'), '288 Del Sol Place', '73230', 'Kirchheim', '630-274-3008', 'ndrucer@globo.com', '371070886291214', 'Kreissparkasse Reutlingen', 'HR66 3358 0587 7925 4912 0', '8838545480', '24543765',                                         'KV_028', 'KK_03','M_06');
-INSERT INTO kunden VALUES ('C_029', 'Justine', 'Currey', 'W', TO_DATE('1986-05-19','YYYY-MM-DD'), '9 Barnett Way', '72654', 'Neckartenzlingen', '203-803-2392', 'jcurreys@dropbox.com', '4041377808043', 'Commerzbank Esslingen', 'TR14 8350 6TPO A9UN TQSI 6V6Z HD', '8404974624', '753831236',                                     'KV_029', 'KK_04','M_08');
-INSERT INTO kunden VALUES ('C_030', 'Curr', 'Kidwell', 'M', TO_DATE('1971-03-11','YYYY-MM-DD'), '58 Northview Way', '72622', 'Nuertingen', '675-699-0035', 'ckidwellt@sbwire.com', '30210235305728', 'Volksbank Tuebingen', 'DE44 3178 2662 3985 8122 91', '2040548335', '3495324924',                                              'KV_030', 'KK_05','M_05');
-
-------------------------------------------------------------------------------------------------------------------------
--- Populate table kundenvertraege
-------------------------------------------------------------------------------------------------------------------------
-
-INSERT INTO kundenvertraege VALUES ('KV_001', 'All Inclusive', '2019-09-10', 24, '34,90', '90,05', 'C_001');
-INSERT INTO kundenvertraege VALUES ('KV_002', 'Basic', '2020-10-12', 12, '29,90', '63,88', 'C_002');
-INSERT INTO kundenvertraege VALUES ('KV_003', 'Schüler/Student', '2021-03-25', 6, '29,90', '49,49', 'C_003');
-INSERT INTO kundenvertraege VALUES ('KV_004', 'All Inclusive', '2020-11-12', 36, '29,90', '88,88', 'C_004');
-INSERT INTO kundenvertraege VALUES ('KV_005', 'Schüler/Student', '2021-06-21', 6, '29,90', '83,32', 'C_005');
-INSERT INTO kundenvertraege VALUES ('KV_006', 'Reha-Sport', '2021-02-23', 6, '39,90', '39,77', 'C_006');
-INSERT INTO kundenvertraege VALUES ('KV_007', 'All Inclusive', '2020-08-24', 12, '39,90', '43,15', 'C_007');
-INSERT INTO kundenvertraege VALUES ('KV_008', 'Basic', '2019-11-19', 24, '24,90', '33,38', 'C_008');
-INSERT INTO kundenvertraege VALUES ('KV_009', 'Schüler/Student', '2021-04-26', 12, '24,90', '45,44', 'C_009');
-INSERT INTO kundenvertraege VALUES ('KV_010', 'Basic', '2020-12-24', 36, '29,90', '33,25', 'C_010');
-INSERT INTO kundenvertraege VALUES ('KV_011', 'Reha-Sport','2021-01-01', 12, '34,90', '67,39', 'C_011');
-INSERT INTO kundenvertraege VALUES ('KV_012', 'All Inclusive', '2021-02-27', 24, '34,90', '22,16', 'C_012');
-INSERT INTO kundenvertraege VALUES ('KV_013', 'Reha-Sport','2021-5-23', 6, '39,90', '43,41', 'C_0013');
-INSERT INTO kundenvertraege VALUES ('KV_014', 'Schüler/Student', '2020-02-03', 24, '19,90', '31,67', 'C_0014');
-INSERT INTO kundenvertraege VALUES ('KV_015', 'Basic', '2020-09-13', 12, '29,90', '84,70', 'C_015');
-INSERT INTO kundenvertraege VALUES ('KV_016', 'All Inclusive', '2020-10-10', 12, '39,90', '95,51', 'C_016');
-INSERT INTO kundenvertraege VALUES ('KV_017', 'Reha-Sport','2021-03-20', 12, '34,90', '81,58', 'C_017');
-INSERT INTO kundenvertraege VALUES ('KV_018', 'Reha-Sport','2021-02-01', 6, '39,90', '92,86', 'C_018');
-INSERT INTO kundenvertraege VALUES ('KV_019', 'Schüler/Student', '2019-12-20', 36, '16,90', '68,02', 'C_019');
-INSERT INTO kundenvertraege VALUES ('KV_020', 'All Inclusive', '2021-03-23', 12, '39,90', '23,64', 'C_020');
-INSERT INTO kundenvertraege VALUES ('KV_021', 'Basic', '2021-04-23', 6, '34,90', '25,76', 'C_021');
-INSERT INTO kundenvertraege VALUES ('KV_022', 'Reha-Sport','2020-07-24', 24, '29,90', '83,18', 'C_022');
-INSERT INTO kundenvertraege VALUES ('KV_023', 'All Inclusive', '2019-09-02', 36, '29,90', '67,78', 'C_023');
-INSERT INTO kundenvertraege VALUES ('KV_024', 'Basic','2020-02-04', 24, '24,90', '49,90', 'C_024');
-INSERT INTO kundenvertraege VALUES ('KV_025', 'Schüler/Student', '2021-05-20', 12, '24,90', '89,86', 'C_025');
-INSERT INTO kundenvertraege VALUES ('KV_026', 'Basic', '2021-03-12', 6, '34,90', '61,89', 'C_026');
-INSERT INTO kundenvertraege VALUES ('KV_027', 'All Inclusive', '2020-07-05', 36, '29,90', '48,70', 'C_027');
-INSERT INTO kundenvertraege VALUES ('KV_028', 'Reha-Sport','2021-03-25', 6, '39,90', '89,86', 'C_028');
-INSERT INTO kundenvertraege VALUES ('KV_029', 'Basic', '2020-11-24', 12, '29,90', '20,77', 'C_029');
-INSERT INTO kundenvertraege VALUES ('KV_030', 'All Inclusive', '2020-06-25', 24, '34,90', '60,74', 'C_030');
+INSERT INTO kunden VALUES ('C_001', 'Edward', 'Beedell', 'M', TO_DATE('2003-03-06', 'YYYY-MM-DD'), '3434 Ludington Road', '72555', 'Metzingen', '349-664-0426', 'ebeedell0@artisteer.com', '201472312178856', 'Kreissparkasse Reutlingen', 'AE47 8291 2055 4254 6814 121', '1270086561', '2345654334',                           'CC_001', 'KK_01','M_05');
+INSERT INTO kunden VALUES ('C_002', 'Cobb', 'Rechert', 'M', TO_DATE('1960-05-08','YYYY-MM-DD'), '5707 Dahle Lane', '72764', 'Reutlingen', '559-780-7427', 'crechert1@dedecms.com', '374283446353401', 'Volksbank Tuebingen', 'AE22 7776 7586 9708 0072 060', '5941514867', '765434567',                                        'CC_002', 'KK_02','M_05');
+INSERT INTO kunden VALUES ('C_003', 'Kincaid', 'Bruffell', 'M', TO_DATE('1997-03-15','YYYY-MM-DD'), '6 Stuart Plaza', '72070', 'Tuebingen', '804-578-2321', 'kbruffell2@narod.ru', '374288814456298', 'Kreissparkasse Reutlingen', 'MT95 FLLR 0524 8P7Z 9DFX CERP OI4L 8EX', '1507925840', '765498765',                       'CC_003', 'KK_03','M_08');
+INSERT INTO kunden VALUES ('C_004', 'Odey', 'Heigho', 'M', TO_DATE('1993-07-15','YYYY-MM-DD'), '069 Starling Center', '70794', 'Filderstadt', '617-311-9109', 'oheigho3@360.cn', '3587150308041712', 'Kreissparkasse Reutlingen', 'SI97 9575 7390 8904 381', '8849256787', '234566',                                                 'CC_004', 'KK_04','M_06');
+INSERT INTO kunden VALUES ('C_005', 'Lorrin', 'Butterwick', 'M', TO_DATE('1989-04-17','YYYY-MM-DD'), '29 Atwood Crossing', '72654', 'Neckartenzlingen', '107-668-0849', 'lbutterwick4@who.int', '30268482031579', 'Volksbank Tuebingen', 'HU54 7024 0989 8888 1601 9252 3398', '3312674980', '65432354',                                'CC_005', 'KK_05','M_08');
+INSERT INTO kunden VALUES ('C_006', 'Melodie', 'Tadman', 'W', TO_DATE('1979-07-08','YYYY-MM-DD'), '61 Mockingbird Pass', '72622', 'Nuertingen', '325-447-9871', 'mtadman5@msu.edu', '3558991730162153', 'Kreissparkasse Reutlingen', 'DK35 3976 9707 4443 96', '7291311918', '34256534',                                            'CC_006', 'KK_01','M_06');
+INSERT INTO kunden VALUES ('C_007', 'Ossie', 'Dat', 'W',TO_DATE( '1981-08-24','YYYY-MM-DD'), '56 Riverside Junction', '73230', 'Kirchheim', '504-995-2187', 'odat6@ca.gov', '3563157786886078', 'Volksbank Tuebingen', 'SM42 O356 3567 320E LE4W WSLK QQP', '3467202799', '3423462',                                       'CC_007', 'KK_02','M_08');
+INSERT INTO kunden VALUES ('C_008', 'Shelley', 'Woolam', 'W', TO_DATE('1997-06-21','YYYY-MM-DD'), '86 Dennis Hill', '72764', 'Reutlingen', '769-455-5316', 'swoolam7@google.pl', '675971503749615545', 'Commerzbank Esslingen', 'FR09 8363 1485 82SC NHCL O1UZ D86', '0088637506','5432456',                                    'CC_008', 'KK_03','M_06');
+INSERT INTO kunden VALUES ('C_009', 'Ashlee', 'Chstney', 'W', TO_DATE('1986-12-15','YYYY-MM-DD'), '71 Lerdahl Terrace', '72764', 'Reutlingen', '986-887-8186', 'achstney8@chronoengine.com', '5100134301200312', 'Volksbank Tuebingen', 'GT74 PWWM 8AIK WSJD 3WHQ 9LJG YCZS', '9603555584', '345654',                              'CC_009', 'KK_04','M_08');
+INSERT INTO kunden VALUES ('C_010', 'Rockey', 'Stapele', 'W', TO_DATE('2002-05-20','YYYY-MM-DD'), '035 Quincy Trail', '72764', 'Reutlingen', '370-444-9021', 'rstapele9@e-recht24.de', '4026400321100954', 'Kreissparkasse Reutlingen', 'DK73 6552 1457 7113 46', '1859805795', '218542',                                         'CC_010', 'KK_05','M_05');
+INSERT INTO kunden VALUES ('C_011', 'Gideon', 'Annon', 'M', TO_DATE('1973-08-06','YYYY-MM-DD'), '266 Gina Pass', '72764', 'Reutlingen', '123-181-7464', 'gannona@exblog.jp', '4917981460579175', 'Volksbank Tuebingen', 'DO50 7IDN 1918 6038 7729 3274 7258', '3164876106', '454332',                                            'CC_011', 'KK_01','M_06');
+INSERT INTO kunden VALUES ('C_012', 'Spike', 'Jaukovic', 'M', TO_DATE('1969-05-04','YYYY-MM-DD'), '9 Crescent Oaks Trail', '72555', 'Metzingen', '506-212-9422', 'sjaukovicb@walmart.com', '4905028235441236854', 'Kreissparkasse Reutlingen', 'FR82 8212 3140 56ZF CUP2 R0AH P49', '9273820891', '524573',                    'CC_012', 'KK_02','M_05');
+INSERT INTO kunden VALUES ('C_013', 'Lyndel', 'Brockie', 'W', TO_DATE('1982-05-25','YYYY-MM-DD'), '143 Vera Way', '72555', 'Metzingen', '557-135-7150', 'lbrockiec@yale.edu', '6706989677694710852', 'Volksbank Tuebingen', 'PL76 2964 8362 3582 4258 2087 0634', '9847018863', '9872345',                                      'CC_013', 'KK_03','M_08');
+INSERT INTO kunden VALUES ('C_014', 'Pancho', 'Abramzon', 'M', TO_DATE('1960-07-02','YYYY-MM-DD'), '665 Eastwood Lane', '72555', 'Metzingen', '878-143-7305', 'pabramzond@tumblr.com', '3574328611904199', 'Commerzbank Esslingen', 'CH43 5469 8SJD ISVF RZE7 9', '2072540356', '3456765',                                'CC_014', 'KK_04','M_06');
+INSERT INTO kunden VALUES ('C_015', 'Culver', 'Jukes', 'M',TO_DATE('1968-02-29','YYYY-MM-DD') , '640 Jackson Junction', '72622', 'Nuertingen', '183-961-1505', 'cjukese@google.co.uk', '5375071592293440', 'Volksbank Tuebingen', 'GT85 Q2SP HQND CDUC CJVZ WQMF GANA', '0592061558', '45672',                                  'CC_015', 'KK_05','M_06');
+INSERT INTO kunden VALUES ('C_016', 'Orelle', 'Sizeland', 'W', TO_DATE('1992-03-01','YYYY-MM-DD'), '23045 3rd Street', '72622', 'Nuertingen', '223-493-0493', 'osizelandf@reddit.com', '3584841244961814', 'Kreissparkasse Reutlingen', 'AD39 7657 2906 YUIN KRDN SKMY', '4345174740', '452842',                            'CC_016', 'KK_01','M_05');
+INSERT INTO kunden VALUES ('C_017', 'Renaud', 'Goricke', 'M', TO_DATE('2003-02-20','YYYY-MM-DD'), '8604 Luster Lane', '2442', 'Kirchheim', '422-608-6380', 'rgorickeg@microsoft.com', '3565814365140594', 'Commerzbank Esslingen', 'IS07 5405 4488 6321 3775 6623 11', '7477752442', '76432326',                               'CC_017', 'KK_02','M_08');
+INSERT INTO kunden VALUES ('C_018', 'Ewen', 'Fieldhouse', 'W',TO_DATE('1974-06-03','YYYY-MM-DD'), '11 Graedel Center', '84242', 'Kirchheim', '136-101-2947', 'efieldhouseh@house.gov', '3554568601994999', 'Commerzbank Esslingen', 'RS96 8568 2229 8589 5679 80', '5121495188', '83248',                                       'CC_018', 'KK_03','M_05');
+INSERT INTO kunden VALUES ('C_019', 'Shane', 'Tayler', 'W', TO_DATE('1980-09-07','YYYY-MM-DD'), '98 Longview Circle', '70794', 'Filderstadt', '393-601-2272', 'stayleri@fotki.com', '675971911381757030', 'Volksbank Tuebingen', 'BE05 3532 8340 4353', '1428661964', '342357654',                                              'CC_019', 'KK_04','M_08');
+INSERT INTO kunden VALUES ('C_020', 'Alla', 'Plom', 'W', TO_DATE('2002-04-18','YYYY-MM-DD'), '34825 Fairfield Street', '70794', 'Filderstadt', '755-220-6157', 'aplomj@senate.gov', '3551728126143075', 'Volksbank Tuebingen', 'DE26 4076 4280 5549 3250 60', '8073295865', '6543223456',                                          'CC_020', 'KK_05','M_08');
+INSERT INTO kunden VALUES ('C_021', 'Saloma', 'Billington', 'W', TO_DATE(,'1966-10-03''YYYY-MM-DD'), '215 Clyde Gallagher Lane', '72070', 'Tuebingen', '545-684-8284', 'sbillingtonk@who.int', '4844191902682615', 'Kreissparkasse Reutlingen', 'RO61 LTBT OMO5 QTBW IPPS G5SH', '9145201315', '87654345114',             'CC_021', 'KK_01','M_06');
+INSERT INTO kunden VALUES ('C_022', 'Scarlett', 'Neiland', 'W', TO_DATE('1961-11-16','YYYY-MM-DD'), '5 Tomscot Alley', '72070', 'Tuebingen', '263-920-3319', 'sneilandl@wisc.edu', '5610909989414683471', 'Commerzbank Esslingen', 'CR24 9959 9737 3032 4311 1', '9060258320', '42678723',                                         'CC_022', 'KK_02','M_05');
+INSERT INTO kunden VALUES ('C_023', 'Morlee', 'Whetland', 'W', TO_DATE(,'1971-02-25''YYYY-MM-DD'), '181 Browning Trail', '72070', 'Tuebingen', '639-239-1190', 'mwhetlandm@tinyurl.com', '3573361733944075', 'Kreissparkasse Reutlingen', 'FR15 3978 6840 32FM YXSN NCEJ G06', '1963569296', '3252484',                     'CC_023', 'KK_03','M_05');
+INSERT INTO kunden VALUES ('C_024', 'Danika', 'Redrup', 'W', TO_DATE('1973-11-30','YYYY-MM-DD'), '31 Sutteridge Avenue', '72654', 'Neckartenzlingen', '634-111-5788', 'dredrupn@upenn.edu', '3552522694084400', 'Commerzbank Esslingen', 'ES94 8467 4921 5571 1869 2405', '9351926044', '674533221',                               'CC_024', 'KK_04','M_08');
+INSERT INTO kunden VALUES ('C_025', 'Gwynne', 'Buckston', 'W', TO_DATE('1988-05-03','YYYY-MM-DD'), '3536 South Court', '72654', 'Neckartenzlingen', '356-526-6409', 'gbuckstono@jigsy.com', '3567660433898590', 'Commerzbank Esslingen', 'SM19 W112 5432 807U ISYT ISWH U1V', '4783268703', '31487654323',                          'CC_025', 'KK_05','M_06');
+INSERT INTO kunden VALUES ('C_026', 'Jewel', 'Glanville', 'W', TO_DATE('1972-04-19','YYYY-MM-DD'), '17962 Dunning Plaza', '73230', 'Kirchheim', '825-647-0335', 'jglanvillep@netvibes.com', '3554637768008024', 'Kreissparkasse Reutlingen', 'BR55 5218 7183 1744 1537 6750 929U G', '6709294625', '3494646134',                 'CC_026', 'KK_01','M_05');
+INSERT INTO kunden VALUES ('C_027', 'Flinn', 'Gammade', 'M', TO_DATE('1960-04-06','YYYY-MM-DD'), '592 Stone Corner Park', '72070', 'Tuebingen', '885-899-0077', 'fgammadeq@sogou.com', '3574326855216023', 'Kreissparkasse Reutlingen', 'PS11 VAIP 6DHO J7ZG 3XLE OOQY EAHI G', '9211279763', '3259831123',                        'CC_027', 'KK_02','M_05');
+INSERT INTO kunden VALUES ('C_028', 'Nevsa', 'Druce', 'W',TO_DATE('1974-01-30','YYYY-MM-DD'), '288 Del Sol Place', '73230', 'Kirchheim', '630-274-3008', 'ndrucer@globo.com', '371070886291214', 'Kreissparkasse Reutlingen', 'HR66 3358 0587 7925 4912 0', '8838545480', '24543765',                                         'CC_028', 'KK_03','M_06');
+INSERT INTO kunden VALUES ('C_029', 'Justine', 'Currey', 'W', TO_DATE('1986-05-19','YYYY-MM-DD'), '9 Barnett Way', '72654', 'Neckartenzlingen', '203-803-2392', 'jcurreys@dropbox.com', '4041377808043', 'Commerzbank Esslingen', 'TR14 8350 6TPO A9UN TQSI 6V6Z HD', '8404974624', '753831236',                                     'CC_029', 'KK_04','M_08');
+INSERT INTO kunden VALUES ('C_030', 'Curr', 'Kidwell', 'M', TO_DATE('1971-03-11','YYYY-MM-DD'), '58 Northview Way', '72622', 'Nuertingen', '675-699-0035', 'ckidwellt@sbwire.com', '30210235305728', 'Volksbank Tuebingen', 'DE44 3178 2662 3985 8122 91', '2040548335', '3495324924',                                              'CC_030', 'KK_05','M_05');
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table kurse
@@ -539,20 +526,6 @@ INSERT INTO leitet_kurs VALUES ('AV_05', 'KRS_03');
 INSERT INTO leitet_kurs VALUES ('AV_06', 'KRS_04');
 INSERT INTO leitet_kurs VALUES ('AV_08', 'KRS_05');
 INSERT INTO leitet_kurs VALUES ('AV_05', 'KRS_06');
-
-------------------------------------------------------------------------------------------------------------------------
--- Populate table mitarbeiter
-------------------------------------------------------------------------------------------------------------------------
-
-INSERT INTO mitarbeiter VALUES ('M_01', 'John', 'White', 'M', TO_DATE('1993-11-21', 'YYYY-MM-DD'), '2567 Fairfield Trail', '10505', 'Partido', '429-253-6451', TO_DATE('2018-05-31', 'YYYY-MM-DD'), '4905111521802833530', 'Kreissparkasse Reutlingen', 'CY98 8265 1216 U7YJ IO7H BYPG 7TKJ', '5794577622');
-INSERT INTO mitarbeiter VALUES ('M_02', 'Ann', 'Richfield', 'W', TO_DATE('1963-05-21', 'YYYY-MM-DD'), '38611 Chinook Trail', '35783', 'Adorjan', '257-966-4681', TO_DATE('2017-02-26', 'YYYY-MM-DD'), '4913458837624582', 'Volksbank Esslingen', 'AE67 7159 7140 0060 4918 096', '0375143017');
-INSERT INTO mitarbeiter VALUES ('M_03', 'Birgitta', 'Ford', 'W', TO_DATE('2000-02-01', 'YYYY-MM-DD'), '2 Park Meadow Crossing', '27508', 'Pizarro', '720-560-6783', TO_DATE('2019-03-02', 'YYYY-MM-DD'), '3539438117305926', 'Kreissparkasse Reutlingen', 'SA68 017S AXJU XGSV K5FM UODT', '6168138420');
-INSERT INTO mitarbeiter VALUES ('M_04', 'Joe', 'Hayball', 'M', TO_DATE('1990-04-21','YYYY-MM-DD'), '416 Corben Center', '91044 CEDEX', 'Évry', '174-901-6314', TO_DATE('2013-02-23', 'YYYY-MM-DD'), '36616504490435', 'Volksbank Esslingen', 'CR11 6772 2103 0916 5410 9', '9052299420');
-INSERT INTO mitarbeiter VALUES ('M_05', 'Nichol', 'Caddie', 'W', TO_DATE('1996-09-08','YYYY-MM-DD'), '55 Shasta Circle', '23456', 'Nancheng', '736-311-6065', TO_DATE('2021-06-23', 'YYYY-MM-DD'), '3575066775849862', 'Kreissparkasse Reutlingen', 'EE34 2799 1496 6641 5869', '3723113745');
-INSERT INTO mitarbeiter VALUES ('M_06', 'Mike', 'Works', 'M', TO_DATE('1994-10-23','YYYY-MM-DD'), '9 Hauk Alley', '46926', 'Fengqiao', '866-656-5629', TO_DATE('2016-01-23', 'YYYY-MM-DD'), '3542201933015953', 'Volksbank Esslingen', 'EE03 0469 3847 3223 5259', '5722486647');
-INSERT INTO mitarbeiter VALUES ('M_07', 'Alexander', 'Keedy', 'M', TO_DATE('1992-07-09','YYYY-MM-DD'), '0 Cambridge Junction', '62400', 'Camocim', '936-498-8488', TO_DATE('2017-06-01', 'YYYY-MM-DD'), '5108758794541089', 'Kreissparkasse Reutlingen', 'BR49 4039 9267 3208 4117 2372 832E L', '6283119190');
-INSERT INTO mitarbeiter VALUES ('M_08', 'Mary', 'Baal', 'W', TO_DATE('2005-05-16','YYYY-MM-DD'), '06 Kingsford Trail', '5782', 'Kumagunnam', '971-136-0196', TO_DATE('2021-06-01', 'YYYY-MM-DD'), '6709308779133280089', 'Commerzbank Böblingen', 'MU50 BPRZ 1170 5450 9760 4580 652Z LO', '7619692177');
-INSERT INTO mitarbeiter VALUES ('M_09', 'Susan', 'Filer', 'W', TO_DATE('1991-12-03','YYYY-MM-DD'), '0 Kings Trail', '14936', 'Bayt al ‘Awābī', '366-470-1994', TO_DATE('2015-04-26', 'YYYY-MM-DD'), '4041596338772', 'Volksbank Esslingen', 'AD67 2643 1046 JPZH ZY6P OZXO', '4591229556');
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table sportgeraete
@@ -614,14 +587,6 @@ INSERT INTO steht_unter_vertrag VALUES ('M_06','AV_06');
 INSERT INTO steht_unter_vertrag VALUES ('M_07','AV_07');
 INSERT INTO steht_unter_vertrag VALUES ('M_08','AV_09');
 INSERT INTO steht_unter_vertrag VALUES ('M_09','AV_08');
-
-------------------------------------------------------------------------------------------------------------------------
--- Populate table trainer
-------------------------------------------------------------------------------------------------------------------------
-
-INSERT INTO trainer VALUES ('A','M_05');
-INSERT INTO trainer VALUES ('C','M_06');
-INSERT INTO trainer VALUES ('B','M_08');
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table trainingseinheiten
