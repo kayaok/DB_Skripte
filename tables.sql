@@ -314,15 +314,15 @@ ALTER TABLE kurse
 
 CREATE TABLE individualplaene
 (
-    individualplan_id     CHAR(7) --ivp_000
+    individualplan_id CHAR(7) --ivp_000
         CONSTRAINT individualplan_id_nn NOT NULL,
-    beginn                DATE
+    beginn            DATE
         CONSTRAINT individualplan_beginn_nn NOT NULL,
-    tatsaechlicher_beginn DATE,
-    ende                  DATE
+    dauer             NUMBER
+        CONSTRAINT individualplan_dauer_nn NOT NULL,
+    ende              DATE
         CONSTRAINT individualplan_ende_nn NOT NULL,
-    tatsechliches_ende    DATE,
-    trainingsplan_id      CHAR(5)
+    trainingsplan_id  CHAR(5)
 );
 
 CREATE UNIQUE INDEX individualplan_id_pk ON
@@ -522,27 +522,27 @@ CREATE TABLE wird_eingeteilt_in
     arbeitseinteilung_id CHAR(6)
 );
 
-CREATE TABLE steht_unter_Vertrag
+CREATE TABLE steht_unter_vertrag
 (
     mitarbeiter_id    CHAR(4),
     arbeitsvertrag_id CHAR(5)
 );
 
-CREATE TABLE leitet
+CREATE TABLE leitet_kurs
 (
-    kurse_id   CHAR(6),
+    kurs_id    CHAR(6),
     trainer_id CHAR(4)
 );
 
-CREATE TABLE ist_Teilnehmer
+CREATE TABLE ist_teilnehmer
 (
-    kurse_id CHAR(6),
+    kurs_id  CHAR(6),
     kunde_id CHAR(5)
 );
 
 CREATE TABLE besteht_aus
 (
-    kurse_id            CHAR(6),
+    kurs_id             CHAR(6),
     trainingseinheit_id CHAR(5)
 );
 
@@ -630,7 +630,7 @@ ALTER TABLE wird_eingeteilt_in
                  REFERENCES arbeitseinteilungen (arbeitseinteilung_id)
         );
 
-ALTER TABLE steht_unter_Vertrag
+ALTER TABLE steht_unter_vertrag
     ADD (CONSTRAINT ma_av_1_fk
              FOREIGN KEY (mitarbeiter_id)
                  REFERENCES mitarbeiter (mitarbeiter_id),
@@ -639,9 +639,9 @@ ALTER TABLE steht_unter_Vertrag
                  REFERENCES arbeitsvertraege (arbeitsvertrag_id)
         );
 
-ALTER TABLE leitet
+ALTER TABLE leitet_kurs
     ADD (CONSTRAINT kurse_trainer_1_fk
-             FOREIGN KEY (kurse_id)
+             FOREIGN KEY (kurs_id)
                  REFERENCES kurse (kurs_id),
          CONSTRAINT kurse_trainer_2_fk
              FOREIGN KEY (trainer_id)
@@ -650,7 +650,7 @@ ALTER TABLE leitet
 
 ALTER TABLE besteht_aus
     ADD (CONSTRAINT kurse_te_1_fk
-             FOREIGN KEY (kurse_id)
+             FOREIGN KEY (kurs_id)
                  REFERENCES kurse (kurs_id),
          CONSTRAINT kurse_te_2_fk
              FOREIGN KEY (trainingseinheit_id)
@@ -666,11 +666,11 @@ ALTER TABLE ist_definiert_durch
                  REFERENCES kategorien (kategorie_id)
         );
 
-ALTER TABLE ist_Teilnehmer
+ALTER TABLE ist_teilnehmer
     ADD (CONSTRAINT kunde_kurse_1_fk
              FOREIGN KEY (kunde_id)
                  REFERENCES kunden (kunde_id),
          CONSTRAINT kunde_kurse_2_fk
-             FOREIGN KEY (kurse_id)
+             FOREIGN KEY (kurs_id)
                  REFERENCES kurse (kurs_id)
         );
