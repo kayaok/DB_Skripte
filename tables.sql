@@ -4,38 +4,37 @@
 
 CREATE TABLE kunden
 (
-    kunde_id          CHAR(5) --k_000
+    kunde_id        CHAR(5) --k_000
         CONSTRAINT kunde_id_nn NOT NULL,
-    vorname           VARCHAR(20)
+    vorname         VARCHAR(20)
         CONSTRAINT kunde_vorname_nn NOT NULL,
-    nachname          VARCHAR(20)
+    nachname        VARCHAR(20)
         CONSTRAINT kunde_nachname_nn NOT NULL,
-    geschlecht        CHAR
+    geschlecht      CHAR
         CONSTRAINT kunde_geschlecht_nn NOT NULL,
-    geburtsdatum      DATE
+    geburtsdatum    DATE
         CONSTRAINT kunde_geburtsdatum_nn NOT NULL,
-    strasse_hn        VARCHAR(30)
+    strasse_hn      VARCHAR(30)
         CONSTRAINT kunde_shn_nn NOT NULL,
-    plz               VARCHAR(5)
+    plz             VARCHAR(5)
         CONSTRAINT kunde_plz_nn NOT NULL,
-    ort               VARCHAR(20)
+    ort             VARCHAR(20)
         CONSTRAINT kunde_ort_nn NOT NULL,
-    telefonnummer     VARCHAR(20),
-    email             VARCHAR(40),
-    kontonummer       VARCHAR(25)
+    telefonnummer   VARCHAR(20),
+    email           VARCHAR(40),
+    kontonummer     VARCHAR(25)
         CONSTRAINT kunde_kontonummer_nn NOT NULL,
-    bank              VARCHAR(50)
+    bank            VARCHAR(50)
         CONSTRAINT kunde_bank_nn NOT NULL,
-    iban              VARCHAR(40)
+    iban            VARCHAR(40)
         CONSTRAINT kunde_iban_nn NOT NULL,
-    bic               VARCHAR(15)
+    bic             VARCHAR(15)
         CONSTRAINT kunde_bic_nn NOT NULL,
-    kk_nummer         NUMBER
+    kk_nummer       NUMBER
         CONSTRAINT kunde_kk_nummer_nn NOT NULL,
-    kundenkarte_id    CHAR(6),
-    krankenkasse_id   CHAR(5),
-    trainer_id        CHAR(4),
-    individualplan_id CHAR(7)
+    kundenkarte_id  CHAR(6),
+    krankenkasse_id CHAR(5),
+    trainer_id      CHAR(4)
 );
 
 CREATE UNIQUE INDEX kunde_id_pk ON
@@ -233,9 +232,9 @@ CREATE TABLE arbeitseinteilungen
 (
     arbeitseinteilung_id CHAR(6) --ae_000
         CONSTRAINT ae_id_nn NOT NULL,
-    beginn               TIMESTAMP
+    beginn               DATE
         CONSTRAINT ae_beginn_nn NOT NULL,
-    ende                 TIMESTAMP
+    ende                 DATE
         CONSTRAINT ae_ende_nn NOT NULL,
     datum                DATE
         CONSTRAINT ae_datum_nn NOT NULL
@@ -322,7 +321,9 @@ CREATE TABLE individualplaene
         CONSTRAINT individualplan_dauer_nn NOT NULL,
     ende              DATE
         CONSTRAINT individualplan_ende_nn NOT NULL,
-    trainingsplan_id  CHAR(5)
+    trainingsplan_id  CHAR(5),
+    kunde_id          CHAR(5)
+
 );
 
 CREATE UNIQUE INDEX individualplan_id_pk ON
@@ -565,16 +566,16 @@ ALTER TABLE kunden
                  REFERENCES trainer (trainer_id),
          CONSTRAINT kunden_kundendenkarte_fk
              FOREIGN KEY (kundenkarte_id)
-                 REFERENCES kundenkarten (kundenkarte_id),
-         CONSTRAINT kunden_ip_fk
-             FOREIGN KEY (individualplan_id)
-                 REFERENCES individualplaene (individualplan_id)
+                 REFERENCES kundenkarten (kundenkarte_id)
         );
 
 ALTER TABLE individualplaene
     ADD (CONSTRAINT inditrplan_trplan_fk
-        FOREIGN KEY (trainingsplan_id)
-            REFERENCES trainingsplaene (trainingsplan_id)
+             FOREIGN KEY (trainingsplan_id)
+                 REFERENCES trainingsplaene (trainingsplan_id),
+         CONSTRAINT inditrplan_kunde_fk
+             FOREIGN KEY (kunde_id)
+                 REFERENCES kunden (kunde_id)
         );
 
 -- TODO Trainer soll id von Mitarbeiter erben
