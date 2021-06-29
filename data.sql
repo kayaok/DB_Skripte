@@ -2,36 +2,36 @@
 -- Populate table arbeitseinteilung
 ------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO arbeitseinteilung VALUES ('AE_001','09:00', '16:30', TO_DATE('2021-12-08','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_002','08:00', '15:30', TO_DATE('2021-01-04','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_003','09:30', '16:30', TO_DATE('2021-03-15','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_004','10:30', '16:30', TO_DATE('2021-04-21','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_005','11:45', '17:30', TO_DATE('2021-05-03','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_006','09:15', '16:30', TO_DATE('2021-12-21','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_007','11:45', '20:30', TO_DATE('2021-09-04','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_008','12:00', '21:30', TO_DATE('2021-06-15','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_009','11:00', '16:30', TO_DATE('2021-09-02','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_010','09:30', '17:30', TO_DATE('2021-08-13','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_011','09:30', '15:30', TO_DATE('2021-05-03','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_012','11:00', '20:30', TO_DATE('2021-06-13','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_013','08:15', '16:30', TO_DATE('2021-12-02','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_014','08:45', '16:30', TO_DATE('2021-08-17','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_015','11:45', '19:30', TO_DATE('2021-06-24','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_016','09:15', '17:30', TO_DATE('2021-09-03','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_017','11:45', '19:30', TO_DATE('2021-09-12','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_018','13:45', '20:30', TO_DATE('2021-04-16','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_019','14:00', '21:30', TO_DATE('2021-04-06','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_020','09:30', '17:30', TO_DATE('2021-02-18','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_021','14:30', '21:30', TO_DATE('2021-02-19','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_022','11:00', '18:30', TO_DATE('2021-04-11','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_023','08:30', '16:30', TO_DATE('2021-02-15','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_024','08:45', '16:30', TO_DATE('2021-07-26','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_025','11:45', '21:30', TO_DATE('2021-09-17','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_026','09:15', '17:30', TO_DATE('2021-11-08','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_027','12:00', '20:30', TO_DATE('2021-03-06','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_028','15:45', '21:30', TO_DATE('2021-09-21','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_029','14:45', '20:30', TO_DATE('2021-05-15','YYYY-MM-DD'));
-INSERT INTO arbeitseinteilung VALUES ('AE_030','09:30', '15:30', TO_DATE('2021-02-19','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_001','09:00', '16:30', TO_DATE('2021-12-08','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_002','08:00', '15:30', TO_DATE('2021-01-04','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_003','09:30', '16:30', TO_DATE('2021-03-15','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_004','10:30', '16:30', TO_DATE('2021-04-21','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_005','11:45', '17:30', TO_DATE('2021-05-03','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_006','09:15', '16:30', TO_DATE('2021-12-21','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_007','11:45', '20:30', TO_DATE('2021-09-04','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_008','12:00', '21:30', TO_DATE('2021-06-15','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_009','11:00', '16:30', TO_DATE('2021-09-02','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_010','09:30', '17:30', TO_DATE('2021-08-13','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_011','09:30', '15:30', TO_DATE('2021-05-03','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_012','11:00', '20:30', TO_DATE('2021-06-13','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_013','08:15', '16:30', TO_DATE('2021-12-02','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_014','08:45', '16:30', TO_DATE('2021-08-17','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_015','11:45', '19:30', TO_DATE('2021-06-24','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_016','09:15', '17:30', TO_DATE('2021-09-03','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_017','11:45', '19:30', TO_DATE('2021-09-12','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_018','13:45', '20:30', TO_DATE('2021-04-16','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_019','14:00', '21:30', TO_DATE('2021-04-06','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_020','09:30', '17:30', TO_DATE('2021-02-18','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_021','14:30', '21:30', TO_DATE('2021-02-19','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_022','11:00', '18:30', TO_DATE('2021-04-11','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_023','08:30', '16:30', TO_DATE('2021-02-15','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_024','08:45', '16:30', TO_DATE('2021-07-26','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_025','11:45', '21:30', TO_DATE('2021-09-17','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_026','09:15', '17:30', TO_DATE('2021-11-08','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_027','12:00', '20:30', TO_DATE('2021-03-06','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_028','15:45', '21:30', TO_DATE('2021-09-21','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_029','14:45', '20:30', TO_DATE('2021-05-15','YYYY-MM-DD'));
+INSERT INTO arbeitseinteilungen VALUES ('AE_030','09:30', '15:30', TO_DATE('2021-02-19','YYYY-MM-DD'));
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table arbeitsvertraege
@@ -384,46 +384,46 @@ INSERT INTO buchungsverlaeufe VALUES(325, TO_DATE('2021-03-08 16:49:38', 'YYYY-M
 
 -- TODO Trainingseinheiten anpassen
 
-INSERT INTO durchfuehrungen VALUES (DRF_001, 6, 1, 1, 0, TE_01, TP_01);
-INSERT INTO durchfuehrungen VALUES (DRF_002, 7, 10, 2, 120, TE_01, TP_01);
-INSERT INTO durchfuehrungen VALUES (DRF_003, 8, 10, 2, 120, TE_01, TP_01);
-INSERT INTO durchfuehrungen VALUES (DRF_004, 6, 12, 3, 90, TE_01, TP_01);
-INSERT INTO durchfuehrungen VALUES (DRF_005, 7, 12, 3, 90, TE_01, TP_01);
-INSERT INTO durchfuehrungen VALUES (DRF_006, 8, 12, 3, 90, TE_01, TP_01);
-INSERT INTO durchfuehrungen VALUES (DRF_007, 7, 15, 2, 60, TE_01, TP_01);
-INSERT INTO durchfuehrungen VALUES (DRF_008, 7, 15, 2, 60, TE_01, TP_01);
-INSERT INTO durchfuehrungen VALUES (DRF_009, 7, 10, 3, 90, TE_01, TP_02);
-INSERT INTO durchfuehrungen VALUES (DRF_010, 8, 10, 2, 90, TE_01, TP_02);
-INSERT INTO durchfuehrungen VALUES (DRF_011, 7, 12, 3, 120, TE_01, TP_02);
-INSERT INTO durchfuehrungen VALUES (DRF_012, 9, 8, 1, 120, TE_01, TP_02);
-INSERT INTO durchfuehrungen VALUES (DRF_013, 8, 10, 2, 90, TE_01, TP_02);
-INSERT INTO durchfuehrungen VALUES (DRF_014, 9, 6, 3, 150, TE_01, TP_02);
-INSERT INTO durchfuehrungen VALUES (DRF_015, 8, 10, 3, 90, TE_01, TP_02);
-INSERT INTO durchfuehrungen VALUES (DRF_016, 7, 15, 2, 60, TE_01, TP_02);
-INSERT INTO durchfuehrungen VALUES (DRF_017, 8, 12, 3, 60, TE_01, TP_03);
-INSERT INTO durchfuehrungen VALUES (DRF_018, 8, 12, 4, 60, TE_01, TP_03);
-INSERT INTO durchfuehrungen VALUES (DRF_019, 9, 10, 2, 150, TE_01, TP_03);
-INSERT INTO durchfuehrungen VALUES (DRF_020, 9, 8, 3, 120, TE_01, TP_03);
-INSERT INTO durchfuehrungen VALUES (DRF_021, 9, 6, 3, 120, TE_01, TP_03);
-INSERT INTO durchfuehrungen VALUES (DRF_022, 8, 10, 4, 90, TE_01, TP_03);
-INSERT INTO durchfuehrungen VALUES (DRF_023, 9, 5, 5, 120, TE_01, TP_03);
-INSERT INTO durchfuehrungen VALUES (DRF_024, 9, 5, 3, 120, TE_01, TP_03);
-INSERT INTO durchfuehrungen VALUES (DRF_025, 6, 20, 1, 60, TE_01, TP_04);
-INSERT INTO durchfuehrungen VALUES (DRF_026, 6, 15, 2, 60, TE_01, TP_04);
-INSERT INTO durchfuehrungen VALUES (DRF_027, 7, 12, 3, 90, TE_01, TP_04);
-INSERT INTO durchfuehrungen VALUES (DRF_028, 7, 12, 3, 60, TE_01, TP_04);
-INSERT INTO durchfuehrungen VALUES (DRF_029, 8, 10, 4, 90, TE_01, TP_04);
-INSERT INTO durchfuehrungen VALUES (DRF_030, 8, 10, 3, 120, TE_01, TP_04);
-INSERT INTO durchfuehrungen VALUES (DRF_031, 9, 8, 3, 120, TE_01, TP_04);
-INSERT INTO durchfuehrungen VALUES (DRF_032, 9, 6, 4, 150, TE_01, TP_04);
-INSERT INTO durchfuehrungen VALUES (DRF_033, 10, 8, 1, 120, TE_01, TP_05);
-INSERT INTO durchfuehrungen VALUES (DRF_034, 9, 10, 3, 90, TE_01, TP_05);
-INSERT INTO durchfuehrungen VALUES (DRF_035, 9, 10, 2, 60, TE_01, TP_05);
-INSERT INTO durchfuehrungen VALUES (DRF_036, 8, 12, 3, 60, TE_01, TP_05);
-INSERT INTO durchfuehrungen VALUES (DRF_037, 8, 12, 2, 90, TE_01, TP_05);
-INSERT INTO durchfuehrungen VALUES (DRF_038, 8, 12, 1, 45, TE_01, TP_05);
-INSERT INTO durchfuehrungen VALUES (DRF_039, 7, 15, 3, 45, TE_01, TP_05);
-INSERT INTO durchfuehrungen VALUES (DRF_040, 7, 15, 2, 60, TE_01, TP_05);
+INSERT INTO durchfuehrungen VALUES ('DRF_001', 6, 1, 1, 0, 'TE_01', 'TP_01');
+INSERT INTO durchfuehrungen VALUES ('DRF_002', 7, 10, 2, 120, 'TE_01', 'TP_01');
+INSERT INTO durchfuehrungen VALUES ('DRF_003', 8, 10, 2, 120, 'TE_01', 'TP_01');
+INSERT INTO durchfuehrungen VALUES ('DRF_004', 6, 12, 3, 90, 'TE_01', 'TP_01');
+INSERT INTO durchfuehrungen VALUES ('DRF_005', 7, 12, 3, 90, 'TE_01', 'TP_01');
+INSERT INTO durchfuehrungen VALUES ('DRF_006', 8, 12, 3, 90, 'TE_01', 'TP_01');
+INSERT INTO durchfuehrungen VALUES ('DRF_007', 7, 15, 2, 60, 'TE_01', 'TP_01');
+INSERT INTO durchfuehrungen VALUES ('DRF_008', 7, 15, 2, 60, 'TE_01', 'TP_01');
+INSERT INTO durchfuehrungen VALUES ('DRF_009', 7, 10, 3, 90, 'TE_01', 'TP_02');
+INSERT INTO durchfuehrungen VALUES ('DRF_010', 8, 10, 2, 90, 'TE_01', 'TP_02');
+INSERT INTO durchfuehrungen VALUES ('DRF_011', 7, 12, 3, 120, 'TE_01', 'TP_02');
+INSERT INTO durchfuehrungen VALUES ('DRF_012', 9, 8, 1, 120, 'TE_01', 'TP_02');
+INSERT INTO durchfuehrungen VALUES ('DRF_013', 8, 10, 2, 90, 'TE_01', 'TP_02');
+INSERT INTO durchfuehrungen VALUES ('DRF_014', 9, 6, 3, 150, 'TE_01', 'TP_02');
+INSERT INTO durchfuehrungen VALUES ('DRF_015', 8, 10, 3, 90, 'TE_01', 'TP_02');
+INSERT INTO durchfuehrungen VALUES ('DRF_016', 7, 15, 2, 60, 'TE_01', 'TP_02');
+INSERT INTO durchfuehrungen VALUES ('DRF_017', 8, 12, 3, 60, 'TE_01', 'TP_03');
+INSERT INTO durchfuehrungen VALUES ('DRF_018', 8, 12, 4, 60, 'TE_01', 'TP_03');
+INSERT INTO durchfuehrungen VALUES ('DRF_019', 9, 10, 2, 150, 'TE_01', 'TP_03');
+INSERT INTO durchfuehrungen VALUES ('DRF_020', 9, 8, 3, 120, 'TE_01', 'TP_03');
+INSERT INTO durchfuehrungen VALUES ('DRF_021', 9, 6, 3, 120, 'TE_01', 'TP_03');
+INSERT INTO durchfuehrungen VALUES ('DRF_022', 8, 10, 4, 90, 'TE_01', 'TP_03');
+INSERT INTO durchfuehrungen VALUES ('DRF_023', 9, 5, 5, 120, 'TE_01', 'TP_03');
+INSERT INTO durchfuehrungen VALUES ('DRF_024', 9, 5, 3, 120, 'TE_01', 'TP_03');
+INSERT INTO durchfuehrungen VALUES ('DRF_025', 6, 20, 1, 60, 'TE_01', 'TP_04');
+INSERT INTO durchfuehrungen VALUES ('DRF_026', 6, 15, 2, 60, 'TE_01', 'TP_04');
+INSERT INTO durchfuehrungen VALUES ('DRF_027', 7, 12, 3, 90, 'TE_01', 'TP_04');
+INSERT INTO durchfuehrungen VALUES ('DRF_028', 7, 12, 3, 60, 'TE_01', 'TP_04');
+INSERT INTO durchfuehrungen VALUES ('DRF_029', 8, 10, 4, 90, 'TE_01', 'TP_04');
+INSERT INTO durchfuehrungen VALUES ('DRF_030', 8, 10, 3, 120, 'TE_01', 'TP_04');
+INSERT INTO durchfuehrungen VALUES ('DRF_031', 9, 8, 3, 120, 'TE_01', 'TP_04');
+INSERT INTO durchfuehrungen VALUES ('DRF_032', 9, 6, 4, 150, 'TE_01', 'TP_04');
+INSERT INTO durchfuehrungen VALUES ('DRF_033', 10, 8, 1, 120, 'TE_01', 'TP_05');
+INSERT INTO durchfuehrungen VALUES ('DRF_034', 9, 10, 3, 90, 'TE_01', 'TP_05');
+INSERT INTO durchfuehrungen VALUES ('DRF_035', 9, 10, 2, 60, 'TE_01', 'TP_05');
+INSERT INTO durchfuehrungen VALUES ('DRF_036', 8, 12, 3, 60, 'TE_01', 'TP_05');
+INSERT INTO durchfuehrungen VALUES ('DRF_037', 8, 12, 2, 90, 'TE_01', 'TP_05');
+INSERT INTO durchfuehrungen VALUES ('DRF_038', 8, 12, 1, 45, 'TE_01', 'TP_05');
+INSERT INTO durchfuehrungen VALUES ('DRF_039', 7, 15, 3, 45, 'TE_01', 'TP_05');
+INSERT INTO durchfuehrungen VALUES ('DRF_040', 7, 15, 2, 60, 'TE_01', 'TP_05');
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table ist_Teilnehmer
@@ -585,36 +585,36 @@ INSERT INTO kunden VALUES ('C_030', 'Curr', 'Kidwell', 'M', TO_DATE('1971-03-11'
 -- Populate table kundenkarten
 ------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO kundenkarten VALUES (CC_001, 932);
-INSERT INTO kundenkarten VALUES (CC_002, 672);
-INSERT INTO kundenkarten VALUES (CC_003, 490);
-INSERT INTO kundenkarten VALUES (CC_004, 472);
-INSERT INTO kundenkarten VALUES (CC_005, 721);
-INSERT INTO kundenkarten VALUES (CC_006, 496);
-INSERT INTO kundenkarten VALUES (CC_007, 375);
-INSERT INTO kundenkarten VALUES (CC_008, 863);
-INSERT INTO kundenkarten VALUES (CC_009, 513);
-INSERT INTO kundenkarten VALUES (CC_010, 935);
-INSERT INTO kundenkarten VALUES (CC_011, 706);
-INSERT INTO kundenkarten VALUES (CC_012, 815);
-INSERT INTO kundenkarten VALUES (CC_013, 886);
-INSERT INTO kundenkarten VALUES (CC_014, 980);
-INSERT INTO kundenkarten VALUES (CC_015, 441);
-INSERT INTO kundenkarten VALUES (CC_016, 965);
-INSERT INTO kundenkarten VALUES (CC_017, 841);
-INSERT INTO kundenkarten VALUES (CC_018, 554);
-INSERT INTO kundenkarten VALUES (CC_019, 281);
-INSERT INTO kundenkarten VALUES (CC_020, 881);
-INSERT INTO kundenkarten VALUES (CC_021, 877);
-INSERT INTO kundenkarten VALUES (CC_022, 545);
-INSERT INTO kundenkarten VALUES (CC_023, 709);
-INSERT INTO kundenkarten VALUES (CC_024, 43);
-INSERT INTO kundenkarten VALUES (CC_025, 263);
-INSERT INTO kundenkarten VALUES (CC_026, 67);
-INSERT INTO kundenkarten VALUES (CC_027, 147);
-INSERT INTO kundenkarten VALUES (CC_028, 307);
-INSERT INTO kundenkarten VALUES (CC_029, 91);
-INSERT INTO kundenkarten VALUES (CC_030, 370);
+INSERT INTO kundenkarten VALUES ('CC_001', 932);
+INSERT INTO kundenkarten VALUES ('CC_002', 672);
+INSERT INTO kundenkarten VALUES ('CC_003', 490);
+INSERT INTO kundenkarten VALUES ('CC_004', 472);
+INSERT INTO kundenkarten VALUES ('CC_005', 721);
+INSERT INTO kundenkarten VALUES ('CC_006', 496);
+INSERT INTO kundenkarten VALUES ('CC_007', 375);
+INSERT INTO kundenkarten VALUES ('CC_008', 863);
+INSERT INTO kundenkarten VALUES ('CC_009', 513);
+INSERT INTO kundenkarten VALUES ('CC_010', 935);
+INSERT INTO kundenkarten VALUES ('CC_011', 706);
+INSERT INTO kundenkarten VALUES ('CC_012', 815);
+INSERT INTO kundenkarten VALUES ('CC_013', 886);
+INSERT INTO kundenkarten VALUES ('CC_014', 980);
+INSERT INTO kundenkarten VALUES ('CC_015', 441);
+INSERT INTO kundenkarten VALUES ('CC_016', 965);
+INSERT INTO kundenkarten VALUES ('CC_017', 841);
+INSERT INTO kundenkarten VALUES ('CC_018', 554);
+INSERT INTO kundenkarten VALUES ('CC_019', 281);
+INSERT INTO kundenkarten VALUES ('CC_020', 881);
+INSERT INTO kundenkarten VALUES ('CC_021', 877);
+INSERT INTO kundenkarten VALUES ('CC_022', 545);
+INSERT INTO kundenkarten VALUES ('CC_023', 709);
+INSERT INTO kundenkarten VALUES ('CC_024', 43);
+INSERT INTO kundenkarten VALUES ('CC_025', 263);
+INSERT INTO kundenkarten VALUES ('CC_026', 67);
+INSERT INTO kundenkarten VALUES ('CC_027', 147);
+INSERT INTO kundenkarten VALUES ('CC_028', 307);
+INSERT INTO kundenkarten VALUES ('CC_029', 91);
+INSERT INTO kundenkarten VALUES ('CC_030', 370);
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table kundenvertraege
@@ -655,49 +655,49 @@ INSERT INTO kundenvertraege VALUES ('KV_030', 'All Inclusive', '2020-06-25', 24,
 -- Populate table kurse
 ------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO KURSE
+INSERT INTO kurse
 VALUES  ('KRS_00', 'Zumba', 60, 15,
          TO_DATE('2021-07-12 17:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
          TO_DATE('2022-07-12 18:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'));
-INSERT INTO KURSE
+INSERT INTO kurse
 VALUES ('KRS_01', 'Hot Iron', 30, 10,
         TO_DATE('2021-07-13 17:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
         TO_DATE('2022-07-13 17:30','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'));
-INSERT INTO KURSE
+INSERT INTO kurse
 VALUES('KRS_02', 'Crossfit', 60, 8,
        TO_DATE('2021-07-14 17:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
        TO_DATE('2022-07-14 18:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'));
-INSERT INTO KURSE
+INSERT INTO kurse
 VALUES('KRS_03', 'Functional Training', 45, 6,
        TO_DATE('2021-07-15 17:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
        TO_DATE('2022-07-15 17:45','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'));
-INSERT INTO KURSE
+INSERT INTO kurse
 VALUES('KRS_04', 'Yoga', 60, 25,
        TO_DATE('2021-07-16 17:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
        TO_DATE('2022-07-16 18:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'));
-INSERT INTO KURSE
+INSERT INTO kurse
 VALUES ('KRS_05', 'Mobility', 90, 20,
         TO_DATE('2021-07-17 17:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
         TO_DATE('2022-07-17 18:30','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'));
-INSERT INTO KURSE
+INSERT INTO kurse
 VALUES ('KRS_06', 'Kapoeira', 120, 22,
         TO_DATE('2021-07-18 17:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'),
         TO_DATE('2022-07-18 19:00','YYYY-MM-DD HH24:MI','NLS_DATE_LANGUAGE=AMERICAN'));
 
 ------------------------------------------------------------------------------------------------------------------------
--- Populate table leitet
+-- Populate table leitet_kurs
 ------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO leitet VALUES ('AV_05', 'KRS_00');
-INSERT INTO leitet VALUES ('AV_06', 'KRS_01');
-INSERT INTO leitet VALUES ('AV_08', 'KRS_02');
-INSERT INTO leitet VALUES ('AV_05', 'KRS_03');
-INSERT INTO leitet VALUES ('AV_06', 'KRS_04');
-INSERT INTO leitet VALUES ('AV_08', 'KRS_05');
-INSERT INTO leitet VALUES ('AV_05', 'KRS_06');
+INSERT INTO leitet_kurs VALUES ('AV_05', 'KRS_00');
+INSERT INTO leitet_kurs VALUES ('AV_06', 'KRS_01');
+INSERT INTO leitet_kurs VALUES ('AV_08', 'KRS_02');
+INSERT INTO leitet_kurs VALUES ('AV_05', 'KRS_03');
+INSERT INTO leitet_kurs VALUES ('AV_06', 'KRS_04');
+INSERT INTO leitet_kurs VALUES ('AV_08', 'KRS_05');
+INSERT INTO leitet_kurs VALUES ('AV_05', 'KRS_06');
 
 ------------------------------------------------------------------------------------------------------------------------
--- Populate table leitet
+-- Populate table mitarbeiter
 ------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO mitarbeiter VALUES ('M_01', 'John', 'White', 'M', TO_DATE('1993-11-21', 'YYYY-MM-DD'), '2567 Fairfield Trail', '10505', 'Partido', '429-253-6451', TO_DATE('2018-05-31', 'YYYY-MM-DD'), '4905111521802833530', 'Kreissparkasse Reutlingen', 'CY98 8265 1216 U7YJ IO7H BYPG 7TKJ', '5794577622');
@@ -710,4 +710,161 @@ INSERT INTO mitarbeiter VALUES ('M_07', 'Alexander', 'Keedy', 'M', TO_DATE('1992
 INSERT INTO mitarbeiter VALUES ('M_08', 'Mary', 'Baal', 'W', TO_DATE('2005-05-16','YYYY-MM-DD'), '06 Kingsford Trail', '5782', 'Kumagunnam', '971-136-0196', TO_DATE('2021-06-01', 'YYYY-MM-DD'), '6709308779133280089', 'Commerzbank Böblingen', 'MU50 BPRZ 1170 5450 9760 4580 652Z LO', '7619692177');
 INSERT INTO mitarbeiter VALUES ('M_09', 'Susan', 'Filer', 'W', TO_DATE('1991-12-03','YYYY-MM-DD'), '0 Kings Trail', '14936', 'Bayt al ‘Awābī', '366-470-1994', TO_DATE('2015-04-26', 'YYYY-MM-DD'), '4041596338772', 'Volksbank Esslingen', 'AD67 2643 1046 JPZH ZY6P OZXO', '4591229556');
 
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table sportgeraete
+------------------------------------------------------------------------------------------------------------------------
 
+INSERT INTO sportgeraete VALUES('SG_001','Aerobic-Stepper', 'Reebok', '742735785-X',TO_DATE('2017-03-12','YYYY-MM-DD'), TO_DATE('2021-02-06','YYYY-MM-DD'), '€83,01', 'T');
+INSERT INTO sportgeraete VALUES('SG_002','Aerobic-Stepper', 'Reebok', '7427357862-X',TO_DATE('2017-03-12','YYYY-MM-DD'), TO_DATE('2021-02-06','YYYY-MM-DD'), '€83,01', 'F');
+INSERT INTO sportgeraete VALUES('SG_003','Aerobic-Stepper', 'Reebok', '7427357835-X',TO_DATE('2017-03-12','YYYY-MM-DD'), TO_DATE('2021-02-06','YYYY-MM-DD'), '€83,01', 'F');
+INSERT INTO sportgeraete VALUES('SG_004','Brustpresse', 'Sport-Thieme', '663053156-8',TO_DATE('2020-08-17','YYYY-MM-DD'), TO_DATE('2020-09-09','YYYY-MM-DD'), '€495,10', 'T');
+INSERT INTO sportgeraete VALUES('SG_005','Beinpresse', 'Super Pro', '2109995432-2',TO_DATE('2018-01-13','YYYY-MM-DD'), TO_DATE('2020-09-13','YYYY-MM-DD'), '€275,07', 'F');
+INSERT INTO sportgeraete VALUES('SG_006','Crosstrainer', 'Sport-Thieme', '374455454-6',TO_DATE('2020-05-01','YYYY-MM-DD'),TO_DATE('2021-03-13','YYYY-MM-DD') , '€189,54', 'F');
+INSERT INTO sportgeraete VALUES('SG_007','Crosstrainer', 'Sport-Thieme', '374454534-6',TO_DATE('2020-05-01','YYYY-MM-DD'), TO_DATE('2021-03-13','YYYY-MM-DD'), '€189,54', 'F');
+INSERT INTO sportgeraete VALUES('SG_008','Crosstrainer', 'Sport-Thieme', '374457654-6',TO_DATE('2020-05-01','YYYY-MM-DD'), TO_DATE('2021-03-13','YYYY-MM-DD'), '€189,54', 'F');
+INSERT INTO sportgeraete VALUES('SG_009','Hantelbank', 'Sport-Thieme', '016260269-3',TO_DATE('2018-04-30','YYYY-MM-DD'),TO_DATE('2021-01-26','YYYY-MM-DD') , '€498,02', 'T');
+INSERT INTO sportgeraete VALUES('SG_010','Hantelbank', 'Sport-Thieme', '016260692-3',TO_DATE('2018-04-30','YYYY-MM-DD'),TO_DATE(,'2021-01-26''YYYY-MM-DD') , '€498,02', 'F');
+INSERT INTO sportgeraete VALUES('SG_011','Schulterpresse','Sport-Thieme', '314258743-8',TO_DATE('2020-01-08','YYYY-MM-DD'),TO_DATE('2020-11-19','YYYY-MM-DD') , '€458,10', 'F');
+INSERT INTO sportgeraete VALUES('SG_012','Hantelstange', 'Balanced-Body', '552930987-0',TO_DATE('2018-11-28','YYYY-MM-DD'), TO_DATE('2020-08-27','YYYY-MM-DD'), '€18,40', 'T');
+INSERT INTO sportgeraete VALUES('SG_013','Hantelstange', 'Balanced-Body', '552930938-0',TO_DATE('2018-11-28','YYYY-MM-DD'), TO_DATE('2020-08-27','YYYY-MM-DD'), '€18,40', 'F');
+INSERT INTO sportgeraete VALUES('SG_014','Bauchpresse', 'Balanced-Body', '442233095-0',TO_DATE('2015-03-13',,'YYYY-MM-DD'), TO_DATE('2021-05-02','YYYY-MM-DD'), '€480,59', 'F');
+INSERT INTO sportgeraete VALUES('SG_015','Kabelturm', 'Sport-Thieme', '853798453-1',TO_DATE('2018-05-18','YYYY-MM-DD'), TO_DATE('2020-11-08','YYYY-MM-DD'), '€247,88', 'F');
+INSERT INTO sportgeraete VALUES('SG_016','Kabelturm', 'Sport-Thieme', '8537984543-1',TO_DATE('2018-05-18','YYYY-MM-DD'), TO_DATE('2020-11-08','YYYY-MM-DD'), '€247,88', 'F');
+INSERT INTO sportgeraete VALUES('SG_017','Indoor Bikes', 'Balanced-Body', '4710340262-0',TO_DATE('2017-03-23','YYYY-MM-DD'),TO_DATE('2020-09-14','YYYY-MM-DD') , '€340,78', 'F');
+INSERT INTO sportgeraete VALUES('SG_018','Indoor Bikes', 'Balanced-Body', '471034025-0',TO_DATE('2017-03-23','YYYY-MM-DD'),TO_DATE('2020-09-14','YYYY-MM-DD') , '€340,78', 'F');
+INSERT INTO sportgeraete VALUES('SG_019','Indoor Bikes', 'Balanced-Body', '4710340887-0',TO_DATE('2017-03-23','YYYY-MM-DD'), TO_DATE('2020-09-14','YYYY-MM-DD'), '€340,78', 'T');
+INSERT INTO sportgeraete VALUES('SG_020','Faszienrolle', 'Balanced-Body', '812701031-6',TO_DATE('2018-03-14','YYYY-MM-DD'), TO_DATE('2021-06-02','YYYY-MM-DD'), '€22,48', 'F');
+INSERT INTO sportgeraete VALUES('SG_021','Faszienrolle', 'Balanced-Body', '8127010322-6',TO_DATE('2018-03-14','YYYY-MM-DD'),TO_DATE('2021-06-02','YYYY-MM-DD') , '€22,48', 'F');
+INSERT INTO sportgeraete VALUES('SG_022','Faszienrolle', 'Balanced-Body', '8127010333-6',TO_DATE('2018-03-14','YYYY-MM-DD'), TO_DATE('2021-06-02','YYYY-MM-DD'), '€22,48', 'F');
+INSERT INTO sportgeraete VALUES('SG_023','Rueckenstrecker', 'Life Fitness','746206818-4',TO_DATE('2018-11-11','YYYY-MM-DD'),TO_DATE('2021-05-09','YYYY-MM-DD'), '€196,95','F');
+INSERT INTO sportgeraete VALUES('SG_024','Rueckenstrecker', 'Life Fitness','746206819-4',TO_DATE('2018-11-11','YYYY-MM-DD'),TO_DATE('2021-05-09','YYYY-MM-DD') , '€196,95', 'T');
+INSERT INTO sportgeraete VALUES('SG_025','Laufband', 'Stages','859856964-X',TO_DATE('2013-11-09','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€317,78', 'F');
+INSERT INTO sportgeraete VALUES('SG_026','Laufband', 'Stages','85985696632-X',TO_DATE('2013-11-09','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€317,78', 'T');
+INSERT INTO sportgeraete VALUES('SG_027','Laufband', 'Stages','859856965-X',TO_DATE('2013-11-09','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€317,78','F');
+INSERT INTO sportgeraete VALUES('SG_028','Gymnastikball', 'Reebok','523936375-7',TO_DATE('2016-01-10','YYYY-MM-DD'),TO_DATE('2021-01-12','YYYY-MM-DD') , '€34,39','F');
+INSERT INTO sportgeraete VALUES('SG_029','Gymnastikball', 'Reebok','523936372-7',TO_DATE('2016-01-10','YYYY-MM-DD'),TO_DATE('2021-01-12','YYYY-MM-DD') , '€34,39','F');
+INSERT INTO sportgeraete VALUES('SG_030','Gymnastikball', 'Reebok','52393637689-7',TO_DATE('2016-01-10','YYYY-MM-DD'), TO_DATE('2021-01-12','YYYY-MM-DD'), '€34,39','F');
+INSERT INTO sportgeraete VALUES('SG_031','Fitnessmatte', 'Reebok','811304171-0',TO_DATE('2016-09-27','YYYY-MM-DD'),TO_DATE('2020-09-27','YYYY-MM-DD') , '€399,98', 'F');
+INSERT INTO sportgeraete VALUES('SG_032','Fitnessmatte', 'Reebok','8113041724-0',TO_DATE('2016-09-27','YYYY-MM-DD'), TO_DATE('2020-09-27','YYYY-MM-DD'), '€399,98','F');
+INSERT INTO sportgeraete VALUES('SG_033','Fitnessmatte', 'Reebok','81130417963-0',TO_DATE('2016-09-27','YYYY-MM-DD'),TO_DATE('2020-09-27','YYYY-MM-DD') , '€399,98','F');
+INSERT INTO sportgeraete VALUES('SG_034','Butterfly', 'Stages', '932074453-X',TO_DATE('2015-05-31','YYYY-MM-DD'), TO_DATE('2021-04-28','YYYY-MM-DD'), '€476,83','F');
+INSERT INTO sportgeraete VALUES('SG_035','Beinbeuger', 'Stages', '93207445234-X',TO_DATE('2015-05-31','YYYY-MM-DD'),TO_DATE('2021-04-28','YYYY-MM-DD'), '€476,83','F');
+INSERT INTO sportgeraete VALUES('SG_036','Latismuszug', 'Balanced-Body', '396263007-4',TO_DATE('2020-03-03','YYYY-MM-DD'), TO_DATE('2020-10-29','YYYY-MM-DD'), '€490,80', 'T');
+INSERT INTO sportgeraete VALUES('SG_037','Beinstrecker', 'Balanced-Body', '3962630588-4',TO_DATE('2020-03-03','YYYY-MM-DD'), TO_DATE('2020-10-29','YYYY-MM-DD'), '€490,80','F');
+INSERT INTO sportgeraete VALUES('SG_038','Schraegbank', 'Stages', '61518093005-0',TO_DATE(,'2019-09-25''YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€236,60','F');
+INSERT INTO sportgeraete VALUES('SG_039','Schraegbank', 'Stages', '615180930-0',TO_DATE('2019-09-25','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€336,60','F');
+INSERT INTO sportgeraete VALUES('SG_040','Rudermaschine', 'Balanced-Body','078809144-1',TO_DATE('2016-04-20','YYYY-MM-DD'), TO_DATE('2021-02-15','YYYY-MM-DD'), '€364,31','F');
+INSERT INTO sportgeraete VALUES('SG_041','Abduktionsmaschine', 'Balanced-Body','078809143-1',TO_DATE('2016-04-20','YYYY-MM-DD'), TO_DATE('2021-02-15','YYYY-MM-DD'), '€365,31', 'T');
+INSERT INTO sportgeraete VALUES('SG_042','Adduktionsmaschine', 'Balanced-Body', '078809145-1',TO_DATE('2016-04-20','YYYY-MM-DD'), TO_DATE('2021-02-15','YYYY-MM-DD'), '€378,31', 'T');
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table steht_unter_vertrag
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO steht_unter_vertrag VALUES ('M_01','AV_01');
+INSERT INTO steht_unter_vertrag VALUES ('M_02','AV_02');
+INSERT INTO steht_unter_vertrag VALUES ('M_03','AV_03');
+INSERT INTO steht_unter_vertrag VALUES ('M_04','AV_05');
+INSERT INTO steht_unter_vertrag VALUES ('M_05','AV_04');
+INSERT INTO steht_unter_vertrag VALUES ('M_06','AV_06');
+INSERT INTO steht_unter_vertrag VALUES ('M_07','AV_07');
+INSERT INTO steht_unter_vertrag VALUES ('M_08','AV_09');
+INSERT INTO steht_unter_vertrag VALUES ('M_09','AV_08');
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table trainer
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO trainer VALUES ('A','M_05');
+INSERT INTO trainer VALUES ('C','M_06');
+INSERT INTO trainer VALUES ('B','M_08');
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table trainingseinheiten
+------------------------------------------------------------------------------------------------------------------------
+
+-- TODO: Vorgaenger, Nachfolger, mehrfacheintraege(?)
+
+INSERT INTO trainingseinheiten VALUES ('TE_00', 'Stepper', 20, 'Stepper Cardio Training', null, 'TE_12', 'SG_001');
+INSERT INTO trainingseinheiten VALUES ('TE_01', 'Stepper', 20, 'Stepper Cardio Training', null, 'TE_16', 'SG_002');
+INSERT INTO trainingseinheiten VALUES ('TE_02', 'Stepper', 20, 'Stepper Cardio Training', null, 'TE_20', 'SG_003');
+INSERT INTO trainingseinheiten VALUES ('TE_03', 'Laufband', 20, 'Laufband Cardio Training', null, 'TE_13', 'SG_004');
+INSERT INTO trainingseinheiten VALUES ('TE_04', 'Laufband', 20, 'Laufband Cardio Training', null, 'TE_17', 'SG_005');
+INSERT INTO trainingseinheiten VALUES ('TE_05', 'Laufband', 20, 'Laufband Cardio Training', null, 'TE_21', 'SG_006');
+INSERT INTO trainingseinheiten VALUES ('TE_06', 'Crosstrainer', 30, 'Crosstrainer Workout', null, 'TE_14', 'SG_007');
+INSERT INTO trainingseinheiten VALUES ('TE_07', 'Crosstrainer', 30, 'Crosstrainer Workout', null, 'TE_18', 'SG_008');
+INSERT INTO trainingseinheiten VALUES ('TE_08', 'Crosstrainer', 30, 'Crosstrainer Workout', null, 'TE_22', 'SG_009');
+INSERT INTO trainingseinheiten VALUES ('TE_09', 'Biking', 30, 'Fahrrad fahren', null, 'TE_15', 'SG_010');
+INSERT INTO trainingseinheiten VALUES ('TE_10', 'Biking', 30, 'Fahrrad fahren', null, 'TE_19', 'SG_011');
+INSERT INTO trainingseinheiten VALUES ('TE_11', 'Biking', 30, 'Fahrrad fahren', null, 'TE_23', 'SG_012');
+INSERT INTO trainingseinheiten VALUES ('TE_12', 'Bankdruecken', 15, 'Hanteltraining mit x Gewicht', 'TE_00', null, 'SG_013');
+INSERT INTO trainingseinheiten VALUES ('TE_13', 'Bankdruecken', 15, 'Hanteltraining mit x Gewicht', 'TE_03', null, 'SG_013');
+INSERT INTO trainingseinheiten VALUES ('TE_14', 'Bankdruecken', 15, 'Hanteltraining mit x Gewicht', 'TE_06', null, 'SG_014');
+INSERT INTO trainingseinheiten VALUES ('TE_15', 'Bankdruecken', 15, 'Hanteltraining mit x Gewicht', 'TE_09', null, 'SG_014');
+INSERT INTO trainingseinheiten VALUES ('TE_13', 'Schraekbankdruecken', 12, 'Hanteltraining mit x Gewicht', 'te_57', 'te_37', 'sg_786');
+INSERT INTO trainingseinheiten VALUES ('TE_14', 'Schraekbankdruecken', 12, 'Hanteltraining mit x Gewicht', 'te_25', 'te_44', 'sg_167');
+INSERT INTO trainingseinheiten VALUES ('TE_15', 'SZ-Bizeps-Curls', 10, 'Hanteltraining mit x Gewicht', 'te_07', 'te_87', 'sg_196');
+INSERT INTO trainingseinheiten VALUES ('TE_16', 'Butterfly', 10, 'Training an Maschine mit x Gewicht', 'te_01', 'te_33', 'sg_266');
+INSERT INTO trainingseinheiten VALUES ('TE_17', 'Reverse-Butterfly', 10, 'Training an Maschine mit x Gewicht', 'te_88', 'te_57', 'sg_874');
+INSERT INTO trainingseinheiten VALUES ('TE_18', 'Brustpresse', 15, 'Training an Maschine mit x Gewicht', 'te_72', 'te_95', 'sg_681');
+INSERT INTO trainingseinheiten VALUES ('TE_19', 'Beipresse', 12, 'Training an Maschine mit x Gewicht', 'te_77', 'te_08', 'sg_898');
+INSERT INTO trainingseinheiten VALUES ('TE_20', 'Bauchpresse', 10, 'Training an Maschine mit x Gewicht', 'te_66', 'te_75', 'sg_700');
+INSERT INTO trainingseinheiten VALUES ('TE_21', 'Rückenstrecker',10, 'Training an Maschine mit x Gewicht', 'te_35', 'te_98', 'sg_062');
+INSERT INTO trainingseinheiten VALUES ('TE_22', 'Beinstrecker',10, 'Training an Maschine mit x Gewicht', 'te_24', 'te_27', 'sg_071');
+INSERT INTO trainingseinheiten VALUES ('TE_23', 'Beinbeuger', 10, 'Training an Maschine mit x Gewicht', 'te_97', 'te_44', 'sg_385');
+INSERT INTO trainingseinheiten VALUES ('TE_24', 'Kniebeuge', 15, 'Hanteltraining mit x Gewicht', 'te_79', 'te_24', 'sg_129');
+INSERT INTO trainingseinheiten VALUES ('TE_25', 'Kreuzheben',20, 'Hanteltraining mit x Gewicht', 'te_02', 'te_20', 'sg_664');
+INSERT INTO trainingseinheiten VALUES ('TE_26', 'Schulterpresse',15, 'Hanteltraining mit x Gewicht', 'te_38', 'te_14', 'sg_448');
+INSERT INTO trainingseinheiten VALUES ('TE_27', 'Bein Abduktion',10, 'Training an Maschine mit x Gewicht', 'te_59', 'te_38', 'sg_032');
+INSERT INTO trainingseinheiten VALUES ('TE_28', 'Bein Adduktion',10, 'Training an Maschine mit x Gewicht', 'te_26', 'te_74', 'sg_001');
+INSERT INTO trainingseinheiten VALUES ('TE_29', 'Latisimuszug',12, 'Training am Kabelturm mit x Gewicht', 'te_99', 'te_94', 'sg_247');
+INSERT INTO trainingseinheiten VALUES ('TE_30', 'Rudern',12, 'Training am Kabelturm mit x Gewicht', 'te_35', 'te_97', 'sg_708');
+INSERT INTO trainingseinheiten VALUES ('TE_31', 'Trizeps Extension am Kabelturm',8, 'Training am Kabelturm mit x Gewicht', 'te_23', 'te_66', 'sg_152');
+INSERT INTO trainingseinheiten VALUES ('TE_32', 'Bizeps Curls am Kabelturm',8, 'Training am Kabelturm mit x Gewicht', 'te_75', 'te_41', 'sg_608');
+INSERT INTO trainingseinheiten VALUES ('TE_33', 'Klimmzüge',10, 'Körpergewichtsübung', 'te_61', 'te_96', 'sg_824');
+INSERT INTO trainingseinheiten VALUES ('TE_34', 'Dips',10, 'Körpergewichtsübung', 'te_61', 'te_96', 'sg_824');
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table trainingsplaene
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO trainingsplaene VALUES ('TP_01', 'Beginner Friendly', 1, 6);
+INSERT INTO trainingsplaene VALUES ('TP_02', 'Ganzkörper', 2, 12);
+INSERT INTO trainingsplaene VALUES ('TP_03', 'Muskelaufbau', 4, 8);
+INSERT INTO trainingsplaene VALUES ('TP_04', '12-Wochen Challenge', 5, 12);
+INSERT INTO trainingsplaene VALUES ('TP_05', 'Zirkeltraining', 5, 12);
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table wird_eingeteilit_in
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO wird_eingeteilt_in VALUES ('M_01','AE_001');
+INSERT INTO wird_eingeteilt_in VALUES ('M_02','AE_002');
+INSERT INTO wird_eingeteilt_in VALUES ('M_03','AE_003');
+INSERT INTO wird_eingeteilt_in VALUES ('M_04','AE_004');
+INSERT INTO wird_eingeteilt_in VALUES ('M_05','AE_005');
+INSERT INTO wird_eingeteilt_in VALUES ('M_06','AE_006');
+INSERT INTO wird_eingeteilt_in VALUES ('M_07','AE_007');
+INSERT INTO wird_eingeteilt_in VALUES ('M_08','AE_008');
+INSERT INTO wird_eingeteilt_in VALUES ('M_09','AE_009');
+INSERT INTO wird_eingeteilt_in VALUES ('M_01','AE_010');
+INSERT INTO wird_eingeteilt_in VALUES ('M_02','AE_011');
+INSERT INTO wird_eingeteilt_in VALUES ('M_03','AE_012');
+INSERT INTO wird_eingeteilt_in VALUES ('M_04','AE_013');
+INSERT INTO wird_eingeteilt_in VALUES ('M_05','AE_014');
+INSERT INTO wird_eingeteilt_in VALUES ('M_06','AE_015');
+INSERT INTO wird_eingeteilt_in VALUES ('M_07','AE_016');
+INSERT INTO wird_eingeteilt_in VALUES ('M_08','AE_017');
+INSERT INTO wird_eingeteilt_in VALUES ('M_09','AE_018');
+INSERT INTO wird_eingeteilt_in VALUES ('M_01','AE_019');
+INSERT INTO wird_eingeteilt_in VALUES ('M_02','AE_020');
+INSERT INTO wird_eingeteilt_in VALUES ('M_03','AE_021');
+INSERT INTO wird_eingeteilt_in VALUES ('M_04','AE_022');
+INSERT INTO wird_eingeteilt_in VALUES ('M_05','AE_023');
+INSERT INTO wird_eingeteilt_in VALUES ('M_06','AE_024');
+INSERT INTO wird_eingeteilt_in VALUES ('M_07','AE_025');
+INSERT INTO wird_eingeteilt_in VALUES ('M_08','AE_026');
+INSERT INTO wird_eingeteilt_in VALUES ('M_09','AE_027');
+INSERT INTO wird_eingeteilt_in VALUES ('M_04','AE_028');
+INSERT INTO wird_eingeteilt_in VALUES ('M_05','AE_029');
+INSERT INTO wird_eingeteilt_in VALUES ('M_06','AE_030');
