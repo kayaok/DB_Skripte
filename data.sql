@@ -568,7 +568,7 @@ INSERT INTO sportgeraete VALUES('SG_034','Butterfly', 'Stages', '932074453-X',TO
 INSERT INTO sportgeraete VALUES('SG_035','Beinbeuger', 'Stages', '93207445234-X',TO_DATE('2015-05-31','YYYY-MM-DD'),TO_DATE('2021-04-28','YYYY-MM-DD'), '476,83','F');
 INSERT INTO sportgeraete VALUES('SG_036','Latismuszug', 'Balanced-Body', '396263007-4',TO_DATE('2020-03-03','YYYY-MM-DD'), TO_DATE('2020-10-29','YYYY-MM-DD'), '490,80', 'T');
 INSERT INTO sportgeraete VALUES('SG_037','Beinstrecker', 'Balanced-Body', '3962630588-4',TO_DATE('2020-03-03','YYYY-MM-DD'), TO_DATE('2020-10-29','YYYY-MM-DD'), '490,80','F');
-INSERT INTO sportgeraete VALUES('SG_038','Schraegbank', 'Stages', '61518093005-0',TO_DATE(,'2019-09-25','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '236,60','F');
+INSERT INTO sportgeraete VALUES('SG_038','Schraegbank', 'Stages', '61518093005-0',TO_DATE('2019-09-25','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '236,60','F');
 INSERT INTO sportgeraete VALUES('SG_039','Schraegbank', 'Stages', '615180930-0',TO_DATE('2019-09-25','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '336,60','F');
 INSERT INTO sportgeraete VALUES('SG_040','Rudermaschine', 'Balanced-Body','078809144-1',TO_DATE('2016-04-20','YYYY-MM-DD'), TO_DATE('2021-02-15','YYYY-MM-DD'), '364,31','F');
 INSERT INTO sportgeraete VALUES('SG_041','Abduktionsmaschine', 'Balanced-Body','078809143-1',TO_DATE('2016-04-20','YYYY-MM-DD'), TO_DATE('2021-02-15','YYYY-MM-DD'), '365,31', 'T');
