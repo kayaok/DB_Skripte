@@ -314,15 +314,15 @@ ALTER TABLE kurse
 
 CREATE TABLE individualplaene
 (
-    individualplan_id     CHAR(7) --ivp_000
+    individualplan_id CHAR(7) --ivp_000
         CONSTRAINT individualplan_id_nn NOT NULL,
-    beginn                DATE
+    beginn            DATE
         CONSTRAINT individualplan_beginn_nn NOT NULL,
-    tatsaechlicher_beginn DATE,
-    ende                  DATE
+    dauer             NUMBER
+        CONSTRAINT individualplan_dauer_nn NOT NULL,
+    ende              DATE
         CONSTRAINT individualplan_ende_nn NOT NULL,
-    tatsechliches_ende    DATE,
-    trainingsplan_id      CHAR(5)
+    trainingsplan_id  CHAR(5)
 );
 
 CREATE UNIQUE INDEX individualplan_id_pk ON
@@ -530,19 +530,19 @@ CREATE TABLE steht_unter_vertrag
 
 CREATE TABLE leitet_kurs
 (
-    kurs_id   CHAR(6),
+    kurs_id    CHAR(6),
     trainer_id CHAR(4)
 );
 
 CREATE TABLE ist_teilnehmer
 (
-    kurs_id CHAR(6),
+    kurs_id  CHAR(6),
     kunde_id CHAR(5)
 );
 
 CREATE TABLE besteht_aus
 (
-    kurs_id            CHAR(6),
+    kurs_id             CHAR(6),
     trainingseinheit_id CHAR(5)
 );
 
