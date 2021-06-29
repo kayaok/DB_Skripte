@@ -595,8 +595,8 @@ INSERT INTO steht_unter_vertrag VALUES ('M_09','AV_08');
 -- TODO: Vorgaenger, Nachfolger, mehrfacheintraege(?)
 -- TODO: Hier koennte es ganz bitter werden: Referenz auf einen Nachfolger, der noch nicht erstellt ist, geht leider nicht :'(
 
--- INSERT INTO trainingseinheiten VALUES ('TE_00', 'Stepper', 20, 'Stepper Cardio Training', null, 'TE_12', 'SG_001');
--- INSERT INTO trainingseinheiten VALUES ('TE_01', 'Stepper', 20, 'Stepper Cardio Training', null, 'TE_16', 'SG_002');
+INSERT INTO trainingseinheiten VALUES ('TE_00', 'Stepper', 20, 'Stepper Cardio Training', null, null, 'SG_001');
+INSERT INTO trainingseinheiten VALUES ('TE_01', 'Stepper', 20, 'Stepper Cardio Training', null, null, 'SG_002');
 -- INSERT INTO trainingseinheiten VALUES ('TE_02', 'Stepper', 20, 'Stepper Cardio Training', null, 'TE_20', 'SG_003');
 -- INSERT INTO trainingseinheiten VALUES ('TE_03', 'Laufband', 20, 'Laufband Cardio Training', null, 'TE_13', 'SG_004');
 -- INSERT INTO trainingseinheiten VALUES ('TE_04', 'Laufband', 20, 'Laufband Cardio Training', null, 'TE_17', 'SG_005');
