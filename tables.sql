@@ -439,7 +439,7 @@ CREATE TABLE sportgeraete
         CONSTRAINT sportgeraet_ad_nn NOT NULL,
     garantie           DATE
         CONSTRAINT sportgeraet_garantie_nn NOT NULL,
-    anschaffungskosten DECIMAL(4, 2)
+    anschaffungskosten DECIMAL(5, 2)
         CONSTRAINT sportgeraet_ak_nn NOT NULL,
     e_gym              CHAR(1)
         CONSTRAINT sportgeraet_eg_nn NOT NULL
