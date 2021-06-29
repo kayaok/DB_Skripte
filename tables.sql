@@ -319,7 +319,9 @@ CREATE TABLE individualplaene
     beginn                DATE
         CONSTRAINT individualplan_beginn_nn NOT NULL,
     tatsaechlicher_beginn DATE,
-    ende                  DATE,
+    ende                  DATE
+        CONSTRAINT individualplan_ende_nn NOT NULL,
+    tatsechliches_ende    DATE,
     trainingsplan_id      CHAR(5)
 );
 
@@ -666,9 +668,9 @@ ALTER TABLE ist_definiert_durch
 
 ALTER TABLE ist_Teilnehmer
     ADD (CONSTRAINT kunde_kurse_1_fk
-             FOREIGN KEY (kunden_id)
-                 REFERENCES kunden (kunden_id),
+             FOREIGN KEY (kunde_id)
+                 REFERENCES kunden (kunde_id),
          CONSTRAINT kunde_kurse_2_fk
              FOREIGN KEY (kurse_id)
-                 REFERENCES kurse (kurse_id)
+                 REFERENCES kurse (kurs_id)
         );
