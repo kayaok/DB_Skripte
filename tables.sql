@@ -4,37 +4,38 @@
 
 CREATE TABLE kunden
 (
-    kunde_id              CHAR(5) --k_000
+    kunde_id          CHAR(5) --k_000
         CONSTRAINT kunde_id_nn NOT NULL,
-    vorname              VARCHAR(20)
+    vorname           VARCHAR(20)
         CONSTRAINT kunde_vorname_nn NOT NULL,
-    nachname              VARCHAR(20)
+    nachname          VARCHAR(20)
         CONSTRAINT kunde_nachname_nn NOT NULL,
-    geschlecht            CHAR
+    geschlecht        CHAR
         CONSTRAINT kunde_geschlecht_nn NOT NULL,
-    geburtsdatum          DATE
+    geburtsdatum      DATE
         CONSTRAINT kunde_geburtsdatum_nn NOT NULL,
-    strasse_hn               VARCHAR(30)
+    strasse_hn        VARCHAR(30)
         CONSTRAINT kunde_shn_nn NOT NULL,
-    plz                   VARCHAR(5)
+    plz               VARCHAR(5)
         CONSTRAINT kunde_plz_nn NOT NULL,
-    ort                   VARCHAR(20)
+    ort               VARCHAR(20)
         CONSTRAINT kunde_ort_nn NOT NULL,
-    telefonnummer         VARCHAR(20),
-    email                 VARCHAR(40),
-    kontonummer           VARCHAR(25)
+    telefonnummer     VARCHAR(20),
+    email             VARCHAR(40),
+    kontonummer       VARCHAR(25)
         CONSTRAINT kunde_kontonummer_nn NOT NULL,
-    bank                  VARCHAR(50)
+    bank              VARCHAR(50)
         CONSTRAINT kunde_bank_nn NOT NULL,
-    iban                  VARCHAR(40)
+    iban              VARCHAR(40)
         CONSTRAINT kunde_iban_nn NOT NULL,
-    bic                   VARCHAR(15)
+    bic               VARCHAR(15)
         CONSTRAINT kunde_bic_nn NOT NULL,
-    kk_nummer                   NUMBER
+    kk_nummer         NUMBER
         CONSTRAINT kunde_kk_nummer_nn NOT NULL,
-    kundenkarte_id        CHAR(6),
-    krankenkasse_id       CHAR(5),
-    trainer_id            CHAR(4)
+    kundenkarte_id    CHAR(6),
+    krankenkasse_id   CHAR(5),
+    trainer_id        CHAR(4),
+    individualplan_id CHAR(7)
 );
 
 CREATE UNIQUE INDEX kunde_id_pk ON
@@ -53,19 +54,19 @@ ALTER TABLE kunden
 
 CREATE TABLE krankenkassen
 (
-    krankenkasse_id          CHAR(5) --kk_00
+    krankenkasse_id      CHAR(5) --kk_00
         CONSTRAINT krankenkasse_id_nn NOT NULL,
-    name                     VARCHAR(30)
+    name                 VARCHAR(30)
         CONSTRAINT krankenkasse_name_nn NOT NULL,
-    strasse_hn                 VARCHAR(30)
+    strasse_hn           VARCHAR(30)
         CONSTRAINT krankenkasse_strasse_nn NOT NULL,
-    plz                      VARCHAR(5)
+    plz                  VARCHAR(5)
         CONSTRAINT krankenkasse_plz_nn NOT NULL,
-    ort                      VARCHAR(20)
+    ort                  VARCHAR(20)
         CONSTRAINT krankenkasse_ort_nn NOT NULL,
-    telefonnummer            VARCHAR(20),
-    email                    VARCHAR(40),
-    ansprechpartner_name  VARCHAR(20)
+    telefonnummer        VARCHAR(20),
+    email                VARCHAR(40),
+    ansprechpartner_name VARCHAR(20)
         CONSTRAINT krankenkasse_ap_name_nn NOT NULL
 );
 
@@ -85,12 +86,10 @@ ALTER TABLE krankenkassen
 
 CREATE TABLE kundenkarten
 (
-    kundenkarte_id  CHAR(6) --cc_000
+    kundenkarte_id CHAR(6) --cc_000
         CONSTRAINT kundenkarte_id_nn NOT NULL,
-    bonuspunkte     NUMBER
-        CONSTRAINT kundenkarte_bonuspunkte_nn NOT NULL,
-    status          NUMBER
-        CONSTRAINT kundenkarte_status_nn NOT NULL
+    bonuspunkte    NUMBER
+        CONSTRAINT kundenkarte_bonuspunkte_nn NOT NULL
 );
 
 CREATE UNIQUE INDEX kundenkarte_id_pk ON
@@ -104,24 +103,26 @@ ALTER TABLE kundenkarten
         );
 
 --------------------------------------------------------------------------
--- Create Table Buchungsverlauf
+-- Create Table Buchungsverlaeufe
 --------------------------------------------------------------------------
 
-CREATE TABLE buchungsverlauf
+CREATE TABLE buchungsverlaeufe
 (
-    buchungsverlauf_id  CHAR(7) --bv_0000
+    buchungsverlauf_id CHAR(7) --bv_0000
         CONSTRAINT buchungsverlauf_id_nn NOT NULL,
-    zeitpunkt DATE
+    status             NUMBER
+        CONSTRAINT kundenkarte_status_nn NOT NULL,
+    zeitpunkt          DATE
         CONSTRAINT buchungsverlauf_zeitpunkt_nn NOT NULL,
-    kundenkarte_id CHAR(6)
+    kundenkarte_id     CHAR(6)
 );
 
 CREATE UNIQUE INDEX bunchungsverlauf_id_pk ON
-    buchungsverlauf (
+    buchungsverlaeufe (
                      buchungsverlauf_id
         );
 
-ALTER TABLE buchungsverlauf
+ALTER TABLE buchungsverlaeufe
     ADD (
         CONSTRAINT buchungsverlauf_id_pk PRIMARY KEY (buchungsverlauf_id)
         );
@@ -163,32 +164,32 @@ ALTER TABLE kundenvertraege
 
 CREATE TABLE mitarbeiter
 (
-    mitarbeiter_id        CHAR(4) --m_00
+    mitarbeiter_id CHAR(4) --m_00
         CONSTRAINT mitarbeiter_id_nn NOT NULL,
-    vorname               VARCHAR(20)
+    vorname        VARCHAR(20)
         CONSTRAINT mitarbeiter_vorname_nn NOT NULL,
-    nachname               VARCHAR(20)
+    nachname       VARCHAR(20)
         CONSTRAINT mitarbeiter_nachname_nn NOT NULL,
-    geschlecht            CHAR
+    geschlecht     CHAR
         CONSTRAINT mitarbeiter_geschlecht_nn NOT NULL,
-    geburtsdatum          DATE
+    geburtsdatum   DATE
         CONSTRAINT mitarbeiter_geburtsdatum_nn NOT NULL,
-    strasse_hn              VARCHAR(20)
+    strasse_hn     VARCHAR(30)
         CONSTRAINT mitarbeiter_shn_nn NOT NULL,
-    plz                   VARCHAR(5)
+    plz            VARCHAR(5)
         CONSTRAINT mitarbeiter_plz_nn NOT NULL,
-    ort                   VARCHAR(20)
+    ort            VARCHAR(20)
         CONSTRAINT mitarbeiter_ort_nn NOT NULL,
-    telefonnummer         VARCHAR(20),
-    firmeneintritt        DATE
+    telefonnummer  VARCHAR(20),
+    firmeneintritt DATE
         CONSTRAINT mitarbeiter_eintritt_nn NOT NULL,
-    kontonummer           VARCHAR(25)
+    kontonummer    VARCHAR(25)
         CONSTRAINT mitarbeiter_kontonummer_nn NOT NULL,
-    bank                  VARCHAR(50)
+    bank           VARCHAR(50)
         CONSTRAINT mitarbeiter_bank_nn NOT NULL,
-    iban                  VARCHAR(40)
+    iban           VARCHAR(40)
         CONSTRAINT mitarbeiter_iban_nn NOT NULL,
-    bic                   VARCHAR(15)
+    bic            VARCHAR(15)
         CONSTRAINT mitarbeiter_bic_nn NOT NULL
 );
 
@@ -211,8 +212,7 @@ CREATE TABLE trainer
     trainer_id     CHAR(4) -- t_00
         CONSTRAINT trainer_id_nn NOT NULL,
     trainer_lizenz CHAR
-        CONSTRAINT trainer_lizenz_nn NOT NULL,
-    mitarbeiter_id CHAR(4)
+        CONSTRAINT trainer_lizenz_nn NOT NULL
 );
 
 CREATE UNIQUE INDEX trainer_id_pk ON
@@ -226,10 +226,10 @@ ALTER TABLE trainer
         );
 
 --------------------------------------------------------------------------
--- Create Table Arbeitseinteilung
+-- Create Table Arbeitseinteilungen
 --------------------------------------------------------------------------
 
-CREATE TABLE arbeitseinteilung
+CREATE TABLE arbeitseinteilungen
 (
     arbeitseinteilung_id CHAR(6) --ae_000
         CONSTRAINT ae_id_nn NOT NULL,
@@ -242,11 +242,11 @@ CREATE TABLE arbeitseinteilung
 );
 
 CREATE UNIQUE INDEX arbeitseinteilung_id_pk ON
-    arbeitseinteilung (
-                       arbeitseinteilung_id
+    arbeitseinteilungen (
+                         arbeitseinteilung_id
         );
 
-ALTER TABLE arbeitseinteilung
+ALTER TABLE arbeitseinteilungen
     ADD (
         CONSTRAINT arbeitseinteilung_id_pk PRIMARY KEY (arbeitseinteilung_id)
         );
@@ -378,6 +378,8 @@ CREATE TABLE trainingsplaene
         CONSTRAINT trainingsplan_name_nn NOT NULL,
     schwierigkeit     NUMBER
         CONSTRAINT trainingsplan_schwierigkeit_nn NOT NULL,
+    empfohlene_tage   NUMBER
+        CONSTRAINT trainingsplan_et_nn NOT NULL,
     trainingszeitraum NUMBER
         CONSTRAINT trainingsplan_tz_nn NOT NULL
 );
@@ -402,11 +404,10 @@ CREATE TABLE trainingseinheiten
         CONSTRAINT trainingseinheit_id_nn NOT NULL,
     name                varchar(20)
         CONSTRAINT name_nn NOT NULL,
-    trainingsdauer      NUMBER
-        CONSTRAINT trainingseinheit_td_nn NOT NULL,
-    empfohleneTage      NUMBER
-        CONSTRAINT trainingseinheit_et_nn NOT NULL,
+    trainingsdauer      NUMBER,
     hinweise            varchar(300),
+    vorgaenger_id       CHAR(5),
+    nachfolger_id       CHAR(5),
     sportgeraet_id      CHAR(6)
 );
 
@@ -509,31 +510,47 @@ ALTER TABLE indi_durchfuehrungen
         );
 
 --------------------------------------------------------------------------
--- Create Table individuelle Trainingseinheit
+-- CREATE many-many relations
 --------------------------------------------------------------------------
 
-CREATE TABLE indi_trainingseinheit
+CREATE TABLE mitarbeiter_ae
 (
-    indi_trainingseinheit_id CHAR(8) --ite_0000
-        CONSTRAINT indi_trainingseinheit_id_nn NOT NULL,
-    indi_trainingsdauer      NUMBER
-        CONSTRAINT indi_trainingsdauer_nn NOT NULL,
-    indi_empfohleneTage      NUMBER
-        CONSTRAINT indi_et_nn NOT NULL
+    mitarbeiter_id       CHAR(4),
+    arbeitseinteilung_id CHAR(6)
 );
 
-CREATE UNIQUE INDEX indi_trainingseinheit_id_pk ON
-    indi_trainingseinheit (
-                           indi_trainingseinheit_id
-        );
+CREATE TABLE mitarbeiter_arbeitsvertraege
+(
+    mitarbeiter_id    CHAR(4),
+    arbeitsvertrag_id CHAR(5)
+);
 
-ALTER TABLE indi_trainingseinheit
-    ADD (
-        CONSTRAINT indi_trainingseinheit_id_pk PRIMARY KEY (indi_trainingseinheit_id)
-        );
+CREATE TABLE kurse_trainer
+(
+    kurse_id   CHAR(6),
+    trainer_id CHAR(4)
+);
+
+CREATE TABLE kurse_kunden
+(
+    kurse_id CHAR(6),
+    kunde_id CHAR(5)
+);
+
+CREATE TABLE kurse_trainingseinheiten
+(
+    kurse_id            CHAR(6),
+    trainingseinheit_id CHAR(5)
+);
+
+CREATE TABLE trainingseinheiten_kategorie
+(
+    trainingseinheit_id CHAR(5),
+    kategorie_id        CHAR(6)
+);
 
 --------------------------------------------------------------------------
--- ADD Foreign Keys
+-- ADD foreign keys
 --------------------------------------------------------------------------
 
 ALTER TABLE kunden
@@ -545,7 +562,10 @@ ALTER TABLE kunden
                  REFERENCES trainer (trainer_id),
          CONSTRAINT kunden_kundendenkarte_fk
              FOREIGN KEY (kundenkarte_id)
-                 REFERENCES kundenkarten (kundenkarte_id)
+                 REFERENCES kundenkarten (kundenkarte_id),
+         CONSTRAINT kunden_ip_fk
+             FOREIGN KEY (individualplan_id)
+                 REFERENCES individualplaene (individualplan_id)
         );
 
 ALTER TABLE individualplaene
@@ -557,14 +577,20 @@ ALTER TABLE individualplaene
 -- TODO Trainer soll id von Mitarbeiter erben
 ALTER TABLE trainer
     ADD (CONSTRAINT trainer_mitarbeiter_fk
-        FOREIGN KEY (mitarbeiter_id)
+        FOREIGN KEY (trainer_id)
             REFERENCES mitarbeiter (mitarbeiter_id)
         );
 
 ALTER TABLE trainingseinheiten
     ADD (CONSTRAINT te_sg_fk
-        FOREIGN KEY (sportgeraet_id)
-            REFERENCES sportgeraete (sportgeraet_id)
+             FOREIGN KEY (sportgeraet_id)
+                 REFERENCES sportgeraete (sportgeraet_id),
+         CONSTRAINT te_vg_fk
+             FOREIGN KEY (vorgaenger_id)
+                 REFERENCES trainingseinheiten (trainingseinheit_id),
+         CONSTRAINT te_nf_fk
+             FOREIGN KEY (nachfolger_id)
+                 REFERENCES trainingseinheiten (trainingseinheit_id)
         );
 
 ALTER TABLE kundenvertraege
@@ -579,8 +605,57 @@ ALTER TABLE durchfuehrungen
             REFERENCES trainingseinheiten (trainingseinheit_id)
         );
 
-ALTER TABLE buchungsverlauf
+ALTER TABLE buchungsverlaeufe
     ADD (CONSTRAINT bv_kundenkarte_fk
         FOREIGN KEY (kundenkarte_id)
             REFERENCES kundenkarten (kundenkarte_id)
+        );
+
+--------------------------------------------------------------------------
+-- ADD foreign keys to many-many relations
+--------------------------------------------------------------------------
+
+ALTER TABLE mitarbeiter_ae
+    ADD (CONSTRAINT ma_ae_1_fk
+             FOREIGN KEY (mitarbeiter_id)
+                 REFERENCES mitarbeiter (mitarbeiter_id),
+         CONSTRAINT ma_ae_2_fk
+             FOREIGN KEY (arbeitseinteilung_id)
+                 REFERENCES arbeitseinteilungen (arbeitseinteilung_id)
+        );
+
+ALTER TABLE mitarbeiter_arbeitsvertraege
+    ADD (CONSTRAINT ma_av_1_fk
+             FOREIGN KEY (mitarbeiter_id)
+                 REFERENCES mitarbeiter (mitarbeiter_id),
+         CONSTRAINT ma_av_2_fk
+             FOREIGN KEY (arbeitsvertrag_id)
+                 REFERENCES arbeitsvertraege (arbeitsvertrag_id)
+        );
+
+ALTER TABLE kurse_trainer
+    ADD (CONSTRAINT kurse_trainer_1_fk
+             FOREIGN KEY (kurse_id)
+                 REFERENCES kurse (kurs_id),
+         CONSTRAINT kurse_trainer_2_fk
+             FOREIGN KEY (trainer_id)
+                 REFERENCES trainer (trainer_id)
+        );
+
+ALTER TABLE kurse_trainingseinheiten
+    ADD (CONSTRAINT kurse_te_1_fk
+             FOREIGN KEY (kurse_id)
+                 REFERENCES kurse (kurs_id),
+         CONSTRAINT kurse_te_2_fk
+             FOREIGN KEY (trainingseinheit_id)
+                 REFERENCES trainingseinheiten (trainingseinheit_id)
+        );
+
+ALTER TABLE trainingseinheiten_kategorie
+    ADD (CONSTRAINT te_kategorie_1_fk
+             FOREIGN KEY (trainingseinheit_id)
+                 REFERENCES trainingseinheiten (trainingseinheit_id),
+         CONSTRAINT te_kategorie_2_fk
+             FOREIGN KEY (kategorie_id)
+                 REFERENCES kategorien (kategorie_id)
         );
