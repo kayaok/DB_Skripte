@@ -27,7 +27,7 @@
 
 CREATE TABLE kunden
 (
-    kunde_id              NUMBER
+    kunde_id              CHAR
         CONSTRAINT kunde_id_nn NOT NULL,
     name              VARCHAR(40)
         CONSTRAINT kunde_name_nn NOT NULL,
@@ -76,7 +76,7 @@ ALTER TABLE kunden
 
 CREATE TABLE krankenkassen
 (
-    krankenkasse_id          NUMBER
+    krankenkasse_id          CHAR
         CONSTRAINT krankenkasse_id_nn NOT NULL,
     name                     VARCHAR(30)
         CONSTRAINT krankenkasse_name_nn NOT NULL,
@@ -108,7 +108,7 @@ ALTER TABLE krankenkassen
 
 CREATE TABLE kundenkarten
 (
-    kundenkarte_id  NUMBER
+    kundenkarte_id  CHAR
         CONSTRAINT kundenkarte_id_nn NOT NULL,
     bonuspunkte     NUMBER
         CONSTRAINT kundenkarte_bonuspunkte_nn NOT NULL,
@@ -132,7 +132,7 @@ ALTER TABLE kundenkarten
 
 CREATE TABLE buchungsverlauf
 (
-    buchungsverlauf_id  NUMBER
+    buchungsverlauf_id  CHAR
         CONSTRAINT buchungsverlauf_id_nn NOT NULL,
     zeitpunkt DATE
         CONSTRAINT buchungsverlauf_zeitpunkt_nn NOT NULL,
@@ -155,7 +155,7 @@ ALTER TABLE buchungsverlauf
 
 CREATE TABLE kundenvertraege
 (
-    kundenvertrag_id NUMBER
+    kundenvertrag_id CHAR
         CONSTRAINT kundenvertrag_id_nn NOT NULL,
     vertragsart      VARCHAR(20)
         CONSTRAINT kundenvertrag_vertragsart_nn NOT NULL,
@@ -186,7 +186,7 @@ ALTER TABLE kundenvertraege
 
 CREATE TABLE mitarbeiter
 (
-    mitarbeiter_id        NUMBER
+    mitarbeiter_id        CHAR
         CONSTRAINT mitarbeiter_id_nn NOT NULL,
     name               VARCHAR(20)
         CONSTRAINT mitarbeiter_name_nn NOT NULL,
@@ -231,7 +231,7 @@ ALTER TABLE mitarbeiter
 
 CREATE TABLE trainer
 (
-    trainer_id     NUMBER
+    trainer_id     CHAR
         CONSTRAINT trainer_id_nn NOT NULL,
     trainer_lizenz CHAR
         CONSTRAINT trainer_lizenz_nn NOT NULL,
@@ -254,7 +254,7 @@ ALTER TABLE trainer
 
 CREATE TABLE arbeitseinteilung
 (
-    arbeitseinteilung_id NUMBER
+    arbeitseinteilung_id CHAR
         CONSTRAINT ae_id_nn NOT NULL,
     beginn               TIMESTAMP
         CONSTRAINT ae_beginn_nn NOT NULL,
@@ -280,7 +280,7 @@ ALTER TABLE arbeitseinteilung
 
 CREATE TABLE arbeitsvertraege
 (
-    arbeitsvertrag_id NUMBER
+    arbeitsvertrag_id CHAR
         CONSTRAINT arbeitsvertrag_id_nn NOT NULL,
     vertragslaufzeit  NUMBER
         CONSTRAINT arbeitsvertrag_laufzeit_nn NOT NULL,
@@ -309,7 +309,7 @@ ALTER TABLE arbeitsvertraege
 
 CREATE TABLE kurse
 (
-    kurs_id    NUMBER
+    kurs_id    CHAR
         CONSTRAINT kurs_id_nn NOT NULL,
     name       varchar(20)
         CONSTRAINT kurs_name_nn NOT NULL,
@@ -337,7 +337,7 @@ ALTER TABLE kurse
 
 CREATE TABLE individualplaene
 (
-    individualplan_id     NUMBER
+    individualplan_id     CHAR
         CONSTRAINT individualplan_id_nn NOT NULL,
     beginn                DATE
         CONSTRAINT individualplan_beginn_nn NOT NULL,
@@ -364,7 +364,7 @@ ALTER TABLE individualplaene
 
 CREATE TABLE durchfuehrungen
 (
-    durchfuehrung_id    NUMBER
+    durchfuehrung_id    CHAR
         CONSTRAINT durchfuehrung_id_nn NOT NULL,
     intensitaet         NUMBER
         CONSTRAINT intensitaet_nn NOT NULL,
@@ -395,7 +395,7 @@ ALTER TABLE durchfuehrungen
 
 CREATE TABLE trainingsplaene
 (
-    trainingsplan_id  NUMBER
+    trainingsplan_id  CHAR
         CONSTRAINT trainingsplan_id_nn NOT NULL,
     name              VARCHAR(20)
         CONSTRAINT trainingsplan_name_nn NOT NULL,
@@ -421,7 +421,7 @@ ALTER TABLE trainingsplaene
 
 CREATE TABLE trainingseinheiten
 (
-    trainingseinheit_id NUMBER
+    trainingseinheit_id CHAR
         CONSTRAINT trainingseinheit_id_nn NOT NULL,
     name                varchar(20)
         CONSTRAINT name_nn NOT NULL,
@@ -449,7 +449,7 @@ ALTER TABLE trainingseinheiten
 
 CREATE TABLE sportgeraete
 (
-    sportgeraet_id     NUMBER
+    sportgeraet_id     CHAR
         CONSTRAINT sportgeraet_id_nn NOT NULL,
     name               VARCHAR(30)
         CONSTRAINT sportgeraet_name_nn NOT NULL,
@@ -484,7 +484,7 @@ ALTER TABLE sportgeraete
 
 CREATE TABLE kategorien
 (
-    kategorie_id NUMBER
+    kategorie_id CHAR
         CONSTRAINT kategorie_id_nn NOT NULL,
     bezeichnung  VARCHAR(30)
         CONSTRAINT kategorie_bezeichnung_nn NOT NULL,
@@ -507,7 +507,7 @@ ALTER TABLE kategorien
 
 CREATE TABLE indi_durchfuehrungen
 (
-    indi_durchfuehrung_id NUMBER
+    indi_durchfuehrung_id CHAR
         CONSTRAINT indi_durchfuehrung_id_nn NOT NULL,
     indi_intensitaet      NUMBER
         CONSTRAINT indi_intensitaet_nn NOT NULL,
@@ -537,7 +537,7 @@ ALTER TABLE indi_durchfuehrungen
 
 CREATE TABLE indi_trainingseinheit
 (
-    indi_trainingseinheit_id NUMBER
+    indi_trainingseinheit_id CHAR
         CONSTRAINT indi_trainingseinheit_id_nn NOT NULL,
     indi_trainingsdauer      NUMBER
         CONSTRAINT indi_trainingsdauer_nn NOT NULL,
