@@ -514,37 +514,37 @@ ALTER TABLE indi_durchfuehrungen
 -- CREATE many-many relations
 --------------------------------------------------------------------------
 
-CREATE TABLE mitarbeiter_ae
+CREATE TABLE wird_eingeteilt_in
 (
     mitarbeiter_id       CHAR(4),
     arbeitseinteilung_id CHAR(6)
 );
 
-CREATE TABLE mitarbeiter_arbeitsvertraege
+CREATE TABLE steht_unter_Vertrag
 (
     mitarbeiter_id    CHAR(4),
     arbeitsvertrag_id CHAR(5)
 );
 
-CREATE TABLE kurse_trainer
+CREATE TABLE leitet
 (
     kurse_id   CHAR(6),
     trainer_id CHAR(4)
 );
 
-CREATE TABLE kurse_kunden
+CREATE TABLE ist_Teilnehmer
 (
     kurse_id CHAR(6),
     kunde_id CHAR(5)
 );
 
-CREATE TABLE kurse_trainingseinheiten
+CREATE TABLE besteht_aus
 (
     kurse_id            CHAR(6),
     trainingseinheit_id CHAR(5)
 );
 
-CREATE TABLE trainingseinheiten_kategorie
+CREATE TABLE ist_definiert_durch
 (
     trainingseinheit_id CHAR(5),
     kategorie_id        CHAR(6)
@@ -619,7 +619,7 @@ ALTER TABLE buchungsverlaeufe
 -- ADD foreign keys to many-many relations
 --------------------------------------------------------------------------
 
-ALTER TABLE mitarbeiter_ae
+ALTER TABLE wird_eingeteilt_in
     ADD (CONSTRAINT ma_ae_1_fk
              FOREIGN KEY (mitarbeiter_id)
                  REFERENCES mitarbeiter (mitarbeiter_id),
@@ -628,7 +628,7 @@ ALTER TABLE mitarbeiter_ae
                  REFERENCES arbeitseinteilungen (arbeitseinteilung_id)
         );
 
-ALTER TABLE mitarbeiter_arbeitsvertraege
+ALTER TABLE steht_unter_Vertrag
     ADD (CONSTRAINT ma_av_1_fk
              FOREIGN KEY (mitarbeiter_id)
                  REFERENCES mitarbeiter (mitarbeiter_id),
@@ -637,7 +637,7 @@ ALTER TABLE mitarbeiter_arbeitsvertraege
                  REFERENCES arbeitsvertraege (arbeitsvertrag_id)
         );
 
-ALTER TABLE kurse_trainer
+ALTER TABLE leitet
     ADD (CONSTRAINT kurse_trainer_1_fk
              FOREIGN KEY (kurse_id)
                  REFERENCES kurse (kurs_id),
@@ -646,7 +646,7 @@ ALTER TABLE kurse_trainer
                  REFERENCES trainer (trainer_id)
         );
 
-ALTER TABLE kurse_trainingseinheiten
+ALTER TABLE besteht_aus
     ADD (CONSTRAINT kurse_te_1_fk
              FOREIGN KEY (kurse_id)
                  REFERENCES kurse (kurs_id),
@@ -655,11 +655,20 @@ ALTER TABLE kurse_trainingseinheiten
                  REFERENCES trainingseinheiten (trainingseinheit_id)
         );
 
-ALTER TABLE trainingseinheiten_kategorie
+ALTER TABLE ist_definiert_durch
     ADD (CONSTRAINT te_kategorie_1_fk
              FOREIGN KEY (trainingseinheit_id)
                  REFERENCES trainingseinheiten (trainingseinheit_id),
          CONSTRAINT te_kategorie_2_fk
              FOREIGN KEY (kategorie_id)
                  REFERENCES kategorien (kategorie_id)
+        );
+
+ALTER TABLE ist_Teilnehmer
+    ADD (CONSTRAINT kunde_kurse_1_fk
+             FOREIGN KEY (kunden_id)
+                 REFERENCES kunden (kunden_id),
+         CONSTRAINT kunde_kurse_2_fk
+             FOREIGN KEY (kurse_id)
+                 REFERENCES kurse (kurse_id)
         );
