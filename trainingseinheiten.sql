@@ -14,7 +14,7 @@ INSERT INTO TRAININGSEINHEITEN VALUES ('TE_11', 'Beinpresse', 15, 'Training an d
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_12', 'Schulterpresse', 15, 'Training an der Maschine mit x Gewicht', 'TE_11', 'TE_13', 'SG_011');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_13', 'Butterfly', 15, 'Training an der Maschine mit x Gewicht', 'TE_12', 'TE_14', 'SG_034');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_14', 'Bauchtraining', 15, 'Training mit der Fitnessmatte', 'TE_13', 'TE_15', 'SG_031');
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_15', 'Laufband', 30, 'Laufen auf dem Laufband', 'TE_14', null, 'SG_025');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_15', 'Laufband', 30, 'Laufband laufen', 'TE_14', null, 'SG_025');
 
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_16', 'Laufband', 45, 'Laufband laufen', null, 'TE_16', 'SG_025');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_17', 'Bankdruecken', 15, 'An der Hantelbank mit x Gewicht', 'TE_16', 'TE_18', 'SG_009');
@@ -34,11 +34,19 @@ INSERT INTO TRAININGSEINHEITEN VALUES ('TE_26', 'Beinpresse',15, 'Beinpresse mit
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_27', 'Rueckentraining',15, 'Latismuszug mit x Gewicht', 'TE_26', 'TE_28', 'SG_036');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_28', 'Bauchpresse',15, 'Bauchpresse mit x Gewicht', 'TE_27', null, 'SG_014');
 
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_32', 'Bizeps Curls am Kabelturm',8, 'Training am Kabelturm mit x Gewicht', null, 'TE_33', 'sg_608');
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_33', 'Klimmzüge',10, 'Körpergewichtsübung', 'TE_32', 'TE_34', 'sg_824');
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_34', 'Dips',10, 'Körpergewichtsübung', 'TE_33', 'TE_35', 'sg_824');
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_35', 'Dips',10, 'Körpergewichtsübung', 'TE_34', 'TE_36', 'sg_824');
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_36', 'Dips',10, 'Körpergewichtsübung', 'TE_35', 'TE_37', 'sg_824');
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_37', 'Bankdruecken', 15, 'An der Hantelbank mit x Gewicht', 'TE_36', 'TE_38', 'SG_009');
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_38', 'Bankdruecken', 15, 'An der Hantelbank mit x Gewicht', 'TE_37', 'TE_39', 'SG_009');
-INSERT INTO TRAININGSEINHEITEN VALUES ('TE_39', 'Bankdruecken', 15, 'An der Hantelbank mit x Gewicht', 'TE_38', null, 'SG_009');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_32', 'Stepper',20, 'Stepper', null, 'TE_33', 'SG_001');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_33', 'Rudern',15, 'Rudermaschine', 'TE_32', 'TE_34', 'SG_040');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_34', 'Sit-Ups',15, 'Gymnastikball', 'TE_33', 'TE_35', 'SG_028');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_35', 'Biking',20, 'Indoor Biking', 'TE_34', 'TE_36', 'SG_017');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_36', 'Rueckentraining',15, 'Latismuszug', 'TE_35', 'TE_37', 'SG_036');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_37', 'Abduktionsmaschine', 15, 'Training an Maschine mit x Gewicht', 'TE_36', 'TE_38', 'SG_041');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_38', 'Adduktionsmaschine', 15, 'Training an Maschine mit x Gewicht', 'TE_37', 'TE_39', 'SG_042');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_39', 'Laufband', 15, 'Laufband laufen', 'TE_38', null, 'SG_025');
+
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_40', 'Stepper', 60, 'Aerobic Stepper', null, null, 'SG_001');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_41', 'Crosstrainer', 60, 'Crosstrainer', null, null, 'SG_006');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_42', 'Fitnessmatte', 60, 'Fitnessmatte', null, null, 'SG_031');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_43', 'Faszienlockerung', 45, 'Faszienrolle', null, null, 'SG_020');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_44', 'Biking', 90, 'Indoor Biking', null, null, 'SG_017');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_45', 'Gymnastik', 20, 'Gymnastikball', null, null, 'SG_028');
+INSERT INTO TRAININGSEINHEITEN VALUES ('TE_46', 'Hantelstange', 20, 'Freihanteln', null, null, 'SG_012');
