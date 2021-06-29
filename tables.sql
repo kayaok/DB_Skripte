@@ -119,7 +119,7 @@ CREATE TABLE buchungsverlaeufe
 
 CREATE UNIQUE INDEX bunchungsverlauf_id_pk ON
     buchungsverlaeufe (
-                     buchungsverlauf_id
+                       buchungsverlauf_id
         );
 
 ALTER TABLE buchungsverlaeufe
@@ -320,7 +320,7 @@ CREATE TABLE individualplaene
         CONSTRAINT individualplan_beginn_nn NOT NULL,
     tatsaechlicher_beginn DATE,
     ende                  DATE,
-    trainingsplan_id      CHAR(6)
+    trainingsplan_id      CHAR(5)
 );
 
 CREATE UNIQUE INDEX individualplan_id_pk ON
@@ -353,7 +353,8 @@ CREATE TABLE durchfuehrungen
         CONSTRAINT pausen_nn NOT NULL,
     nummer              NUMBER
         CONSTRAINT nummer_nn NOT NULL,
-    trainingseinheit_id CHAR(5)
+    trainingseinheit_id CHAR(5),
+    trainingsplan_id    CHAR(5)
 );
 
 CREATE UNIQUE INDEX durchfuehrung_id_pk ON
@@ -372,7 +373,7 @@ ALTER TABLE durchfuehrungen
 
 CREATE TABLE trainingsplaene
 (
-    trainingsplan_id  CHAR(6) --trp_00
+    trainingsplan_id  CHAR(5) --tp_00
         CONSTRAINT trainingsplan_id_nn NOT NULL,
     name              VARCHAR(20)
         CONSTRAINT trainingsplan_name_nn NOT NULL,
@@ -601,8 +602,11 @@ ALTER TABLE kundenvertraege
 
 ALTER TABLE durchfuehrungen
     ADD (CONSTRAINT df_te_fk
-        FOREIGN KEY (trainingseinheit_id)
-            REFERENCES trainingseinheiten (trainingseinheit_id)
+             FOREIGN KEY (trainingseinheit_id)
+                 REFERENCES trainingseinheiten (trainingseinheit_id),
+         CONSTRAINT df_tp_fk
+             FOREIGN KEY (trainingsplan_id)
+                 REFERENCES trainingsplaene (trainingsplan_id)
         );
 
 ALTER TABLE buchungsverlaeufe
