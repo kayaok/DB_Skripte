@@ -1,4 +1,13 @@
-insert into buchungsverlauf (buchungsverlauf_id, buchungsverlauf, status) values (1, '2021-06-28 14:00:00', 'CHECK-IN');
-insert into buchungsverlauf (buchungsverlauf_id, buchungsverlauf, status) values (2, '2021-06-28 14:00:01', 'GUTSCHRIFT');
-insert into buchungsverlauf (buchungsverlauf_id, buchungsverlauf, status) values (3, '2021-06-28 14:59:00', 'ABBUCHUNG');
-insert into buchungsverlauf (buchungsverlauf_id, buchungsverlauf, status) values (4, '2021-06-28 15:00:00', 'CHECK-OUT');
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (1, 'cc_187', 'CHECK-IN', TO_DATE('2021-06-01 10:13:18', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (2, 'cc_555', 'CHECK-IN', TO_DATE('2021-06-01 10:21:30', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (3, 'cc_001', 'CHECK-IN', TO_DATE('2021-06-01 11:03:55', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (4, 'cc_777', 'CHECK-IN', TO_DATE('2021-06-01 11:56:41', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (5, 'cc_187', 'CHECK-OUT', TO_DATE('2021-06-01 11:57:18', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (6, 'cc_187', 'GUTSCHRIFT', TO_DATE('2021-06-01 11:57:18', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (7, 'cc_001', 'CHECK-OUT', TO_DATE('2021-06-01 12:00:55', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (8, 'cc_001', 'GUTSCHRIFT', TO_DATE('2021-06-01 12:00:55', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (9, 'cc_042', 'CHECK-IN', TO_DATE('2021-06-01 12:01:15', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (10, 'cc_555', 'CHECK-OUT', TO_DATE('2021-06-01 12:05:30', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (11, 'cc_555', 'GUTSCHRIFT', TO_DATE('2021-06-01 12:05:30', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (12, 'cc_777', 'CHECK-OUT', TO_DATE('2021-06-01 12:13:41', 'YYYY-MM-DD HH:mm:ss'));
+insert into buchungsverlauf (buchungsverlauf_id, kundenkarte_id, status, zeitpunkt) values (13, 'cc_777', 'GUTSCHRIFT', TO_DATE('2021-06-01 12:13:41', 'YYYY-MM-DD HH:mm:ss'));
