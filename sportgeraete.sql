@@ -1,61 +1,43 @@
-insert into TRAINER values('SG_001','Aerobic-Stepper', 'Reebok', '742735785-X',
-insert into TRAINER values('SG_002','Bauchtrainer', 'Sport-Thieme', '663053155-8',
-insert into TRAINER values('SG_003','Boxsack', 'Super Pro', '210999168-2',
-insert into TRAINER values('SG_004','Crosstrainer', 'Sport-Thieme', '374455454-6')
-insert into TRAINER values('SG_005','Hantelbank', 'Sport-Thieme', '016260692-3')
-insert into TRAINER values('SG_006','Hantelscheiben','Sport-Thieme', '314255292-8')
-insert into TRAINER values('SG_007','Hantelstange', 'Balanced-Body')
-insert into TRAINER values('SG_008','Kettlebells', 'Balanced-Body')
-insert into TRAINER values('SG_009','Klimmzugstangen', 'Sport-Thieme')
-insert into TRAINER values('SG_010','Indoor Bikes', 'Balanced-Body')
-insert into TRAINER values('SG_011','Pilates', 'Balanced-Body')
-insert into TRAINER values('SG_012','Kraftgeraet', 'Life Fitness')
-insert into TRAINER values('SG_013','Laufband', 'Stages')
-insert into TRAINER values('SG_014','Gymnastikball', 'Reebok')
-insert into TRAINER values('SG_015','Fitnessmatte', 'Reebok')
-insert into TRAINER values('SG_016','Battle Rope', 'Stages')
-insert into TRAINER values('SG_017','Crosstrainer', 'Balanced-Body')
-insert into TRAINER values('SG_018','Schrägbank', 'Stages')
-insert into TRAINER values('SG_019','Aerobic-Stepper', 'Reebok')
-insert into TRAINER values('SG_020','Beinpresse', 'Balanced-Body')
-insert into TRAINER values('SG_021','Bauchtrainer', 'Stages')
-insert into TRAINER values('SG_022','Boxsack', 'Balanced-Body')
-insert into TRAINER values('SG_023','Crosstrainer', 'Life Fitness')
-insert into TRAINER values('SG_024','Hantelbank', 'Stages')
-insert into TRAINER values('SG_025','Hantelscheiben', 'Life Fitness')
-insert into TRAINER values('SG_026','Hantelstange', 'Balanced-Body')
-insert into TRAINER values('SG_027','Beinpresse', 'Stages')
-insert into TRAINER values('SG_028','Klimmzugstangen', 'Life Fitness')
-insert into TRAINER values('SG_029','Indoor Bikes', 'Life Fitness')
-insert into TRAINER values('SG_030','Pilates', 'Balanced-Body')
+insert into Sportgeraete values('SG_001','Aerobic-Stepper', 'Reebok', '742735785-X',TO_DATE('2017-03-12','YYYY-MM-DD'), TO_DATE('2021-02-06','YYYY-MM-DD'), '€83,01', 'T');
+insert into Sportgeraete values('SG_002','Aerobic-Stepper', 'Reebok', '7427357862-X',TO_DATE('2017-03-12','YYYY-MM-DD'), TO_DATE('2021-02-06','YYYY-MM-DD'), '€83,01', 'F');
+insert into Sportgeraete values('SG_003','Aerobic-Stepper', 'Reebok', '7427357835-X',TO_DATE('2017-03-12','YYYY-MM-DD'), TO_DATE('2021-02-06','YYYY-MM-DD'), '€83,01', 'F');
+insert into Sportgeraete values('SG_004','Brustpresse', 'Sport-Thieme', '663053156-8',TO_DATE('2020-08-17','YYYY-MM-DD'), TO_DATE('2020-09-09','YYYY-MM-DD'), '€495,10', 'T');
+insert into Sportgeraete values('SG_005','Beinpresse', 'Super Pro', '2109995432-2',TO_DATE('2018-01-13','YYYY-MM-DD'), TO_DATE('2020-09-13','YYYY-MM-DD'), '€275,07', 'F');
+insert into Sportgeraete values('SG_006','Crosstrainer', 'Sport-Thieme', '374455454-6',TO_DATE('2020-05-01','YYYY-MM-DD'),TO_DATE('2021-03-13','YYYY-MM-DD') , '€189,54', 'F');
+insert into Sportgeraete values('SG_007','Crosstrainer', 'Sport-Thieme', '374454534-6',TO_DATE('2020-05-01','YYYY-MM-DD'), TO_DATE('2021-03-13','YYYY-MM-DD'), '€189,54', 'F');
+insert into Sportgeraete values('SG_008','Crosstrainer', 'Sport-Thieme', '374457654-6',TO_DATE('2020-05-01','YYYY-MM-DD'), TO_DATE('2021-03-13','YYYY-MM-DD'), '€189,54', 'F');
+insert into Sportgeraete values('SG_009','Hantelbank', 'Sport-Thieme', '016260269-3',TO_DATE('2018-04-30','YYYY-MM-DD'),TO_DATE('2021-01-26','YYYY-MM-DD') , '€498,02', 'T');
+insert into Sportgeraete values('SG_010','Hantelbank', 'Sport-Thieme', '016260692-3',TO_DATE('2018-04-30','YYYY-MM-DD'),TO_DATE(,'2021-01-26''YYYY-MM-DD') , '€498,02', 'F');
+insert into Sportgeraete values('SG_011','Schulterpresse','Sport-Thieme', '314258743-8',TO_DATE('2020-01-08','YYYY-MM-DD'),TO_DATE('2020-11-19','YYYY-MM-DD') , '€458,10', 'F');
+insert into Sportgeraete values('SG_012','Hantelstange', 'Balanced-Body', '552930987-0',TO_DATE('2018-11-28','YYYY-MM-DD'), TO_DATE('2020-08-27','YYYY-MM-DD'), '€18,40', 'T');
+insert into Sportgeraete values('SG_013','Hantelstange', 'Balanced-Body', '552930938-0',TO_DATE('2018-11-28','YYYY-MM-DD'), TO_DATE('2020-08-27','YYYY-MM-DD'), '€18,40', 'F');
+insert into Sportgeraete values('SG_014','Bauchpresse', 'Balanced-Body', '442233095-0',TO_DATE('2015-03-13',,'YYYY-MM-DD') TO_DATE('2021-05-02','YYYY-MM-DD'), '€480,59', 'F');
+insert into Sportgeraete values('SG_015','Kabelturm', 'Sport-Thieme', '853798453-1',TO_DATE('2018-05-18','YYYY-MM-DD'), TO_DATE('2020-11-08','YYYY-MM-DD'), '€247,88', 'F');
+insert into Sportgeraete values('SG_016','Kabelturm', 'Sport-Thieme', '8537984543-1',TO_DATE('2018-05-18','YYYY-MM-DD'), TO_DATE('2020-11-08','YYYY-MM-DD'), '€247,88', 'F');
+insert into Sportgeraete values('SG_017','Indoor Bikes', 'Balanced-Body', '4710340262-0',TO_DATE('2017-03-23','YYYY-MM-DD'),TO_DATE('2020-09-14','YYYY-MM-DD') , '€340,78', 'F');
+insert into Sportgeraete values('SG_018','Indoor Bikes', 'Balanced-Body', '471034025-0',TO_DATE('2017-03-23','YYYY-MM-DD'),TO_DATE('2020-09-14','YYYY-MM-DD') , '€340,78', 'F');
+insert into Sportgeraete values('SG_019','Indoor Bikes', 'Balanced-Body', '4710340887-0',TO_DATE('2017-03-23','YYYY-MM-DD'), TO_DATE('2020-09-14','YYYY-MM-DD'), '€340,78', 'T');
+insert into Sportgeraete values('SG_020','Faszienrolle', 'Balanced-Body', '812701031-6',TO_DATE('2018-03-14','YYYY-MM-DD'), TO_DATE('2021-06-02','YYYY-MM-DD'), '€22,48', 'F');
+insert into Sportgeraete values('SG_021','Faszienrolle', 'Balanced-Body', '8127010322-6',TO_DATE('2018-03-14','YYYY-MM-DD'),TO_DATE('2021-06-02','YYYY-MM-DD') , '€22,48', 'F');
+insert into Sportgeraete values('SG_022','Faszienrolle', 'Balanced-Body', '8127010333-6',TO_DATE('2018-03-14','YYYY-MM-DD'), TO_DATE('2021-06-02','YYYY-MM-DD'), '€22,48', 'F');
+insert into Sportgeraete values('SG_023','Rueckenstrecker', 'Life Fitness','746206818-4',TO_DATE('2018-11-11','YYYY-MM-DD'),TO_DATE('2021-05-09','YYYY-MM-DD'), '€196,95','F');
+insert into Sportgeraete values('SG_024','Rueckenstrecker', 'Life Fitness','746206819-4',TO_DATE('2018-11-11','YYYY-MM-DD'),TO_DATE('2021-05-09','YYYY-MM-DD') , '€196,95', 'T');
+insert into Sportgeraete values('SG_025','Laufband', 'Stages','859856964-X',TO_DATE('2013-11-09','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€317,78', 'F');
+insert into Sportgeraete values('SG_026','Laufband', 'Stages','85985696632-X',TO_DATE('2013-11-09','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€317,78', 'T');
+insert into Sportgeraete values('SG_027','Laufband', 'Stages','859856965-X',TO_DATE('2013-11-09','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€317,78','F');
+insert into Sportgeraete values('SG_028','Gymnastikball', 'Reebok','523936375-7',TO_DATE('2016-01-10','YYYY-MM-DD'),TO_DATE('2021-01-12','YYYY-MM-DD') , '€34,39','F');
+insert into Sportgeraete values('SG_029','Gymnastikball', 'Reebok','523936372-7',TO_DATE('2016-01-10','YYYY-MM-DD'),TO_DATE('2021-01-12','YYYY-MM-DD') , '€34,39','F');
+insert into Sportgeraete values('SG_030','Gymnastikball', 'Reebok','52393637689-7',TO_DATE('2016-01-10','YYYY-MM-DD'), TO_DATE('2021-01-12','YYYY-MM-DD'), '€34,39','F');
+insert into Sportgeraete values('SG_031','Fitnessmatte', 'Reebok','811304171-0',TO_DATE('2016-09-27','YYYY-MM-DD'),TO_DATE('2020-09-27','YYYY-MM-DD') , '€399,98', 'F');
+insert into Sportgeraete values('SG_032','Fitnessmatte', 'Reebok','8113041724-0',TO_DATE('2016-09-27','YYYY-MM-DD'), TO_DATE('2020-09-27','YYYY-MM-DD'), '€399,98','F');
+insert into Sportgeraete values('SG_033','Fitnessmatte', 'Reebok','81130417963-0',TO_DATE('2016-09-27','YYYY-MM-DD'),TO_DATE('2020-09-27','YYYY-MM-DD') , '€399,98','F');
+insert into Sportgeraete values('SG_034','Butterfly', 'Stages', '932074453-X',TO_DATE('2015-05-31','YYYY-MM-DD'), TO_DATE('2021-04-28','YYYY-MM-DD'), '€476,83','F');
+insert into Sportgeraete values('SG_035','Beinbeuger', 'Stages', '93207445234-X',TO_DATE('2015-05-31','YYYY-MM-DD'),TO_DATE('2021-04-28','YYYY-MM-DD'), '€476,83','F');
+insert into Sportgeraete values('SG_036','Latismuszug', 'Balanced-Body', '396263007-4',TO_DATE('2020-03-03','YYYY-MM-DD'), TO_DATE('2020-10-29','YYYY-MM-DD'), '€490,80', 'T');
+insert into Sportgeraete values('SG_037','Beinstrecker', 'Balanced-Body', '3962630588-4',TO_DATE('2020-03-03','YYYY-MM-DD'), TO_DATE('2020-10-29','YYYY-MM-DD'), '€490,80','F');
+insert into Sportgeraete values('SG_038','Schraegbank', 'Stages', '61518093005-0',TO_DATE(,'2019-09-25''YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€236,60','F');
+insert into Sportgeraete values('SG_039','Schraegbank', 'Stages', '615180930-0',TO_DATE('2019-09-25','YYYY-MM-DD'), TO_DATE('2020-08-11','YYYY-MM-DD'), '€336,60','F');
+insert into Sportgeraete values('SG_040','Rudermaschine', 'Balanced-Body','078809144-1',TO_DATE('2016-04-20','YYYY-MM-DD'), TO_DATE('2021-02-15','YYYY-MM-DD'), '€364,31','F');
+insert into Sportgeraete values('SG_041','Abduktionsmaschine', 'Balanced-Body','078809143-1',TO_DATE('2016-04-20','YYYY-MM-DD'), TO_DATE('2021-02-15','YYYY-MM-DD'), '€365,31', 'T');
+insert into Sportgeraete values('SG_042','Adduktionsmaschine', 'Balanced-Body', '078809145-1',TO_DATE('2016-04-20','YYYY-MM-DD'), TO_DATE('2021-02-15','YYYY-MM-DD'), '€378,31', 'T');
 
-('742735785-X', '2/8/2021', '3/3/2021', '8/15/2020');
-('663053155-8', '5/17/2021', '5/29/2021', '4/4/2021');
-('210999168-2', '9/20/2020', '3/23/2021', '2/18/2021');
-('374455454-6', '12/13/2020', '6/13/2021', '12/21/2020');
-('016260692-3', '4/29/2021', '9/23/2020', '10/28/2020');
-('314255292-8', '3/8/2021', '7/23/2020', '2/21/2021');
-('552930938-0', '9/18/2020', '11/15/2020', '5/2/2021');
-('442233095-0', '11/21/2020', '2/12/2021', '1/3/2021');
-('853798453-1', '8/5/2020', '2/3/2021', '1/6/2021');
-('471034025-0', '2/8/2021', '9/2/2020', '11/2/2020');
-('812701031-6', '2/4/2021', '10/25/2020', '4/8/2021');
-('746206818-4', '11/14/2020', '6/11/2021', '3/1/2021');
-('859856964-X', '3/24/2021', '2/7/2021', '12/14/2020');
-('523936375-7', '9/18/2020', '1/11/2021', '10/9/2020');
-('811304171-0', '8/22/2020', '5/14/2021', '9/2/2020');
-('932074453-X', '6/24/2021', '10/7/2020', '1/20/2021');
-('396263007-4', '3/17/2021', '5/18/2021', '9/18/2020');
-('615180930-0', '2/9/2021', '9/2/2020', '4/29/2021');
-('001506621-5', '11/21/2020', '1/14/2021', '12/25/2020');
-('758115842-X', '7/11/2020', '2/5/2021', '11/8/2020');
-('825349446-7', '10/26/2020', '10/3/2020', '4/30/2021');
-('542151925-2', '3/25/2021', '8/16/2020', '9/1/2020');
-('078817561-0', '6/14/2021', '1/22/2021', '5/5/2021');
-('390461963-2', '1/26/2021', '11/21/2020', '11/13/2020');
-('699843581-9', '11/26/2020', '11/25/2020', '11/16/2020');
-('199628774-5', '5/4/2021', '5/27/2021', '2/12/2021');
-('078809144-1', '3/3/2021', '4/13/2021', '12/9/2020');
-('721500420-1', '3/14/2021', '9/6/2020', '1/15/2021');
-('836415635-7', '4/4/2021', '6/20/2021', '7/25/2020');
-('982506283-5', '8/25/2020', '6/20/2021', '10/31/2020');

@@ -36,24 +36,24 @@ INSERT INTO TRAININGSEINHEITEN VALUES ('TE_31', 'New Zealand Sign Language', 20,
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_32', 'Burmese', 26, 'Multi-layered empowering toolset', 'te_75', 'te_41', 'sg_608');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_33', 'German', 18, 'Programmable hybrid service-desk', 'te_61', 'te_96', 'sg_824');
 
-3x stepper
-3x laufband
-3x fahrrad
-3x crosstrainer
-2x Hantelbank
-2x Schraegbank
-2x SZ-Stange
-1x Brustpresse
-1x Beinpresse
-3x Fitnessmatte
-1x Schulterpresse
-1x Bauchpresse
-2x Kabelturm
-2x Rückenstrecker
-1x Beinbeuger
-1x Beinstrecker
-1x Butterfly
-1x Abduktionsmaschine
-1x Adduktionsmaschine
-1x Latismuszug
-1x Rudermaschine
+3x stepper -
+3x laufband-
+3x fahrrad-
+3x crosstrainer-
+2x Hantelbank-
+2x Schraegbank-
+2x SZ-Stange-
+1x Brustpresse-
+1x Beinpresse-
+3x Fitnessmatte-
+1x Schulterpresse-
+1x Bauchpresse-
+2x Kabelturm-
+2x Rückenstrecker-
+1x Beinbeuger-
+1x Beinstrecker-
+1x Butterfly-
+1x Abduktionsmaschine-
+1x Adduktionsmaschine-
+1x Latismuszug-
+1x Rudermaschine-
