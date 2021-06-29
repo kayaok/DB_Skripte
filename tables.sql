@@ -4,7 +4,7 @@
 
 CREATE TABLE kunden
 (
-    kunde_id              CHAR
+    kunde_id              CHAR(5) --k_000
         CONSTRAINT kunde_id_nn NOT NULL,
     name              VARCHAR(40)
         CONSTRAINT kunde_name_nn NOT NULL,
@@ -32,9 +32,9 @@ CREATE TABLE kunden
         CONSTRAINT kunde_bic_nn NOT NULL,
     kk_nummer                   NUMBER
         CONSTRAINT kunde_kk_nummer_nn NOT NULL,
-    kundenkarte_id        NUMBER,
-    krankenkasse_id       NUMBER,
-    trainer_id            NUMBER
+    kundenkarte_id        CHAR(6),
+    krankenkasse_id       CHAR(5),
+    trainer_id            CHAR(4)
 );
 
 CREATE UNIQUE INDEX kunde_id_pk ON
@@ -53,7 +53,7 @@ ALTER TABLE kunden
 
 CREATE TABLE krankenkassen
 (
-    krankenkasse_id          CHAR
+    krankenkasse_id          CHAR(5) --kk_00
         CONSTRAINT krankenkasse_id_nn NOT NULL,
     name                     VARCHAR(30)
         CONSTRAINT krankenkasse_name_nn NOT NULL,
@@ -85,7 +85,7 @@ ALTER TABLE krankenkassen
 
 CREATE TABLE kundenkarten
 (
-    kundenkarte_id  CHAR
+    kundenkarte_id  CHAR(6) --cc_000
         CONSTRAINT kundenkarte_id_nn NOT NULL,
     bonuspunkte     NUMBER
         CONSTRAINT kundenkarte_bonuspunkte_nn NOT NULL,
@@ -109,11 +109,11 @@ ALTER TABLE kundenkarten
 
 CREATE TABLE buchungsverlauf
 (
-    buchungsverlauf_id  CHAR
+    buchungsverlauf_id  CHAR(7) --bv_0000
         CONSTRAINT buchungsverlauf_id_nn NOT NULL,
     zeitpunkt DATE
         CONSTRAINT buchungsverlauf_zeitpunkt_nn NOT NULL,
-    kundenkarte_id NUMBER
+    kundenkarte_id CHAR(6)
 );
 
 CREATE UNIQUE INDEX bunchungsverlauf_id_pk ON
@@ -132,7 +132,7 @@ ALTER TABLE buchungsverlauf
 
 CREATE TABLE kundenvertraege
 (
-    kundenvertrag_id CHAR
+    kundenvertrag_id CHAR(6) --kv_000
         CONSTRAINT kundenvertrag_id_nn NOT NULL,
     vertragsart      VARCHAR(20)
         CONSTRAINT kundenvertrag_vertragsart_nn NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE kundenvertraege
         CONSTRAINT kundenvertrag_beitrag_nn NOT NULL,
     zusatz_gebuehren DECIMAL(4, 2)
         CONSTRAINT kundenvertrag_zg_nn NOT NULL,
-    kunde_id         NUMBER
+    kunde_id         CHAR(5)
 );
 
 CREATE UNIQUE INDEX kundenvertrag_id_pk ON
@@ -163,7 +163,7 @@ ALTER TABLE kundenvertraege
 
 CREATE TABLE mitarbeiter
 (
-    mitarbeiter_id        CHAR
+    mitarbeiter_id        CHAR(4) --m_00
         CONSTRAINT mitarbeiter_id_nn NOT NULL,
     name               VARCHAR(20)
         CONSTRAINT mitarbeiter_name_nn NOT NULL,
@@ -208,11 +208,11 @@ ALTER TABLE mitarbeiter
 
 CREATE TABLE trainer
 (
-    trainer_id     CHAR
+    trainer_id     CHAR(4) -- t_00
         CONSTRAINT trainer_id_nn NOT NULL,
     trainer_lizenz CHAR
         CONSTRAINT trainer_lizenz_nn NOT NULL,
-    mitarbeiter_id NUMBER
+    mitarbeiter_id CHAR(4)
 );
 
 CREATE UNIQUE INDEX trainer_id_pk ON
@@ -231,7 +231,7 @@ ALTER TABLE trainer
 
 CREATE TABLE arbeitseinteilung
 (
-    arbeitseinteilung_id CHAR
+    arbeitseinteilung_id CHAR(6) --ae_000
         CONSTRAINT ae_id_nn NOT NULL,
     beginn               TIMESTAMP
         CONSTRAINT ae_beginn_nn NOT NULL,
@@ -257,7 +257,7 @@ ALTER TABLE arbeitseinteilung
 
 CREATE TABLE arbeitsvertraege
 (
-    arbeitsvertrag_id CHAR
+    arbeitsvertrag_id CHAR(5) --av_00
         CONSTRAINT arbeitsvertrag_id_nn NOT NULL,
     vertragslaufzeit  NUMBER
         CONSTRAINT arbeitsvertrag_laufzeit_nn NOT NULL,
@@ -286,7 +286,7 @@ ALTER TABLE arbeitsvertraege
 
 CREATE TABLE kurse
 (
-    kurs_id    CHAR
+    kurs_id    CHAR(6) -- krs_00
         CONSTRAINT kurs_id_nn NOT NULL,
     name       varchar(20)
         CONSTRAINT kurs_name_nn NOT NULL,
@@ -314,13 +314,13 @@ ALTER TABLE kurse
 
 CREATE TABLE individualplaene
 (
-    individualplan_id     CHAR
+    individualplan_id     CHAR(7) --ivp_000
         CONSTRAINT individualplan_id_nn NOT NULL,
     beginn                DATE
         CONSTRAINT individualplan_beginn_nn NOT NULL,
     tatsaechlicher_beginn DATE,
     ende                  DATE,
-    trainingsplan_id      NUMBER
+    trainingsplan_id      CHAR(6)
 );
 
 CREATE UNIQUE INDEX individualplan_id_pk ON
@@ -341,7 +341,7 @@ ALTER TABLE individualplaene
 
 CREATE TABLE durchfuehrungen
 (
-    durchfuehrung_id    CHAR
+    durchfuehrung_id    CHAR(7) --drf_000
         CONSTRAINT durchfuehrung_id_nn NOT NULL,
     intensitaet         NUMBER
         CONSTRAINT intensitaet_nn NOT NULL,
@@ -353,7 +353,7 @@ CREATE TABLE durchfuehrungen
         CONSTRAINT pausen_nn NOT NULL,
     nummer              NUMBER
         CONSTRAINT nummer_nn NOT NULL,
-    trainingseinheit_id NUMBER
+    trainingseinheit_id CHAR(5)
 );
 
 CREATE UNIQUE INDEX durchfuehrung_id_pk ON
@@ -372,7 +372,7 @@ ALTER TABLE durchfuehrungen
 
 CREATE TABLE trainingsplaene
 (
-    trainingsplan_id  CHAR
+    trainingsplan_id  CHAR(6) --trp_00
         CONSTRAINT trainingsplan_id_nn NOT NULL,
     name              VARCHAR(20)
         CONSTRAINT trainingsplan_name_nn NOT NULL,
@@ -398,7 +398,7 @@ ALTER TABLE trainingsplaene
 
 CREATE TABLE trainingseinheiten
 (
-    trainingseinheit_id CHAR
+    trainingseinheit_id CHAR(5) --te_00
         CONSTRAINT trainingseinheit_id_nn NOT NULL,
     name                varchar(20)
         CONSTRAINT name_nn NOT NULL,
@@ -407,7 +407,7 @@ CREATE TABLE trainingseinheiten
     empfohleneTage      NUMBER
         CONSTRAINT trainingseinheit_et_nn NOT NULL,
     hinweise            varchar(300),
-    sportgeraet_id      NUMBER
+    sportgeraet_id      CHAR(6)
 );
 
 CREATE UNIQUE INDEX trainingseinheit_id_pk ON
@@ -426,7 +426,7 @@ ALTER TABLE trainingseinheiten
 
 CREATE TABLE sportgeraete
 (
-    sportgeraet_id     CHAR
+    sportgeraet_id     CHAR(6) -- sg_000
         CONSTRAINT sportgeraet_id_nn NOT NULL,
     name               VARCHAR(30)
         CONSTRAINT sportgeraet_name_nn NOT NULL,
@@ -461,7 +461,7 @@ ALTER TABLE sportgeraete
 
 CREATE TABLE kategorien
 (
-    kategorie_id CHAR
+    kategorie_id CHAR(6) --kat_00
         CONSTRAINT kategorie_id_nn NOT NULL,
     bezeichnung  VARCHAR(30)
         CONSTRAINT kategorie_bezeichnung_nn NOT NULL,
@@ -484,7 +484,7 @@ ALTER TABLE kategorien
 
 CREATE TABLE indi_durchfuehrungen
 (
-    indi_durchfuehrung_id CHAR
+    indi_durchfuehrung_id CHAR(9) --idrf_0000
         CONSTRAINT indi_durchfuehrung_id_nn NOT NULL,
     indi_intensitaet      NUMBER
         CONSTRAINT indi_intensitaet_nn NOT NULL,
@@ -514,7 +514,7 @@ ALTER TABLE indi_durchfuehrungen
 
 CREATE TABLE indi_trainingseinheit
 (
-    indi_trainingseinheit_id CHAR
+    indi_trainingseinheit_id CHAR(8) --ite_0000
         CONSTRAINT indi_trainingseinheit_id_nn NOT NULL,
     indi_trainingsdauer      NUMBER
         CONSTRAINT indi_trainingsdauer_nn NOT NULL,
