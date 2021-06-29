@@ -103,10 +103,10 @@ ALTER TABLE kundenkarten
         );
 
 --------------------------------------------------------------------------
--- Create Table Buchungsverlauf
+-- Create Table Buchungsverlaeufe
 --------------------------------------------------------------------------
 
-CREATE TABLE buchungsverlauf
+CREATE TABLE buchungsverlaeufe
 (
     buchungsverlauf_id CHAR(7) --bv_0000
         CONSTRAINT buchungsverlauf_id_nn NOT NULL,
@@ -118,11 +118,11 @@ CREATE TABLE buchungsverlauf
 );
 
 CREATE UNIQUE INDEX bunchungsverlauf_id_pk ON
-    buchungsverlauf (
+    buchungsverlaeufe (
                      buchungsverlauf_id
         );
 
-ALTER TABLE buchungsverlauf
+ALTER TABLE buchungsverlaeufe
     ADD (
         CONSTRAINT buchungsverlauf_id_pk PRIMARY KEY (buchungsverlauf_id)
         );
@@ -605,7 +605,7 @@ ALTER TABLE durchfuehrungen
             REFERENCES trainingseinheiten (trainingseinheit_id)
         );
 
-ALTER TABLE buchungsverlauf
+ALTER TABLE buchungsverlaeufe
     ADD (CONSTRAINT bv_kundenkarte_fk
         FOREIGN KEY (kundenkarte_id)
             REFERENCES kundenkarten (kundenkarte_id)
