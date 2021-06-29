@@ -26,7 +26,7 @@ CREATE TABLE kunden
         CONSTRAINT kunde_kontonummer_nn NOT NULL,
     bank                  VARCHAR(50)
         CONSTRAINT kunde_bank_nn NOT NULL,
-    iban                  VARCHAR(20)
+    iban                  VARCHAR(40)
         CONSTRAINT kunde_iban_nn NOT NULL,
     bic                   VARCHAR(15)
         CONSTRAINT kunde_bic_nn NOT NULL,
