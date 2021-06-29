@@ -258,15 +258,11 @@ CREATE TABLE arbeitsvertraege
 (
     arbeitsvertrag_id CHAR(5) --av_00
         CONSTRAINT arbeitsvertrag_id_nn NOT NULL,
-    vertragslaufzeit  NUMBER
-        CONSTRAINT arbeitsvertrag_laufzeit_nn NOT NULL,
     gehalt            DECIMAL(9, 2)
         CONSTRAINT gehalt_nn NOT NULL,
     position          varchar(15),
     arbeitszeit       NUMBER
         CONSTRAINT arbeitszeit_nn NOT NULL
-
-
 );
 
 CREATE UNIQUE INDEX arbeitsvertrag_id_pk ON
