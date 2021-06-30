@@ -494,7 +494,11 @@ CREATE TABLE indi_durchfuehrungen
     indi_pausen           NUMBER
         CONSTRAINT indi_pausen_nn NOT NULL,
     datum                 DATE
-        CONSTRAINT indi_datum_nn NOT NULL
+        CONSTRAINT indi_datum_nn NOT NULL,
+    individualplan_id CHAR(7)
+        CONSTRAINT individualplan_id_nn NOT NULL,
+    trainingseinheit_id CHAR(5)
+        CONSTRAINT trainingseinheit_id_nn NOT NULL
 );
 
 CREATE UNIQUE INDEX indi_durchfuehrung_id_pk ON
@@ -637,6 +641,14 @@ ALTER TABLE vorausetzungen
                  REFERENCES trainingseinheiten (trainingseinheit_id)
         );
 
+ALTER TABLE indi_durchfuehrungen
+    ADD (CONSTRAINT id_ip_fk
+            FOREIGN KEY (individualplan_id)
+                REFERENCES individualplaene (individualplan_id),
+        CONSTRAINT id_te_fk
+            FOREIGN KEY (trainingseinheit_id)
+                REFERENCES trainingseinheiten(trainingseinheit_id)
+        );
 --------------------------------------------------------------------------
 -- ADD foreign keys to many-many relations
 --------------------------------------------------------------------------
