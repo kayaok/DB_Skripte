@@ -178,6 +178,7 @@ ORDER BY percentage DESC;
 ------------------------------------------------------------------------------------------------------------------------
 -- 11. liste alle kunden auf, die im märz das studio besucht haben sowie die häufigkeit in absteigender reihenfolge
 ------------------------------------------------------------------------------------------------------------------------
+
 create view AnzahlBesuche as
 select STATUS, KUNDE_ID, NACHNAME
 from BUCHUNGSVERLAEUFE bv join KUNDEN k on bv.KUNDENKARTE_ID = k.KUNDENKARTE_ID
