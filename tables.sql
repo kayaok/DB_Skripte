@@ -313,8 +313,6 @@ CREATE TABLE individualplaene
         CONSTRAINT individualplan_id_nn NOT NULL,
     beginn            DATE
         CONSTRAINT individualplan_beginn_nn NOT NULL,
-    dauer             NUMBER
-        CONSTRAINT individualplan_dauer_nn NOT NULL,
     ende              DATE
         CONSTRAINT individualplan_ende_nn NOT NULL,
     trainingsplan_id  CHAR(5),
