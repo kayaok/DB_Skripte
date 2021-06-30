@@ -237,3 +237,5 @@ FROM leitet_kurs lk
          JOIN ist_teilnehmer it ON lk.kurs_id = it.kurs_id
 GROUP BY trainer_id
 ORDER BY kunden DESC;
+
+COMMIT;
