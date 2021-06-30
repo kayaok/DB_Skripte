@@ -69,8 +69,7 @@ ORDER BY percentage desc;
 select KUNDE_ID, count(KUNDE_ID) as anzahlBesuche
 from AnzahlBesuche
 group by KUNDE_ID
-order by anzahlBesuche desc
-fetch first 3 rows only;
+order by anzahlBesuche desc;
 
 -- 13.Erstelle ein Ranking mit zehn Kunden, die die meisten Bonuspunkten haben
 select BONUSPUNKTE, vorname, NACHNAME
