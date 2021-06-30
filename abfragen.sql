@@ -9,6 +9,11 @@ Select DATUM, ind.TRAININGSEINHEIT_ID, tre.TRAININGSEINHEIT_ID, SPORTGERAET_ID f
 INNER JOIN  TRAININGSEINHEITEN tre ON ind.TRAININGSEINHEIT_ID = tre.TRAININGSEINHEIT_ID
 where ind.DATUM BETWEEN TO_DATE('2021-06-28', 'YYYY-MM-DD') AND TO_DATE('2021-07-04', 'YYYY-MM-DD');
 select SPORTGERAET, count(SPORTGERAET) as count from WOCHE_SPORTI group by SPORTGERAET order by count desc;
+-- 3. An welchen Tagen sind die meisten Trainierenden im Studio?
+SELECT EXTRACT(DAY FROM ZEITPUNKT) "Tag",
+       COUNT(*) "Besucher"
+FROM BUCHUNGSVERLAEUFE
+GROUP BY EXTRACT(DAY FROM ZEITPUNKT);
 
 -- 5. Gab es nach Schnupperkursen mehr Neuanmeldungen als davor?
 Create View anmeldungen_n_schnupper as
