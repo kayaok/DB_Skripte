@@ -22,6 +22,25 @@ where k.NAME = 'Schnupperkurs' AND kv.VERTRAGSBEGINN < k.ENDE;
 SELECT vs.VERTRAGSABSCHLUESSE as vor_schnupperkurs, ns.VERTRAGSABSCHLUESSE as nach_schnupperkurs
 from ANMELDUNGEN_N_SCHNUPPER nS, ANMELDUNGEN_V_SCHNUPPER vS;
 
+--10.Wie ist die Verteilung der Kundennach PLZ-Region pro Jahr?
+SELECT PLZ, COUNT(PLZ)/SUM(COUNT(PLZ)) OVER() AS percentage
+FROM KUNDEN k join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
+where extract(year from VERTRAGSBEGINN)=2019
+GROUP BY PLZ
+ORDER BY percentage desc;
+
+SELECT PLZ, COUNT(PLZ)/SUM(COUNT(PLZ)) OVER() AS percentage
+FROM KUNDEN k join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
+where VERTRAGSBEGINN BETWEEN TO_DATE('01/01/2019', 'DD/MM/YYYY') AND TO_DATE('31/12/2020', 'DD/MM/YYYY')
+GROUP BY PLZ
+ORDER BY percentage desc;
+
+SELECT PLZ, COUNT(PLZ)/SUM(COUNT(PLZ)) OVER() AS percentage
+FROM KUNDEN k join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
+where VERTRAGSBEGINN BETWEEN TO_DATE('01/01/2019', 'DD/MM/YYYY') AND TO_DATE('31/12/2021', 'DD/MM/YYYY')
+GROUP BY PLZ
+ORDER BY percentage desc;
+
 --11.Welche Kunden haben das Studio im Monat März am meisten besucht?
 select KUNDE_ID, count(KUNDE_ID) as anzahlBesuche
 from AnzahlBesuche
