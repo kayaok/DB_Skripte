@@ -1,175 +1,233 @@
--- 1. Prozentuales  Verhältnis  der  verschiedenen  Verträge  pro  Jahr (Basic, All Inclusive, Reha-Sport  & Schüler/Student)
-SELECT VERTRAGSART, COUNT(VERTRAGSART) AS count, COUNT(VERTRAGSART) / SUM(COUNT(VERTRAGSART)) OVER () AS percentage
-FROM KUNDENVERTRAEGE
-GROUP BY VERTRAGSART
-ORDER BY percentage desc;
--- 2. Welches Sportgerät erfährt die größte Auslastung in der Woche?
-CREATE OR REPLACE VIEW woche_sporti (datum, trainingseinheit_tre, trainingseinheit_ind, sportgeraet) as
-Select DATUM, ind.TRAININGSEINHEIT_ID, tre.TRAININGSEINHEIT_ID, SPORTGERAET_ID
-from INDI_DURCHFUEHRUNGEN ind
-         INNER JOIN TRAININGSEINHEITEN tre ON ind.TRAININGSEINHEIT_ID = tre.TRAININGSEINHEIT_ID
-where ind.DATUM BETWEEN TO_DATE('2021-06-28', 'YYYY-MM-DD') AND TO_DATE('2021-07-04', 'YYYY-MM-DD');
-select SPORTGERAET, count(SPORTGERAET) as count
-from WOCHE_SPORTI
-group by SPORTGERAET
-order by count desc;
--- 3. An welchen Tagen sind die meisten Trainierenden im Studio?
-SELECT EXTRACT(DAY FROM ZEITPUNKT) "Tag",
-       COUNT(*)                    "Besucher"
-FROM BUCHUNGSVERLAEUFE
-GROUP BY EXTRACT(DAY FROM ZEITPUNKT);
--- 4.
-CREATE VIEW muskelgruppe_mvp as
-SELECT KATEGORIEN.MUSKELGRUPPE,SPORTGERAETE.SPORTGERAET_ID, COUNT(*) as count FROM TRAININGSEINHEITEN
-   JOIN IST_DEFINIERT_DURCH
-        ON IST_DEFINIERT_DURCH.TRAININGSEINHEIT_ID = TRAININGSEINHEITEN.TRAININGSEINHEIT_ID
-   JOIN KATEGORIEN
-        ON KATEGORIEN.KATEGORIE_ID = IST_DEFINIERT_DURCH.KATEGORIE_ID
-   JOIN SPORTGERAETE
-        ON SPORTGERAETE.SPORTGERAET_ID = TRAININGSEINHEITEN.SPORTGERAET_ID
-GROUP BY MUSKELGRUPPE,SPORTGERAETE.SPORTGERAET_ID
+------------------------------------------------------------------------------------------------------------------------
+-- Authors      Irem Belik, Till Greiffert, Okan Kaya
+-- Created      30.06.2021
+-- Purpose      creates all views needed for the fitnessstudio database
+------------------------------------------------------------------------------------------------------------------------
 
--- 5. Gab es nach Schnupperkursen mehr Neuanmeldungen als davor?
-Create View anmeldungen_n_schnupper as
-Select COUNT(kv.VERTRAGSBEGINN) as Vertragsabschluesse
-From Kurse k,
-     IST_TEILNEHMER it
-         JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUNDE_ID
-where k.NAME = 'Schnupperkurs'
-  AND kv.VERTRAGSBEGINN > k.ENDE;
-Create View anmeldungen_v_schnupper as
-Select COUNT(kv.VERTRAGSBEGINN) as Vertragsabschluesse
-From Kurse k,
-     IST_TEILNEHMER it
-         JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUNDE_ID
-where k.NAME = 'Schnupperkurs'
-  AND kv.VERTRAGSBEGINN < k.ENDE;
-SELECT vs.VERTRAGSABSCHLUESSE as vor_schnupperkurs, ns.VERTRAGSABSCHLUESSE as nach_schnupperkurs
-from ANMELDUNGEN_N_SCHNUPPER nS,
-     ANMELDUNGEN_V_SCHNUPPER vS;
---6. Wie ist die durchschnittliche Belegung der Kurse pro Monat pro Thema der Kurse?
-CREATE VIEW monatskurs as
-SELECT EXTRACT(MONTH FROM BEGINN) "Monat", KURSE.NAME
+------------------------------------------------------------------------------------------------------------------------
+-- 1. prozentuales  verhältnis  der  verschiedenen  verträge  pro  jahr (basic, all inclusive, reha-sport  & schüler/student)
+------------------------------------------------------------------------------------------------------------------------
 
-FROM KUNDEN
-         left join IST_TEILNEHMER
-                   ON KUNDEN.KUNDE_ID = IST_TEILNEHMER.KUNDE_ID
-         left join KURSE
-                   ON KURSE.KURS_ID = IST_TEILNEHMER.KURS_ID;
-SELECT COUNT(NAME) "Anzahl", "Monat", NAME
-FROM MONATSKURS
-where name is not null
-group by "Monat", NAME;
---7.Wie ist das Verhältnis von Stammkunden (≥12 Monate Laufzeit) zu Gelegenheitskunden (6 Monate Laufzeit) jeweils nach Geschlecht?
-Create View stammkundenVerhaeltnis as
-select GESCHLECHT, COUNT(GESCHLECHT) / SUM(COUNT(GESCHLECHT)) OVER () AS percentage
-from KUNDEN k
-         join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
-where VERTRAGSLAUFZEIT >= '12'
-GROUP BY GESCHLECHT
-ORDER BY percentage desc;
+SELECT vertragsart, COUNT(vertragsart) AS COUNT, COUNT(vertragsart) / SUM(COUNT(vertragsart)) over () AS percentage
+FROM kundenvertraege
+GROUP BY vertragsart
+ORDER BY percentage DESC;
 
-Create View gelegenheitskundenVerhaeltnis as
-select GESCHLECHT, COUNT(GESCHLECHT) / SUM(COUNT(GESCHLECHT)) OVER () AS percentage
-from KUNDEN k
-         join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
-where VERTRAGSLAUFZEIT = '6'
-GROUP BY GESCHLECHT
-ORDER BY percentage desc;
+------------------------------------------------------------------------------------------------------------------------
+-- 2. welches sportgerät erfährt die größte auslastung in der woche?
+------------------------------------------------------------------------------------------------------------------------
 
-SELECT gelegenheitskunden.GESCHLECHT,
-       gelegenheitskunden.percentage as gelegenheitskunden,
-       stammkunden.GESCHLECHT,
-       stammkunden.percentage        as stammkunden
-from gelegenheitskundenVerhaeltnis gelegenheitskunden,
-     stammkundenVerhaeltnis stammkunden;
--- 8. Wie ist die Trainingsintensität in Stunden pro Altersgruppe?
-CREATE VIEW altersspanne as
-SELECT TRUNC((CURRENT_DATE - Ku.GEBURTSDATUM) / 365) as age, TRAININGSDAUER
-FROM KUNDEN Ku
-         LEFT JOIN INDIVIDUALPLAENE Indv
-                   ON Ku.Kunde_ID = Indv.Kunde_ID
-         LEFT JOIN INDI_DURCHFUEHRUNGEN Idurch
-                   ON Idurch.INDIVIDUALPLAN_ID = Indv.INDIVIDUALPLAN_ID
-         LEFT JOIN TRAININGSEINHEITEN Train
-                   ON Train.TRAININGSEINHEIT_ID = Idurch.TRAININGSEINHEIT_ID;
-SELECT TRUNC(SUM(TRAININGSDAUER) / 60) as "Trainingsdauer in S.", "AGE"
-from ALTERSSPANNE
-group by "AGE";
+CREATE OR REPLACE VIEW woche_sporti (datum, trainingseinheit_tre, trainingseinheit_ind, sportgeraet) AS
+SELECT datum, ind.trainingseinheit_id, tre.trainingseinheit_id, sportgeraet_id
+FROM indi_durchfuehrungen ind
+         INNER JOIN trainingseinheiten tre ON ind.trainingseinheit_id = tre.trainingseinheit_id
+WHERE ind.datum BETWEEN to_date('2021-06-28', 'yyyy-mm-dd') AND to_date('2021-07-04', 'yyyy-mm-dd');
+SELECT sportgeraet, COUNT(sportgeraet) AS COUNT
+FROM woche_sporti
+GROUP BY sportgeraet
+ORDER BY COUNT DESC;
 
--- 9. Anteil der Trainingsstunden von Kunden, die eine Reha-Therapie erhalten?
-SELECT TRUNC(SUM(Trainingsdauer) / 60)
-FROM KUNDEN Ku
-         LEFT JOIN INDIVIDUALPLAENE Indv
-                   ON Ku.Kunde_ID = Indv.Kunde_ID
-         LEFT JOIN INDI_DURCHFUEHRUNGEN Idurch
-                   ON Idurch.INDIVIDUALPLAN_ID = Indv.INDIVIDUALPLAN_ID
-         LEFT JOIN TRAININGSEINHEITEN Train
-                   ON Train.TRAININGSEINHEIT_ID = Idurch.TRAININGSEINHEIT_ID
-         LEFT JOIN KUNDENVERTRAEGE Kuv
-                   ON Kuv.Kunde_ID = Ku.Kunde_ID
-WHERE Kuv.VERTRAGSART = 'Reha-Sport'
+------------------------------------------------------------------------------------------------------------------------
+-- 3. an welchen tagen sind die meisten trainierenden im studio?
+------------------------------------------------------------------------------------------------------------------------
 
+SELECT extract(DAY FROM zeitpunkt) "tag",
+       COUNT(*)                    "besucher"
+FROM buchungsverlaeufe
+GROUP BY extract(DAY FROM zeitpunkt);
 
--- 10. Wie ist die Verteilung der Kunden nach PLZ-Region pro Jahr?
-SELECT PLZ, COUNT(PLZ) / SUM(COUNT(PLZ)) OVER () AS percentage
-FROM KUNDEN k
-         join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
-where extract(year from VERTRAGSBEGINN) = 2019
-GROUP BY PLZ
-ORDER BY percentage desc;
+------------------------------------------------------------------------------------------------------------------------
+-- 4. Anforderung Data Table
+------------------------------------------------------------------------------------------------------------------------
 
-SELECT PLZ, COUNT(PLZ) / SUM(COUNT(PLZ)) OVER () AS percentage
-FROM KUNDEN k
-         join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
-where VERTRAGSBEGINN BETWEEN TO_DATE('01/01/2019', 'DD/MM/YYYY') AND TO_DATE('31/12/2020', 'DD/MM/YYYY')
-GROUP BY PLZ
-ORDER BY percentage desc;
+CREATE OR REPLACE VIEW muskelgruppe_mvp AS
+SELECT kategorien.muskelgruppe,sportgeraete.sportgeraet_id, COUNT(*) AS COUNT FROM trainingseinheiten
+   JOIN ist_definiert_durch
+        ON ist_definiert_durch.trainingseinheit_id = trainingseinheiten.trainingseinheit_id
+   JOIN kategorien
+        ON kategorien.kategorie_id = ist_definiert_durch.kategorie_id
+   JOIN sportgeraete
+        ON sportgeraete.sportgeraet_id = trainingseinheiten.sportgeraet_id
+GROUP BY muskelgruppe,sportgeraete.sportgeraet_id
 
-SELECT PLZ, COUNT(PLZ) / SUM(COUNT(PLZ)) OVER () AS percentage
-FROM KUNDEN k
-         join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
-where VERTRAGSBEGINN BETWEEN TO_DATE('01/01/2019', 'DD/MM/YYYY') AND TO_DATE('31/12/2021', 'DD/MM/YYYY')
-GROUP BY PLZ
-ORDER BY percentage desc;
+------------------------------------------------------------------------------------------------------------------------
+-- 5. gab es nach schnupperkursen mehr neuanmeldungen als davor?
+------------------------------------------------------------------------------------------------------------------------
 
---11. Liste alle Kunden auf, die im März das Studio besucht haben sowie die Häufigkeit in absteigender Reihenfolge
-select KUNDE_ID, count(KUNDE_ID) as anzahlBesuche
-from AnzahlBesuche
-group by KUNDE_ID
-order by anzahlBesuche desc;
+CREATE OR REPLACE VIEW anmeldungen_n_schnupper AS
+SELECT COUNT(kv.vertragsbeginn) AS vertragsabschluesse
+FROM kurse k,
+     ist_teilnehmer it
+         JOIN kundenvertraege kv ON it.kunde_id = kv.kunde_id
+WHERE k.name = 'schnupperkurs'
+  AND kv.vertragsbeginn > k.ende;
 
--- 12. Durchschnittliche Trainingsdauer eines Kunden pro Tag?
-CREATE VIEW drchschntt_training as
-SELECT SUM(Trainingsdauer) as sum_training, Ku.Kunde_ID, Idurch.DATUM
-FROM KUNDEN Ku
-         LEFT JOIN INDIVIDUALPLAENE Indv
-                   ON Ku.Kunde_ID = Indv.Kunde_ID
-         LEFT JOIN INDI_DURCHFUEHRUNGEN Idurch
-                   ON Idurch.INDIVIDUALPLAN_ID = Indv.INDIVIDUALPLAN_ID
-         LEFT JOIN TRAININGSEINHEITEN Train
-                   ON Train.TRAININGSEINHEIT_ID = Idurch.TRAININGSEINHEIT_ID
-         LEFT JOIN KUNDENVERTRAEGE Kuv
-                   ON Kuv.Kunde_ID = Ku.Kunde_ID
-GROUP BY Idurch.DATUM, Ku.Kunde_ID;
-SELECT  TRUNC(SUM(SUM_TRAINING)/COUNT(*))
+CREATE OR REPLACE VIEW anmeldungen_v_schnupper AS
+SELECT COUNT(kv.vertragsbeginn) AS vertragsabschluesse
+FROM kurse k,
+     ist_teilnehmer it
+         JOIN kundenvertraege kv ON it.kunde_id = kv.kunde_id
+WHERE k.name = 'schnupperkurs'
+  AND kv.vertragsbeginn < k.ende;
+SELECT vs.vertragsabschluesse AS vor_schnupperkurs, ns.vertragsabschluesse AS nach_schnupperkurs
+FROM anmeldungen_n_schnupper ns,
+     anmeldungen_v_schnupper vs;
+
+------------------------------------------------------------------------------------------------------------------------
+-- 6. wie ist die durchschnittliche belegung der kurse pro monat pro thema der kurse?
+------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE VIEW monatskurs AS
+SELECT extract(MONTH FROM beginn) "monat", kurse.name
+
+FROM kunden
+         LEFT JOIN ist_teilnehmer
+                   ON kunden.kunde_id = ist_teilnehmer.kunde_id
+         LEFT JOIN kurse
+                   ON kurse.kurs_id = ist_teilnehmer.kurs_id;
+SELECT COUNT(name) "anzahl", "monat", name
+FROM monatskurs
+WHERE name IS NOT NULL
+GROUP BY "monat", name;
+
+------------------------------------------------------------------------------------------------------------------------
+-- 7.wie ist das verhältnis vON stammkunden (≥12 monate laufzeit) zu gelegenheitskunden (6 monate laufzeit) jeweils nach geschlecht?
+------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE VIEW stammkundenverhaeltnis as
+SELECT geschlecht, COUNT(geschlecht) / SUM(COUNT(geschlecht)) over () AS percentage
+FROM kunden k
+         JOIN kundenvertraege kv ON k.kunde_id = kv.kunde_id
+WHERE vertragslaufzeit >= '12'
+GROUP BY geschlecht
+ORDER BY percentage DESC;
+
+CREATE OR REPLACE VIEW gelegenheitskundenverhaeltnis as
+SELECT geschlecht, COUNT(geschlecht) / SUM(COUNT(geschlecht)) over () AS percentage
+FROM kunden k
+         JOIN kundenvertraege kv ON k.kunde_id = kv.kunde_id
+WHERE vertragslaufzeit = '6'
+GROUP BY geschlecht
+ORDER BY percentage DESC;
+
+SELECT gelegenheitskunden.geschlecht,
+       gelegenheitskunden.percentage AS gelegenheitskunden,
+       stammkunden.geschlecht,
+       stammkunden.percentage        AS stammkunden
+FROM gelegenheitskundenverhaeltnis gelegenheitskunden,
+     stammkundenverhaeltnis stammkunden;
+
+------------------------------------------------------------------------------------------------------------------------
+-- 8. wie ist die trainingsintensität in stunden pro altersgruppe?
+------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE VIEW altersspanne as
+SELECT trunc((current_date - ku.geburtsdatum) / 365) AS "age", trainingsdauer
+FROM kunden ku
+         LEFT JOIN individualplaene indv
+                   ON ku.kunde_id = indv.kunde_id
+         LEFT JOIN indi_durchfuehrungen idurch
+                   ON idurch.individualplan_id = indv.individualplan_id
+         LEFT JOIN trainingseinheiten train
+                   ON train.trainingseinheit_id = idurch.trainingseinheit_id;
+SELECT TRUNC(SUM(trainingsdauer) / 60) AS "trainingsdauer in S.", "age"
+FROM altersspanne
+GROUP BY "age";
+
+------------------------------------------------------------------------------------------------------------------------
+-- 9. anteil der trainingsstunden von kunden, die eine reha-therapie erhalten?
+------------------------------------------------------------------------------------------------------------------------
+
+SELECT TRUNC(SUM(trainingsdauer) / 60)
+FROM kunden ku
+         LEFT JOIN individualplaene indv
+                   ON ku.kunde_id = indv.kunde_id
+         LEFT JOIN indi_durchfuehrungen idurch
+                   ON idurch.individualplan_id = indv.individualplan_id
+         LEFT JOIN trainingseinheiten train
+                   ON train.trainingseinheit_id = idurch.trainingseinheit_id
+         LEFT JOIN kundenvertraege kuv
+                   ON kuv.kunde_id = ku.kunde_id
+WHERE kuv.vertragsart = 'reha-sport'
+
+------------------------------------------------------------------------------------------------------------------------
+-- 10. wie ist die verteilung der kunden nach plz-region pro jahr?
+------------------------------------------------------------------------------------------------------------------------
+
+SELECT plz, COUNT(plz) / SUM(COUNT(plz)) over () AS percentage
+FROM kunden k
+         JOIN kundenvertraege kv ON k.kunde_id = kv.kunde_id
+WHERE extract(year FROM vertragsbeginn) = 2019
+GROUP BY plz
+ORDER BY percentage DESC;
+
+SELECT plz, COUNT(plz) / SUM(COUNT(plz)) over () AS percentage
+FROM kunden k
+         JOIN kundenvertraege kv ON k.kunde_id = kv.kunde_id
+WHERE vertragsbeginn BETWEEN to_date('01/01/2019', 'dd/mm/yyyy') and to_date('31/12/2020', 'dd/mm/yyyy')
+GROUP BY plz
+ORDER BY percentage DESC;
+
+SELECT plz, COUNT(plz) / SUM(COUNT(plz)) over () AS percentage
+FROM kunden k
+         JOIN kundenvertraege kv ON k.kunde_id = kv.kunde_id
+WHERE vertragsbeginn BETWEEN to_date('01/01/2019', 'dd/mm/yyyy') and to_date('31/12/2021', 'dd/mm/yyyy')
+GROUP BY plz
+ORDER BY percentage DESC;
+
+------------------------------------------------------------------------------------------------------------------------
+-- 11. liste alle kunden auf, die im märz das studio besucht haben sowie die häufigkeit in absteigender reihenfolge
+------------------------------------------------------------------------------------------------------------------------
+
+SELECT kunde_id, COUNT(kunde_id) AS anzahlbesuche
+FROM anzahlbesuche
+GROUP BY kunde_id
+ORDER BY anzahlbesuche DESC;
+
+------------------------------------------------------------------------------------------------------------------------
+-- 12. durchschnittliche trainingsdauer eines kunden pro tag?
+------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE VIEW drchschntt_training as
+SELECT SUM(trainingsdauer) AS SUM_training, ku.kunde_id, idurch.datum
+FROM kunden ku
+         LEFT JOIN individualplaene indv
+                   ON ku.kunde_id = indv.kunde_id
+         LEFT JOIN indi_durchfuehrungen idurch
+                   ON idurch.individualplan_id = indv.individualplan_id
+         LEFT JOIN trainingseinheiten train
+                   ON train.trainingseinheit_id = idurch.trainingseinheit_id
+         LEFT JOIN kundenvertraege kuv
+                   ON kuv.kunde_id = ku.kunde_id
+GROUP BY idurch.datum, ku.kunde_id;
+SELECT  trunc(SUM(SUM_training)/COUNT(*))
 FROM drchschntt_training;
--- 13.Erstelle ein Ranking mit zehn Kunden, die die meisten Bonuspunkten haben
-select BONUSPUNKTE, vorname, NACHNAME
-from KUNDENKARTEN kk
-         join kunden k on kk.KUNDENKARTE_ID = k.KUNDENKARTE_ID
-order by BONUSPUNKTE desc
-    fetch first 10 rows only;
 
--- 14. Welcher Mitarbeiter ist am häufigsten pro Arbeitseinteilung eingeteilt?
-select wei.MITARBEITER_ID, count(wei.MITARBEITER_ID) as anzahl
-from WIRD_EINGETEILT_IN wei
-group by MITARBEITER_ID
-order by anzahl desc;
+------------------------------------------------------------------------------------------------------------------------
+-- 13.erstelle ein ranking mit zehn kunden, die die meisten bonuspunkten haben
+------------------------------------------------------------------------------------------------------------------------
 
--- 15. Beliebteste Kurse pro Trainer?
-select lk.TRAINER_ID, COUNT(KUNDE_ID) as KUNDEN
-from LEITET_KURS lk
-         JOIN IST_TEILNEHMER it on lk.KURS_ID = it.KURS_ID
-group by TRAINER_ID
-order by KUNDEN desc;
+SELECT bonuspunkte, vorname, nachname
+FROM kundenkarten kk
+         JOIN kunden k ON kk.kundenkarte_id = k.kundenkarte_id
+ORDER BY bonuspunkte DESC
+    FETCH FIRST 10 ROWS ONLY;
+
+------------------------------------------------------------------------------------------------------------------------
+-- 14. welcher mitarbeiter ist am häufigsten pro arbeitseinteilung eingeteilt?
+------------------------------------------------------------------------------------------------------------------------
+
+SELECT wei.mitarbeiter_id, COUNT(wei.mitarbeiter_id) AS anzahl
+FROM wird_eingeteilt_in wei
+GROUP BY mitarbeiter_id
+ORDER BY anzahl DESC;
+
+------------------------------------------------------------------------------------------------------------------------
+-- 15. beliebteste kurse pro trainer?
+------------------------------------------------------------------------------------------------------------------------
+
+SELECT lk.trainer_id, COUNT(kunde_id) AS kunden
+FROM leitet_kurs lk
+         JOIN ist_teilnehmer it ON lk.kurs_id = it.kurs_id
+GROUP BY trainer_id
+ORDER BY kunden DESC;
