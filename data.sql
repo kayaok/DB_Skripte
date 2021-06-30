@@ -776,8 +776,6 @@ INSERT INTO steht_unter_vertrag VALUES ('M_09','AV_08');
 -- Populate table trainingseinheiten
 ------------------------------------------------------------------------------------------------------------------------
 
---FIXED
-
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_00', 'Biking', 20, 'Indoor Biking',                                        'SG_017');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_01', 'Brustpresse', 15, 'Training an Maschine mit x Gewicht',              'SG_004');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_02', 'Schulterpresse', 15, 'Training an Maschine mit x Gewicht',           'SG_011');
@@ -818,7 +816,6 @@ INSERT INTO TRAININGSEINHEITEN VALUES ('TE_36', 'Rueckentraining',15, 'Latismusz
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_37', 'Abduktionsmaschine', 15, 'Training an Maschine mit x Gewicht',       'SG_041');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_38', 'Adduktionsmaschine', 15, 'Training an Maschine mit x Gewicht',       'SG_042');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_39', 'Laufband', 15, 'Laufband laufen',                                       'SG_025');
-
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_40', 'Stepper', 60, 'Aerobic Stepper',        'SG_001');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_41', 'Crosstrainer', 60, 'Crosstrainer',      'SG_006');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_42', 'Fitnessmatte', 60, 'Fitnessmatte',      'SG_031');
@@ -826,7 +823,6 @@ INSERT INTO TRAININGSEINHEITEN VALUES ('TE_43', 'Faszienlockerung', 45, 'Faszien
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_44', 'Biking', 90, 'Indoor Biking',           'SG_017');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_45', 'Gymnastik', 20, 'Gymnastikball',        'SG_028');
 INSERT INTO TRAININGSEINHEITEN VALUES ('TE_46', 'Hantelstange', 20, 'Freihanteln',       'SG_012');
-
 
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table trainingsplaene
@@ -839,10 +835,59 @@ INSERT INTO trainingsplaene VALUES ('TP_04', '12-Wochen Challenge', 5, 4, 12);
 INSERT INTO trainingsplaene VALUES ('TP_05', 'Zirkeltraining', 5, 5, 12);
 
 ------------------------------------------------------------------------------------------------------------------------
--- Populate table durchfuehrungen
+-- Populate table individualplaene
 ------------------------------------------------------------------------------------------------------------------------
 
--- TODO Trainingseinheiten anpassen
+INSERT INTO individualplaene VALUES('IVP_000', TO_DATE('2021-09-08', 'YYYY-MM-DD'), TO_DATE('2021-10-22', 'YYYY-MM-DD'), 'TP_01', 'C_001');
+INSERT INTO individualplaene VALUES('IVP_001', TO_DATE('2021-02-09', 'YYYY-MM-DD'), TO_DATE('2021-05-09', 'YYYY-MM-DD'), 'TP_02', 'C_002');
+INSERT INTO individualplaene VALUES('IVP_002', TO_DATE('2021-05-04', 'YYYY-MM-DD'), TO_DATE('2021-08-04', 'YYYY-MM-DD'), 'TP_05', 'C_003');
+INSERT INTO individualplaene VALUES('IVP_003', TO_DATE('2021-11-26', 'YYYY-MM-DD'), TO_DATE('2022-02-26', 'YYYY-MM-DD'), 'TP_04', 'C_003');
+INSERT INTO individualplaene VALUES('IVP_004', TO_DATE('2021-05-01', 'YYYY-MM-DD'), TO_DATE('2021-08-01', 'YYYY-MM-DD'), 'TP_04', 'C_004');
+INSERT INTO individualplaene VALUES('IVP_005', TO_DATE('2021-10-28', 'YYYY-MM-DD'), TO_DATE('2022-01-28', 'YYYY-MM-DD'), 'TP_02', 'C_004');
+INSERT INTO individualplaene VALUES('IVP_006', TO_DATE('2021-05-24', 'YYYY-MM-DD'), TO_DATE('2021-07-07', 'YYYY-MM-DD'), 'TP_01', 'C_005');
+INSERT INTO individualplaene VALUES('IVP_007', TO_DATE('2021-02-25', 'YYYY-MM-DD'), TO_DATE('2021-05-25', 'YYYY-MM-DD'), 'TP_05', 'C_006');
+INSERT INTO individualplaene VALUES('IVP_008', TO_DATE('2021-12-02', 'YYYY-MM-DD'), TO_DATE('2022-02-02', 'YYYY-MM-DD'), 'TP_03', 'C_007');
+INSERT INTO individualplaene VALUES('IVP_009', TO_DATE('2021-07-27', 'YYYY-MM-DD'), TO_DATE('2021-09-27', 'YYYY-MM-DD'), 'TP_03', 'C_008');
+INSERT INTO individualplaene VALUES('IVP_010', TO_DATE('2021-03-11', 'YYYY-MM-DD'), TO_DATE('2021-05-11', 'YYYY-MM-DD'), 'TP_03', 'C_009');
+INSERT INTO individualplaene VALUES('IVP_011', TO_DATE('2021-09-06', 'YYYY-MM-DD'), TO_DATE('2021-12-06', 'YYYY-MM-DD'), 'TP_05', 'C_009');
+INSERT INTO individualplaene VALUES('IVP_012', TO_DATE('2021-09-23', 'YYYY-MM-DD'), TO_DATE('2021-12-23', 'YYYY-MM-DD'), 'TP_04', 'C_010');
+INSERT INTO individualplaene VALUES('IVP_013', TO_DATE('2021-02-12', 'YYYY-MM-DD'), TO_DATE('2021-04-12', 'YYYY-MM-DD'), 'TP_03', 'C_011');
+INSERT INTO individualplaene VALUES('IVP_014', TO_DATE('2021-08-15', 'YYYY-MM-DD'), TO_DATE('2021-11-15', 'YYYY-MM-DD'), 'TP_02', 'C_012');
+INSERT INTO individualplaene VALUES('IVP_015', TO_DATE('2021-08-04', 'YYYY-MM-DD'), TO_DATE('2021-11-04', 'YYYY-MM-DD'), 'TP_04', 'C_012');
+INSERT INTO individualplaene VALUES('IVP_016', TO_DATE('2021-05-03', 'YYYY-MM-DD'), TO_DATE('2021-08-03', 'YYYY-MM-DD'), 'TP_05', 'C_013');
+INSERT INTO individualplaene VALUES('IVP_017', TO_DATE('2021-04-16', 'YYYY-MM-DD'), TO_DATE('2021-07-16', 'YYYY-MM-DD'), 'TP_02', 'C_013');
+INSERT INTO individualplaene VALUES('IVP_018', TO_DATE('2021-12-05', 'YYYY-MM-DD'), TO_DATE('2022-03-05', 'YYYY-MM-DD'), 'TP_02', 'C_014');
+INSERT INTO individualplaene VALUES('IVP_019', TO_DATE('2021-02-10', 'YYYY-MM-DD'), TO_DATE('2021-05-10', 'YYYY-MM-DD'), 'TP_02', 'C_014');
+INSERT INTO individualplaene VALUES('IVP_020', TO_DATE('2021-09-02', 'YYYY-MM-DD'), TO_DATE('2021-10-16', 'YYYY-MM-DD'), 'TP_01', 'C_015');
+INSERT INTO individualplaene VALUES('IVP_021', TO_DATE('2021-01-11', 'YYYY-MM-DD'), TO_DATE('2021-04-11', 'YYYY-MM-DD'), 'TP_04', 'C_016');
+INSERT INTO individualplaene VALUES('IVP_022', TO_DATE('2021-07-02', 'YYYY-MM-DD'), TO_DATE('2021-10-02', 'YYYY-MM-DD'), 'TP_02', 'C_016');
+INSERT INTO individualplaene VALUES('IVP_023', TO_DATE('2021-09-06', 'YYYY-MM-DD'), TO_DATE('2021-10-20', 'YYYY-MM-DD'), 'TP_01', 'C_017');
+INSERT INTO individualplaene VALUES('IVP_024', TO_DATE('2021-10-26', 'YYYY-MM-DD'), TO_DATE('2022-01-26', 'YYYY-MM-DD'), 'TP_04', 'C_018');
+INSERT INTO individualplaene VALUES('IVP_025', TO_DATE('2021-10-05', 'YYYY-MM-DD'), TO_DATE('2021-11-19', 'YYYY-MM-DD'), 'TP_01', 'C_018');
+INSERT INTO individualplaene VALUES('IVP_026', TO_DATE('2021-07-04', 'YYYY-MM-DD'), TO_DATE('2021-08-18', 'YYYY-MM-DD'), 'TP_01', 'C_019');
+INSERT INTO individualplaene VALUES('IVP_027', TO_DATE('2021-04-18', 'YYYY-MM-DD'), TO_DATE('2021-06-18', 'YYYY-MM-DD'), 'TP_03', 'C_019');
+INSERT INTO individualplaene VALUES('IVP_028', TO_DATE('2021-12-16', 'YYYY-MM-DD'), TO_DATE('2022-02-16', 'YYYY-MM-DD'), 'TP_03', 'C_020');
+INSERT INTO individualplaene VALUES('IVP_029', TO_DATE('2021-08-15', 'YYYY-MM-DD'), TO_DATE('2021-10-15', 'YYYY-MM-DD'), 'TP_03', 'C_020');
+INSERT INTO individualplaene VALUES('IVP_030', TO_DATE('2021-10-19', 'YYYY-MM-DD'), TO_DATE('2021-12-02', 'YYYY-MM-DD'), 'TP_01', 'C_021');
+INSERT INTO individualplaene VALUES('IVP_031', TO_DATE('2021-07-18', 'YYYY-MM-DD'), TO_DATE('2021-10-18', 'YYYY-MM-DD'), 'TP_04', 'C_021');
+INSERT INTO individualplaene VALUES('IVP_032', TO_DATE('2021-07-11', 'YYYY-MM-DD'), TO_DATE('2021-08-25', 'YYYY-MM-DD'), 'TP_01', 'C_022');
+INSERT INTO individualplaene VALUES('IVP_033', TO_DATE('2021-10-25', 'YYYY-MM-DD'), TO_DATE('2022-01-25', 'YYYY-MM-DD'), 'TP_05', 'C_023');
+INSERT INTO individualplaene VALUES('IVP_034', TO_DATE('2021-02-03', 'YYYY-MM-DD'), TO_DATE('2021-04-03', 'YYYY-MM-DD'), 'TP_03', 'C_024');
+INSERT INTO individualplaene VALUES('IVP_035', TO_DATE('2021-02-04', 'YYYY-MM-DD'), TO_DATE('2021-05-04', 'YYYY-MM-DD'), 'TP_05', 'C_024');
+INSERT INTO individualplaene VALUES('IVP_036', TO_DATE('2021-11-28', 'YYYY-MM-DD'), TO_DATE('2022-02-28', 'YYYY-MM-DD'), 'TP_04', 'C_025');
+INSERT INTO individualplaene VALUES('IVP_037', TO_DATE('2021-01-28', 'YYYY-MM-DD'), TO_DATE('2021-04-28', 'YYYY-MM-DD'), 'TP_04', 'C_025');
+INSERT INTO individualplaene VALUES('IVP_038', TO_DATE('2021-01-10', 'YYYY-MM-DD'), TO_DATE('2021-04-10', 'YYYY-MM-DD'), 'TP_02', 'C_026');
+INSERT INTO individualplaene VALUES('IVP_039', TO_DATE('2021-10-14', 'YYYY-MM-DD'), TO_DATE('2022-01-14', 'YYYY-MM-DD'), 'TP_02', 'C_026');
+INSERT INTO individualplaene VALUES('IVP_040', TO_DATE('2021-03-30', 'YYYY-MM-DD'), TO_DATE('2021-05-30', 'YYYY-MM-DD'), 'TP_03', 'C_027');
+INSERT INTO individualplaene VALUES('IVP_041', TO_DATE('2021-04-02', 'YYYY-MM-DD'), TO_DATE('2021-07-02', 'YYYY-MM-DD'), 'TP_02', 'C_027');
+INSERT INTO individualplaene VALUES('IVP_042', TO_DATE('2021-09-09', 'YYYY-MM-DD'), TO_DATE('2021-12-09', 'YYYY-MM-DD'), 'TP_02', 'C_028');
+INSERT INTO individualplaene VALUES('IVP_043', TO_DATE('2021-09-11', 'YYYY-MM-DD'), TO_DATE('2021-12-11', 'YYYY-MM-DD'), 'TP_05', 'C_029');
+INSERT INTO individualplaene VALUES('IVP_044', TO_DATE('2021-09-29', 'YYYY-MM-DD'), TO_DATE('2021-12-29', 'YYYY-MM-DD'), 'TP_02', 'C_030');
+INSERT INTO individualplaene VALUES('IVP_045', TO_DATE('2021-04-13', 'YYYY-MM-DD'), TO_DATE('2021-05-27', 'YYYY-MM-DD'), 'TP_01', 'C_030');
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table durchfuehrungen
+------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO durchfuehrungen VALUES ('DRF_001', 6, 1, 1, 0, 1, 'TE_01', 'TP_01');
 INSERT INTO durchfuehrungen VALUES ('DRF_002', 7, 10, 2, 120, 2, 'TE_01', 'TP_01');
@@ -1034,6 +1079,7 @@ INSERT INTO ist_teilnehmer VALUES ('KRS_06', 'C_026');
 ------------------------------------------------------------------------------------------------------------------------
 -- Populate table KUNDENVERTRAEGE
 ------------------------------------------------------------------------------------------------------------------------
+
 insert into KUNDENVERTRAEGE values ('KV_001', 'All Inclusive', TO_DATE('2019-09-10', 'YYYY-MM-DD'), 24, '34,90', '90,05', 'C_001');
 insert into KUNDENVERTRAEGE values ('KV_002', 'Basic', TO_DATE('2020-10-12', 'YYYY-MM-DD'), 12, '29,90', '63,88', 'C_002');
 insert into KUNDENVERTRAEGE values ('KV_003', 'Schüler/Student',  TO_DATE('2021-03-25', 'YYYY-MM-DD'), 6, '29,90', '49,49', 'C_003');
@@ -1057,7 +1103,7 @@ insert into KUNDENVERTRAEGE values ('KV_020', 'All Inclusive', TO_DATE('2021-03-
 insert into KUNDENVERTRAEGE values ('KV_021', 'Basic', TO_DATE('2021-04-23','YYYY-MM-DD') , 6, '34,90', '25,76', 'C_021');
 insert into KUNDENVERTRAEGE values ('KV_022', 'Reha-Sport',TO_DATE('2020-07-24','YYYY-MM-DD') , 24, '29,90', '83,18', 'C_022');
 insert into KUNDENVERTRAEGE values ('KV_023', 'All Inclusive', TO_DATE('2019-09-02','YYYY-MM-DD') , 24, '29,90', '67,78', 'C_023');
-insert into KUNDENVERTRAEGE values ('KV_024', 'Basic',TO_DATE('2020-02-04','YYYY-MM-DD') , 24, '€24,90', '49,90', 'C_024');
+insert into KUNDENVERTRAEGE values ('KV_024', 'Basic',TO_DATE('2020-02-04','YYYY-MM-DD') , 24, '24,90', '49,90', 'C_024');
 insert into KUNDENVERTRAEGE values ('KV_025', 'Schüler/Student', TO_DATE('2021-05-20','YYYY-MM-DD') , 12, '24,90', '89,86', 'C_025');
 insert into KUNDENVERTRAEGE values ('KV_026', 'Basic', TO_DATE('2021-03-12','YYYY-MM-DD') , 6, '34,90', '61,89', 'C_026');
 insert into KUNDENVERTRAEGE values ('KV_027', 'All Inclusive', TO_DATE('2020-07-05','YYYY-MM-DD') , 24, '29,90', '48,70', 'C_027');
