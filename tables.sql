@@ -510,6 +510,28 @@ ALTER TABLE indi_durchfuehrungen
         );
 
 --------------------------------------------------------------------------
+-- Create Table voraussetzungen
+--------------------------------------------------------------------------
+
+CREATE TABLE vorausetzungen
+(
+    aktuell_id    CHAR(7) --aid_000
+        CONSTRAINT vorausetzung_id_nn NOT NULL,
+    vorgaenger_id CHAR(5),
+    nachfolger_id CHAR(5)
+);
+
+CREATE UNIQUE INDEX vorausetzung_id_pk ON
+    vorausetzungen (
+                    aktuell_id
+        );
+
+ALTER TABLE vorausetzungen
+    ADD (
+        CONSTRAINT vorausetzung_id_pk PRIMARY KEY (aktuell_id)
+        );
+
+--------------------------------------------------------------------------
 -- CREATE many-many relations
 --------------------------------------------------------------------------
 
@@ -612,6 +634,15 @@ ALTER TABLE buchungsverlaeufe
     ADD (CONSTRAINT bv_kundenkarte_fk
         FOREIGN KEY (kundenkarte_id)
             REFERENCES kundenkarten (kundenkarte_id)
+        );
+
+ALTER TABLE vorausetzungen
+    ADD (CONSTRAINT vs_te_vg_fk
+             FOREIGN KEY (vorgaenger_id)
+                 REFERENCES trainingseinheiten (trainingseinheit_id),
+         CONSTRAINT vs_te_nf_fk
+             FOREIGN KEY (nachfolger_id)
+                 REFERENCES trainingseinheiten (trainingseinheit_id)
         );
 
 --------------------------------------------------------------------------
