@@ -6,7 +6,7 @@ INSERT INTO kategorien VALUES('KAT_04', 'KRAFT', 'Trizeps');
 INSERT INTO kategorien VALUES('KAT_05', 'KRAFT', 'Unterarm');
 INSERT INTO kategorien VALUES('KAT_06', 'KRAFT', 'Brust');
 INSERT INTO kategorien VALUES('KAT_07', 'KRAFT', 'Obere Brust');
-INSERT INTO kategorien VALUES('KAT_08', 'KRAFT', 'Bauch');
+INSERT INTO kategorien VALUES('KAT_08', 'KRAFT', 'Bauchmuskeln');
 INSERT INTO kategorien VALUES('KAT_09', 'KRAFT', 'Quadrizeps');
 INSERT INTO kategorien VALUES('KAT_10', 'KRAFT', 'Beinbeuger');
 INSERT INTO kategorien VALUES('KAT_11', 'KRAFT', 'Abduktor');

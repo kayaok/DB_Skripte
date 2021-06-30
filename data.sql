@@ -828,6 +828,89 @@ INSERT INTO trainingseinheiten VALUES ('TE_46', 'Hantelstange', 20, 'Freihanteln
 COMMIT;
 
 ------------------------------------------------------------------------------------------------------------------------
+-- Populate table kategorien
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO kategorien VALUES('KAT_00', 'CARDIO', 'Ausdauer');
+INSERT INTO kategorien VALUES('KAT_01', 'KRAFT', 'Krafttraining');
+INSERT INTO kategorien VALUES('KAT_02', 'KONTROLLE', 'Koerperkontrolle');
+INSERT INTO kategorien VALUES('KAT_03', 'KRAFT', 'Bizeps');
+INSERT INTO kategorien VALUES('KAT_04', 'KRAFT', 'Trizeps');
+INSERT INTO kategorien VALUES('KAT_05', 'KRAFT', 'Unterarm');
+INSERT INTO kategorien VALUES('KAT_06', 'KRAFT', 'Brust');
+INSERT INTO kategorien VALUES('KAT_07', 'KRAFT', 'Obere Brust');
+INSERT INTO kategorien VALUES('KAT_08', 'KRAFT', 'Bauchmuskeln');
+INSERT INTO kategorien VALUES('KAT_09', 'KRAFT', 'Quadrizeps');
+INSERT INTO kategorien VALUES('KAT_10', 'KRAFT', 'Beinbeuger');
+INSERT INTO kategorien VALUES('KAT_11', 'KRAFT', 'Abduktor');
+INSERT INTO kategorien VALUES('KAT_12', 'KRAFT', 'Adduktor');
+INSERT INTO kategorien VALUES('KAT_13', 'KRAFT', 'Gluteus');
+INSERT INTO kategorien VALUES('KAT_14', 'KRAFT', 'Waden');
+INSERT INTO kategorien VALUES('KAT_15', 'KRAFT', 'Latissimus');
+INSERT INTO kategorien VALUES('KAT_16', 'KRAFT', 'Rhombus');
+INSERT INTO kategorien VALUES('KAT_17', 'KRAFT', 'Nacken');
+INSERT INTO kategorien VALUES('KAT_18', 'KRAFT', 'Unterer Rücken');
+INSERT INTO kategorien VALUES('KAT_19', 'KRAFT', 'Schulter');
+INSERT INTO kategorien VALUES('KAT_20', 'KRAFT', 'Vordere Schulter');
+INSERT INTO kategorien VALUES('KAT_21', 'KRAFT', 'Hintere Schulter');
+
+COMMIT;
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table ist_definiert_durch
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO ist_definiert_durch VALUES ('TE_00', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_01', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_02', 'KAT_19');
+INSERT INTO ist_definiert_durch VALUES ('TE_03', 'KAT_10');
+INSERT INTO ist_definiert_durch VALUES ('TE_04', 'KAT_09');
+INSERT INTO ist_definiert_durch VALUES ('TE_05', 'KAT_16');
+INSERT INTO ist_definiert_durch VALUES ('TE_06', 'KAT_11');
+INSERT INTO ist_definiert_durch VALUES ('TE_07', 'KAT_12');
+INSERT INTO ist_definiert_durch VALUES ('TE_08', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_09', 'KAT_18');
+INSERT INTO ist_definiert_durch VALUES ('TE_10', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_11', 'KAT_09');
+INSERT INTO ist_definiert_durch VALUES ('TE_12', 'KAT_19');
+INSERT INTO ist_definiert_durch VALUES ('TE_13', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_14', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_15', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_16', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_17', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_18', 'KAT_04');
+INSERT INTO ist_definiert_durch VALUES ('TE_19', 'KAT_03');
+INSERT INTO ist_definiert_durch VALUES ('TE_20', 'KAT_19');
+INSERT INTO ist_definiert_durch VALUES ('TE_21', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_22', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_23', 'KAT_19');
+INSERT INTO ist_definiert_durch VALUES ('TE_24', 'KAT_03');
+INSERT INTO ist_definiert_durch VALUES ('TE_25', 'KAT_04');
+INSERT INTO ist_definiert_durch VALUES ('TE_26', 'KAT_09');
+INSERT INTO ist_definiert_durch VALUES ('TE_27', 'KAT_15');
+INSERT INTO ist_definiert_durch VALUES ('TE_28', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_29', 'KAT_16');
+INSERT INTO ist_definiert_durch VALUES ('TE_30', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_31', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_32', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_33', 'KAT_15');
+INSERT INTO ist_definiert_durch VALUES ('TE_34', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_35', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_36', 'KAT_16');
+INSERT INTO ist_definiert_durch VALUES ('TE_37', 'KAT_11');
+INSERT INTO ist_definiert_durch VALUES ('TE_38', 'KAT_12');
+INSERT INTO ist_definiert_durch VALUES ('TE_39', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_40', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_41', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_42', 'KAT_02');
+INSERT INTO ist_definiert_durch VALUES ('TE_43', 'KAT_02');
+INSERT INTO ist_definiert_durch VALUES ('TE_44', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_45', 'KAT_02');
+INSERT INTO ist_definiert_durch VALUES ('TE_46', 'KAT_01');
+
+COMMIT;
+
+------------------------------------------------------------------------------------------------------------------------
 -- Populate table trainingsplaene
 ------------------------------------------------------------------------------------------------------------------------
 
