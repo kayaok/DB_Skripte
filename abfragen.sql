@@ -48,7 +48,7 @@ SELECT kategorien.muskelgruppe,sportgeraete.sportgeraet_id, COUNT(*) AS COUNT FR
         ON kategorien.kategorie_id = ist_definiert_durch.kategorie_id
    JOIN sportgeraete
         ON sportgeraete.sportgeraet_id = trainingseinheiten.sportgeraet_id
-GROUP BY muskelgruppe,sportgeraete.sportgeraet_id
+GROUP BY muskelgruppe,sportgeraete.sportgeraet_id;
 
 ------------------------------------------------------------------------------------------------------------------------
 -- 5. gab es nach schnupperkursen mehr neuanmeldungen als davor?
