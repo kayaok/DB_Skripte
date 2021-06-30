@@ -35,6 +35,12 @@ from KUNDENKARTEN kk join kunden k on kk.KUNDENKARTE_ID = k.KUNDENKARTE_ID
 order by BONUSPUNKTE desc
 fetch first 10 rows only;
 
+-- 14. Mitarbeiter haeufigste Arbeitseinteilung
+select wei.MITARBEITER_ID, count(wei.MITARBEITER_ID) as anzahl
+from WIRD_EINGETEILT_IN wei
+group by MITARBEITER_ID
+order by anzahl desc;
+
 -- 15. Trainer mit den meisten Kurs-Teilnehmern
 select lk.TRAINER_ID, COUNT(KUNDE_ID) as KUNDEN
 from LEITET_KURS lk JOIN IST_TEILNEHMER it on lk.KURS_ID = it.KURS_ID
