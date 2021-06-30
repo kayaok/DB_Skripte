@@ -1030,3 +1030,37 @@ INSERT INTO ist_teilnehmer VALUES ('KRS_06', 'C_019');
 INSERT INTO ist_teilnehmer VALUES ('KRS_06', 'C_020');
 INSERT INTO ist_teilnehmer VALUES ('KRS_06', 'C_021');
 INSERT INTO ist_teilnehmer VALUES ('KRS_06', 'C_026');
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table KUNDENVERTRAEGE
+------------------------------------------------------------------------------------------------------------------------
+insert into KUNDENVERTRAEGE values ('KV_001', 'All Inclusive', TO_DATE('2019-09-10', 'YYYY-MM-DD'), 24, '34,90', '90,05', 'C_001');
+insert into KUNDENVERTRAEGE values ('KV_002', 'Basic', TO_DATE('2020-10-12', 'YYYY-MM-DD'), 12, '29,90', '63,88', 'C_002');
+insert into KUNDENVERTRAEGE values ('KV_003', 'Schüler/Student',  TO_DATE('2021-03-25', 'YYYY-MM-DD'), 6, '29,90', '49,49', 'C_003');
+insert into KUNDENVERTRAEGE values ('KV_004', 'All Inclusive',  TO_DATE('2020-11-12', 'YYYY-MM-DD'), 24, '29,90', '88,88', 'C_004');
+insert into KUNDENVERTRAEGE values ('KV_005', 'Schüler/Student',  TO_DATE('2021-06-21', 'YYYY-MM-DD'), 6, '29,90', '83,32', 'C_005');
+insert into KUNDENVERTRAEGE values ('KV_006', 'Reha-Sport',  TO_DATE('2021-02-23', 'YYYY-MM-DD'), 6, '39,90', '39,77', 'C_006');
+insert into KUNDENVERTRAEGE values ('KV_007', 'All Inclusive',  TO_DATE('2020-08-24', 'YYYY-MM-DD'), 12, '39,90', '43,15', 'C_007');
+insert into KUNDENVERTRAEGE values ('KV_008', 'Basic',  TO_DATE('2019-11-19', 'YYYY-MM-DD'), 24, '24,90', '33,38', 'C_008');
+insert into KUNDENVERTRAEGE values ('KV_009', 'Schüler/Student', TO_DATE('2021-04-26', 'YYYY-MM-DD'), 12, '24,90', '45,44', 'C_009');
+insert into KUNDENVERTRAEGE values ('KV_010', 'Basic', TO_DATE('2020-12-24','YYYY-MM-DD') , 36, '29,90', '33,25', 'C_010');
+insert into KUNDENVERTRAEGE values ('KV_011', 'Reha-Sport',TO_DATE('2021-01-01','YYYY-MM-DD'), 12, '34,90', '67,39', 'C_011');
+insert into KUNDENVERTRAEGE values ('KV_012', 'All Inclusive', TO_DATE('2021-02-27','YYYY-MM-DD'), 24, '34,90', '22,16', 'C_012');
+insert into KUNDENVERTRAEGE values ('KV_013', 'Reha-Sport',TO_DATE('2021-5-23','YYYY-MM-DD') , 6, '39,90', '43,41', 'C_013');
+insert into KUNDENVERTRAEGE values ('KV_014', 'Schüler/Student', TO_DATE('2020-02-03','YYYY-MM-DD') , 24, '19,90', '31,67', 'C_014');
+insert into KUNDENVERTRAEGE values ('KV_015', 'Basic', TO_DATE('2020-09-13','YYYY-MM-DD') , 12, '29,90', '84,70', 'C_015');
+insert into KUNDENVERTRAEGE values ('KV_016', 'All Inclusive', TO_DATE('2020-10-10','YYYY-MM-DD') , 12, '39,90', '95,51', 'C_016');
+insert into KUNDENVERTRAEGE values ('KV_017', 'Reha-Sport',TO_DATE('2021-03-20','YYYY-MM-DD') , 12, '34,90', '81,58', 'C_017');
+insert into KUNDENVERTRAEGE values ('KV_018', 'Reha-Sport',TO_DATE('2021-02-01','YYYY-MM-DD') , 6, '39,90', '92,86', 'C_018');
+insert into KUNDENVERTRAEGE values ('KV_019', 'Schüler/Student', TO_DATE('2019-12-20','YYYY-MM-DD') , 24, '16,90', '68,02', 'C_019');
+insert into KUNDENVERTRAEGE values ('KV_020', 'All Inclusive', TO_DATE('2021-03-23','YYYY-MM-DD') , 12, '39,90', '23,64', 'C_020');
+insert into KUNDENVERTRAEGE values ('KV_021', 'Basic', TO_DATE('2021-04-23','YYYY-MM-DD') , 6, '34,90', '25,76', 'C_021');
+insert into KUNDENVERTRAEGE values ('KV_022', 'Reha-Sport',TO_DATE('2020-07-24','YYYY-MM-DD') , 24, '29,90', '83,18', 'C_022');
+insert into KUNDENVERTRAEGE values ('KV_023', 'All Inclusive', TO_DATE('2019-09-02','YYYY-MM-DD') , 24, '29,90', '67,78', 'C_023');
+insert into KUNDENVERTRAEGE values ('KV_024', 'Basic',TO_DATE('2020-02-04','YYYY-MM-DD') , 24, '€24,90', '49,90', 'C_024');
+insert into KUNDENVERTRAEGE values ('KV_025', 'Schüler/Student', TO_DATE('2021-05-20','YYYY-MM-DD') , 12, '24,90', '89,86', 'C_025');
+insert into KUNDENVERTRAEGE values ('KV_026', 'Basic', TO_DATE('2021-03-12','YYYY-MM-DD') , 6, '34,90', '61,89', 'C_026');
+insert into KUNDENVERTRAEGE values ('KV_027', 'All Inclusive', TO_DATE('2020-07-05','YYYY-MM-DD') , 24, '29,90', '48,70', 'C_027');
+insert into KUNDENVERTRAEGE values ('KV_028', 'Reha-Sport',TO_DATE('2021-03-25','YYYY-MM-DD') , 6, '39,90', '89,86', 'C_028');
+insert into KUNDENVERTRAEGE values ('KV_029', 'Basic', TO_DATE('2020-11-24','YYYY-MM-DD') , 12, '29,90', '20,77', 'C_029');
+insert into KUNDENVERTRAEGE values ('KV_030', 'All Inclusive', TO_DATE('2020-06-25','YYYY-MM-DD') , 24, '34,90', '60,74', 'C_030');
