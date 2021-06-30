@@ -22,6 +22,25 @@ where k.NAME = 'Schnupperkurs' AND kv.VERTRAGSBEGINN < k.ENDE;
 SELECT vs.VERTRAGSABSCHLUESSE as vor_schnupperkurs, ns.VERTRAGSABSCHLUESSE as nach_schnupperkurs
 from ANMELDUNGEN_N_SCHNUPPER nS, ANMELDUNGEN_V_SCHNUPPER vS;
 
+--7.Wie ist das Verhältnis von Stammkunden (≥12 Monate Laufzeit) zu Gelegenheitskunden (6 Monate Laufzeit) jeweils nach Geschlecht?
+Create View stammkundenVerhaeltnis as
+select GESCHLECHT, COUNT(GESCHLECHT)/SUM(COUNT(GESCHLECHT)) OVER() AS percentage
+from KUNDEN k join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
+where VERTRAGSLAUFZEIT >= '12'
+GROUP BY GESCHLECHT
+ORDER BY percentage desc;
+
+Create View gelegenheitskundenVerhaeltnis as
+select GESCHLECHT, COUNT(GESCHLECHT)/SUM(COUNT(GESCHLECHT)) OVER() AS percentage
+from KUNDEN k join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
+where VERTRAGSLAUFZEIT = '6'
+GROUP BY GESCHLECHT
+ORDER BY percentage desc;
+
+SELECT gelegenheitskunden.GESCHLECHT,gelegenheitskunden.percentage as gelegenheitskunden,
+       stammkunden.GESCHLECHT, stammkunden.percentage as stammkunden
+from gelegenheitskundenVerhaeltnis gelegenheitskunden, stammkundenVerhaeltnis stammkunden;
+
 --10.Wie ist die Verteilung der Kundennach PLZ-Region pro Jahr?
 SELECT PLZ, COUNT(PLZ)/SUM(COUNT(PLZ)) OVER() AS percentage
 FROM KUNDEN k join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
