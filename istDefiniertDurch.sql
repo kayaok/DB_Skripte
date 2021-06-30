@@ -1,0 +1,11 @@
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
+insert into istDefiniertDurch values ();
