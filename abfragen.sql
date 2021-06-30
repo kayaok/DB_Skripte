@@ -125,12 +125,11 @@ where VERTRAGSBEGINN BETWEEN TO_DATE('01/01/2019', 'DD/MM/YYYY') AND TO_DATE('31
 GROUP BY PLZ
 ORDER BY percentage desc;
 
---11.Welche Kunden haben das Studio im Monat März am meisten besucht?
+--11. Liste alle Kunden auf, die im März das Studio besucht haben sowie die Häufigkeit in absteigender Reihenfolge
 select KUNDE_ID, count(KUNDE_ID) as anzahlBesuche
 from AnzahlBesuche
 group by KUNDE_ID
-order by anzahlBesuche desc
-    fetch first 3 rows only;
+order by anzahlBesuche desc;
 
 -- 12. Durchschnittliche Trainingsdauer eines Kunden pro Tag?
 CREATE VIEW drchschntt_training as
