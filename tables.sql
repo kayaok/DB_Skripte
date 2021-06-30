@@ -406,8 +406,6 @@ CREATE TABLE trainingseinheiten
         CONSTRAINT name_nn NOT NULL,
     trainingsdauer      NUMBER,
     hinweise            varchar(300),
-    vorgaenger_id       CHAR(5),
-    nachfolger_id       CHAR(5),
     sportgeraet_id      CHAR(6)
 );
 
@@ -515,7 +513,7 @@ ALTER TABLE indi_durchfuehrungen
 
 CREATE TABLE vorausetzungen
 (
-    aktuell_id    CHAR(7) --aid_000
+    aktuelle_id    CHAR(5) --v_000
         CONSTRAINT vorausetzung_id_nn NOT NULL,
     vorgaenger_id CHAR(5),
     nachfolger_id CHAR(5)
@@ -523,12 +521,12 @@ CREATE TABLE vorausetzungen
 
 CREATE UNIQUE INDEX vorausetzung_id_pk ON
     vorausetzungen (
-                    aktuell_id
+                    aktuelle_id
         );
 
 ALTER TABLE vorausetzungen
     ADD (
-        CONSTRAINT vorausetzung_id_pk PRIMARY KEY (aktuell_id)
+        CONSTRAINT vorausetzung_id_pk PRIMARY KEY (aktuelle_id)
         );
 
 --------------------------------------------------------------------------
@@ -605,14 +603,8 @@ ALTER TABLE trainer
 
 ALTER TABLE trainingseinheiten
     ADD (CONSTRAINT te_sg_fk
-             FOREIGN KEY (sportgeraet_id)
-                 REFERENCES sportgeraete (sportgeraet_id),
-         CONSTRAINT te_vg_fk
-             FOREIGN KEY (vorgaenger_id)
-                 REFERENCES trainingseinheiten (trainingseinheit_id),
-         CONSTRAINT te_nf_fk
-             FOREIGN KEY (nachfolger_id)
-                 REFERENCES trainingseinheiten (trainingseinheit_id)
+        FOREIGN KEY (sportgeraet_id)
+            REFERENCES sportgeraete (sportgeraet_id)
         );
 
 ALTER TABLE kundenvertraege
