@@ -148,7 +148,7 @@ FROM kunden ku
                    ON train.trainingseinheit_id = idurch.trainingseinheit_id
          LEFT JOIN kundenvertraege kuv
                    ON kuv.kunde_id = ku.kunde_id
-WHERE kuv.vertragsart = 'reha-sport'
+WHERE kuv.vertragsart = 'reha-sport';
 
 ------------------------------------------------------------------------------------------------------------------------
 -- 10. wie ist die verteilung der kunden nach plz-region pro jahr?
@@ -178,7 +178,12 @@ ORDER BY percentage DESC;
 ------------------------------------------------------------------------------------------------------------------------
 -- 11. liste alle kunden auf, die im märz das studio besucht haben sowie die häufigkeit in absteigender reihenfolge
 ------------------------------------------------------------------------------------------------------------------------
-
+create view AnzahlBesuche as
+select STATUS, KUNDE_ID, NACHNAME
+from BUCHUNGSVERLAEUFE bv join KUNDEN k on bv.KUNDENKARTE_ID = k.KUNDENKARTE_ID
+where STATUS='CHECK-IN' and
+        extract(year from ZEITPUNKT)=2021 and
+    extract(month from ZEITPUNKT) between 3 and 3;
 SELECT kunde_id, COUNT(kunde_id) AS anzahlbesuche
 FROM anzahlbesuche
 GROUP BY kunde_id

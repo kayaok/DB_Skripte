@@ -10,12 +10,12 @@
 --                                                                                         INNER JOIN  TRAININGSEINHEITEN tre ON ind.TRAININGSEINHEIT_ID = tre.TRAININGSEINHEIT_ID
 -- where ind.DATUM BETWEEN TO_DATE('2021-06-28', 'YYYY-MM-DD') AND TO_DATE('2021-07-04', 'YYYY-MM-DD')
 -- --
--- create view AnzahlBesuche as
--- select STATUS, KUNDE_ID, NACHNAME
--- from BUCHUNGSVERLAEUFE bv join KUNDEN k on bv.KUNDENKARTE_ID = k.KUNDENKARTE_ID
--- where STATUS='CHECK-IN' and
--- extract(year from ZEITPUNKT)=2021 and
--- extract(month from ZEITPUNKT) between 3 and 3;
+create view AnzahlBesuche as
+select STATUS, KUNDE_ID, NACHNAME
+from BUCHUNGSVERLAEUFE bv join KUNDEN k on bv.KUNDENKARTE_ID = k.KUNDENKARTE_ID
+where STATUS='CHECK-IN' and
+extract(year from ZEITPUNKT)=2021 and
+extract(month from ZEITPUNKT) between 3 and 3;
 --
 
 select  COUNT(*) "x", NAME
