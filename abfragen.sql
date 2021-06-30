@@ -14,6 +14,8 @@ SELECT EXTRACT(DAY FROM ZEITPUNKT) "Tag",
        COUNT(*) "Besucher"
 FROM BUCHUNGSVERLAEUFE
 GROUP BY EXTRACT(DAY FROM ZEITPUNKT);
+-- 4.
+
 
 -- 5. Gab es nach Schnupperkursen mehr Neuanmeldungen als davor?
 Create View anmeldungen_n_schnupper as
@@ -26,7 +28,19 @@ From Kurse k, IST_TEILNEHMER it JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUND
 where k.NAME = 'Schnupperkurs' AND kv.VERTRAGSBEGINN < k.ENDE;
 SELECT vs.VERTRAGSABSCHLUESSE as vor_schnupperkurs, ns.VERTRAGSABSCHLUESSE as nach_schnupperkurs
 from ANMELDUNGEN_N_SCHNUPPER nS, ANMELDUNGEN_V_SCHNUPPER vS;
+--6. Wie ist die durchschnittliche Belegung der Kurse pro Monat pro Thema der Kurse?
+CREATE VIEW monatskurs as
+SELECT EXTRACT(MONTH FROM BEGINN) "Monat", KURSE.NAME
 
+FROM KUNDEN
+         left join IST_TEILNEHMER
+                   ON KUNDEN.KUNDE_ID = IST_TEILNEHMER.KUNDE_ID
+         left join KURSE
+                   ON KURSE.KURS_ID = IST_TEILNEHMER.KURS_ID;
+SELECT   COUNT(NAME) "Anzahl", "Monat", NAME
+FROM MONATSKURS
+where name is not null
+group by "Monat", NAME;
 --7.Wie ist das Verhältnis von Stammkunden (≥12 Monate Laufzeit) zu Gelegenheitskunden (6 Monate Laufzeit) jeweils nach Geschlecht?
 Create View stammkundenVerhaeltnis as
 select GESCHLECHT, COUNT(GESCHLECHT)/SUM(COUNT(GESCHLECHT)) OVER() AS percentage
@@ -45,7 +59,15 @@ ORDER BY percentage desc;
 SELECT gelegenheitskunden.GESCHLECHT,gelegenheitskunden.percentage as gelegenheitskunden,
        stammkunden.GESCHLECHT, stammkunden.percentage as stammkunden
 from gelegenheitskundenVerhaeltnis gelegenheitskunden, stammkundenVerhaeltnis stammkunden;
-
+--8.
+Create View altersspanne as
+SELECT ENDE - BEGINN as "duration", TRUNC( (CURRENT_DATE - K.GEBURTSDATUM)/365 ) as "age"
+FROM INDIVIDUALPLAENE
+         LEFT JOIN KUNDEN K
+                   ON K.KUNDE_ID = INDIVIDUALPLAENE.KUNDE_ID;
+SELECT SUM("duration")*24 as "Dauer", "age"
+from ALTERSSPANNE
+group by "age";
 --10.Wie ist die Verteilung der Kunden nach PLZ-Region pro Jahr?
 SELECT PLZ, COUNT(PLZ)/SUM(COUNT(PLZ)) OVER() AS percentage
 FROM KUNDEN k join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
