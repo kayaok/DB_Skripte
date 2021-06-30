@@ -1,16 +1,16 @@
--- 1.Prozentuales Verhaeltnis der verschiedenen Vertraege
+-- 1. Prozentuales  Verhältnis  der  verschiedenen  Verträge  pro  Jahr (Basic, All Inclusive, Reha-Sport  & Schüler/Student)
 SELECT VERTRAGSART, COUNT(VERTRAGSART) AS count, COUNT(VERTRAGSART)/SUM(COUNT(VERTRAGSART)) OVER() AS percentage
 FROM KUNDENVERTRAEGE
 GROUP BY VERTRAGSART
 ORDER BY percentage desc;
--- 2. Sportgeraete Auslastung
+-- 2. Welches Sportgerät erfährt die größte Auslastung in der Woche?
 CREATE OR REPLACE VIEW woche_sporti (datum, trainingseinheit_tre, trainingseinheit_ind, sportgeraet) as
 Select DATUM, ind.TRAININGSEINHEIT_ID, tre.TRAININGSEINHEIT_ID, SPORTGERAET_ID from INDI_DURCHFUEHRUNGEN ind
 INNER JOIN  TRAININGSEINHEITEN tre ON ind.TRAININGSEINHEIT_ID = tre.TRAININGSEINHEIT_ID
 where ind.DATUM BETWEEN TO_DATE('2021-06-28', 'YYYY-MM-DD') AND TO_DATE('2021-07-04', 'YYYY-MM-DD');
 select SPORTGERAET, count(SPORTGERAET) as count from WOCHE_SPORTI group by SPORTGERAET order by count desc;
 
--- 5. Schnupperkurs Anmeldung
+-- 5. Gab es nach Schnupperkursen mehr Neuanmeldungen als davor?
 Create View anmeldungen_n_schnupper as
 Select COUNT(kv.VERTRAGSBEGINN)  as Vertragsabschluesse
 From Kurse k, IST_TEILNEHMER it JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUNDE_ID
@@ -41,7 +41,7 @@ SELECT gelegenheitskunden.GESCHLECHT,gelegenheitskunden.percentage as gelegenhei
        stammkunden.GESCHLECHT, stammkunden.percentage as stammkunden
 from gelegenheitskundenVerhaeltnis gelegenheitskunden, stammkundenVerhaeltnis stammkunden;
 
---10.Wie ist die Verteilung der Kundennach PLZ-Region pro Jahr?
+--10.Wie ist die Verteilung der Kunden nach PLZ-Region pro Jahr?
 SELECT PLZ, COUNT(PLZ)/SUM(COUNT(PLZ)) OVER() AS percentage
 FROM KUNDEN k join KUNDENVERTRAEGE kv on k.KUNDE_ID = kv.KUNDE_ID
 where extract(year from VERTRAGSBEGINN)=2019
@@ -73,13 +73,13 @@ from KUNDENKARTEN kk join kunden k on kk.KUNDENKARTE_ID = k.KUNDENKARTE_ID
 order by BONUSPUNKTE desc
 fetch first 10 rows only;
 
--- 14. Mitarbeiter haeufigste Arbeitseinteilung
+-- 14. Welcher Mitarbeiter ist am häufigsten pro Arbeitseinteilung eingeteilt?
 select wei.MITARBEITER_ID, count(wei.MITARBEITER_ID) as anzahl
 from WIRD_EINGETEILT_IN wei
 group by MITARBEITER_ID
 order by anzahl desc;
 
--- 15. Trainer mit den meisten Kurs-Teilnehmern
+-- 15. Beliebteste Kurse pro Trainer?
 select lk.TRAINER_ID, COUNT(KUNDE_ID) as KUNDEN
 from LEITET_KURS lk JOIN IST_TEILNEHMER it on lk.KURS_ID = it.KURS_ID
 group by TRAINER_ID
