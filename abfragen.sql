@@ -20,7 +20,7 @@ Select COUNT(kv.VERTRAGSBEGINN) as Vertragsabschluesse
 From Kurse k, IST_TEILNEHMER it JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUNDE_ID
 where k.NAME = 'Schnupperkurs' AND kv.VERTRAGSBEGINN < k.ENDE;
 SELECT vs.VERTRAGSABSCHLUESSE as vor_schnupperkurs, ns.VERTRAGSABSCHLUESSE as nach_schnupperkurs
-from ANMELDUNGEN_N_SCHNUPPER nS, ANMELDUNGEN_V_SCHNUPPER vS
+from ANMELDUNGEN_N_SCHNUPPER nS, ANMELDUNGEN_V_SCHNUPPER vS;
 
 --11.Welche Kunden haben das Studio im Monat März am meisten besucht?
 select KUNDE_ID, count(KUNDE_ID) as anzahlBesuche
@@ -34,3 +34,9 @@ select BONUSPUNKTE, vorname, NACHNAME
 from KUNDENKARTEN kk join kunden k on kk.KUNDENKARTE_ID = k.KUNDENKARTE_ID
 order by BONUSPUNKTE desc
 fetch first 10 rows only;
+
+-- 15. Trainer mit den meisten Kurs-Teilnehmern
+select lk.TRAINER_ID, COUNT(KUNDE_ID) as KUNDEN
+from LEITET_KURS lk JOIN IST_TEILNEHMER it on lk.KURS_ID = it.KURS_ID
+group by TRAINER_ID
+order by KUNDEN desc;
