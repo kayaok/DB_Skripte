@@ -1,4 +1,3 @@
-insert into TRAINER values ('A','M_05');
-insert into TRAINER values ('C','M_06');
-insert into TRAINER values ('B','M_08');
-commit;
+INSERT INTO trainer VALUES ('M_05','A');
+INSERT INTO trainer VALUES ('M_06','C');
+INSERT INTO trainer VALUES ('M_08','B');

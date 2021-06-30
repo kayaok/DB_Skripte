@@ -1,0 +1,9 @@
+INSERT INTO steht_unter_vertrag VALUES ('M_01','AV_01');
+INSERT INTO steht_unter_vertrag VALUES ('M_02','AV_02');
+INSERT INTO steht_unter_vertrag VALUES ('M_03','AV_03');
+INSERT INTO steht_unter_vertrag VALUES ('M_04','AV_05');
+INSERT INTO steht_unter_vertrag VALUES ('M_05','AV_04');
+INSERT INTO steht_unter_vertrag VALUES ('M_06','AV_06');
+INSERT INTO steht_unter_vertrag VALUES ('M_07','AV_07');
+INSERT INTO steht_unter_vertrag VALUES ('M_08','AV_09');
+INSERT INTO steht_unter_vertrag VALUES ('M_09','AV_08');
