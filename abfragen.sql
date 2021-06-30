@@ -19,6 +19,14 @@ Create View anmeldungen_v_schnupper as
 Select k.ENDE as Schnupperkurs_Ende,  kv.VERTRAGSBEGINN as Vertragsabschluesse
 From Kurse k, IST_TEILNEHMER it JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUNDE_ID
 where k.NAME = 'Schnupperkurs' AND kv.VERTRAGSBEGINN < k.ENDE;
+
+--11.Welche Kunden haben das Studio im Monat März am meisten besucht?
+select KUNDE_ID, count(KUNDE_ID) as anzahlBesuche
+from AnzahlBesuche
+group by KUNDE_ID
+order by anzahlBesuche desc
+fetch first 3 rows only;
+
 -- 13.Erstelle ein Ranking mit zehn Kunden, die die meisten Bonuspunkten haben
 select BONUSPUNKTE, vorname, NACHNAME
 from KUNDENKARTEN kk join kunden k on kk.KUNDENKARTE_ID = k.KUNDENKARTE_ID
