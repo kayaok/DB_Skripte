@@ -235,9 +235,7 @@ CREATE TABLE arbeitseinteilungen
     beginn               DATE
         CONSTRAINT ae_beginn_nn NOT NULL,
     ende                 DATE
-        CONSTRAINT ae_ende_nn NOT NULL,
-    datum                DATE
-        CONSTRAINT ae_datum_nn NOT NULL
+        CONSTRAINT ae_ende_nn NOT NULL
 );
 
 CREATE UNIQUE INDEX arbeitseinteilung_id_pk ON
