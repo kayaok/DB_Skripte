@@ -146,8 +146,8 @@ INSERT INTO kunden VALUES ('C_013', 'Lyndel', 'Brockie', 'W', TO_DATE('1982-05-2
 INSERT INTO kunden VALUES ('C_014', 'Pancho', 'Abramzon', 'M', TO_DATE('1960-07-02','YYYY-MM-DD'), '665 Eastwood Lane', '72555', 'Metzingen', '878-143-7305', 'pabramzond@tumblr.com', '3574328611904199', 'Commerzbank Esslingen', 'CH43 5469 8SJD ISVF RZE7 9', '2072540356', '3456765',                                'CC_014', 'KK_04','M_06');
 INSERT INTO kunden VALUES ('C_015', 'Culver', 'Jukes', 'M',TO_DATE('1968-02-29','YYYY-MM-DD') , '640 Jackson Junction', '72622', 'Nuertingen', '183-961-1505', 'cjukese@google.co.uk', '5375071592293440', 'Volksbank Tuebingen', 'GT85 Q2SP HQND CDUC CJVZ WQMF GANA', '0592061558', '45672',                                  'CC_015', 'KK_05','M_06');
 INSERT INTO kunden VALUES ('C_016', 'Orelle', 'Sizeland', 'W', TO_DATE('1992-03-01','YYYY-MM-DD'), '23045 3rd Street', '72622', 'Nuertingen', '223-493-0493', 'osizelandf@reddit.com', '3584841244961814', 'Kreissparkasse Reutlingen', 'AD39 7657 2906 YUIN KRDN SKMY', '4345174740', '452842',                            'CC_016', 'KK_01','M_05');
-INSERT INTO kunden VALUES ('C_017', 'Renaud', 'Goricke', 'M', TO_DATE('2003-02-20','YYYY-MM-DD'), '8604 Luster Lane', '2442', 'Kirchheim', '422-608-6380', 'rgorickeg@microsoft.com', '3565814365140594', 'Commerzbank Esslingen', 'IS07 5405 4488 6321 3775 6623 11', '7477752442', '76432326',                               'CC_017', 'KK_02','M_08');
-INSERT INTO kunden VALUES ('C_018', 'Ewen', 'Fieldhouse', 'W',TO_DATE('1974-06-03','YYYY-MM-DD'), '11 Graedel Center', '84242', 'Kirchheim', '136-101-2947', 'efieldhouseh@house.gov', '3554568601994999', 'Commerzbank Esslingen', 'RS96 8568 2229 8589 5679 80', '5121495188', '83248',                                       'CC_018', 'KK_03','M_05');
+INSERT INTO kunden VALUES ('C_017', 'Renaud', 'Goricke', 'M', TO_DATE('2003-02-20','YYYY-MM-DD'), '8604 Luster Lane', '73230', 'Kirchheim', '422-608-6380', 'rgorickeg@microsoft.com', '3565814365140594', 'Commerzbank Esslingen', 'IS07 5405 4488 6321 3775 6623 11', '7477752442', '76432326',                               'CC_017', 'KK_02','M_08');
+INSERT INTO kunden VALUES ('C_018', 'Ewen', 'Fieldhouse', 'W',TO_DATE('1974-06-03','YYYY-MM-DD'), '11 Graedel Center', '73230', 'Kirchheim', '136-101-2947', 'efieldhouseh@house.gov', '3554568601994999', 'Commerzbank Esslingen', 'RS96 8568 2229 8589 5679 80', '5121495188', '83248',                                       'CC_018', 'KK_03','M_05');
 INSERT INTO kunden VALUES ('C_019', 'Shane', 'Tayler', 'W', TO_DATE('1980-09-07','YYYY-MM-DD'), '98 Longview Circle', '70794', 'Filderstadt', '393-601-2272', 'stayleri@fotki.com', '675971911381757030', 'Volksbank Tuebingen', 'BE05 3532 8340 4353', '1428661964', '342357654',                                              'CC_019', 'KK_04','M_08');
 INSERT INTO kunden VALUES ('C_020', 'Alla', 'Plom', 'W', TO_DATE('2002-04-18','YYYY-MM-DD'), '34825 Fairfield Street', '70794', 'Filderstadt', '755-220-6157', 'aplomj@senate.gov', '3551728126143075', 'Volksbank Tuebingen', 'DE26 4076 4280 5549 3250 60', '8073295865', '6543223456',                                          'CC_020', 'KK_05','M_08');
 INSERT INTO kunden VALUES ('C_021', 'Saloma', 'Billington', 'W', TO_DATE('1966-10-03','YYYY-MM-DD'), '215 Clyde Gallagher Lane', '72070', 'Tuebingen', '545-684-8284', 'sbillingtonk@who.int', '4844191902682615', 'Kreissparkasse Reutlingen', 'RO61 LTBT OMO5 QTBW IPPS G5SH', '9145201315', '87654345114',             'CC_021', 'KK_01','M_06');
@@ -824,6 +824,89 @@ INSERT INTO trainingseinheiten VALUES ('TE_43', 'Faszienlockerung', 45, 'Faszien
 INSERT INTO trainingseinheiten VALUES ('TE_44', 'Biking', 90, 'Indoor Biking',                                        'SG_017');
 INSERT INTO trainingseinheiten VALUES ('TE_45', 'Gymnastik', 20, 'Gymnastikball',                                     'SG_028');
 INSERT INTO trainingseinheiten VALUES ('TE_46', 'Hantelstange', 20, 'Freihanteln',                                    'SG_012');
+
+COMMIT;
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table kategorien
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO kategorien VALUES('KAT_00', 'CARDIO', 'Ausdauer');
+INSERT INTO kategorien VALUES('KAT_01', 'KRAFT', 'Krafttraining');
+INSERT INTO kategorien VALUES('KAT_02', 'KONTROLLE', 'Koerperkontrolle');
+INSERT INTO kategorien VALUES('KAT_03', 'KRAFT', 'Bizeps');
+INSERT INTO kategorien VALUES('KAT_04', 'KRAFT', 'Trizeps');
+INSERT INTO kategorien VALUES('KAT_05', 'KRAFT', 'Unterarm');
+INSERT INTO kategorien VALUES('KAT_06', 'KRAFT', 'Brust');
+INSERT INTO kategorien VALUES('KAT_07', 'KRAFT', 'Obere Brust');
+INSERT INTO kategorien VALUES('KAT_08', 'KRAFT', 'Bauchmuskeln');
+INSERT INTO kategorien VALUES('KAT_09', 'KRAFT', 'Quadrizeps');
+INSERT INTO kategorien VALUES('KAT_10', 'KRAFT', 'Beinbeuger');
+INSERT INTO kategorien VALUES('KAT_11', 'KRAFT', 'Abduktor');
+INSERT INTO kategorien VALUES('KAT_12', 'KRAFT', 'Adduktor');
+INSERT INTO kategorien VALUES('KAT_13', 'KRAFT', 'Gluteus');
+INSERT INTO kategorien VALUES('KAT_14', 'KRAFT', 'Waden');
+INSERT INTO kategorien VALUES('KAT_15', 'KRAFT', 'Latissimus');
+INSERT INTO kategorien VALUES('KAT_16', 'KRAFT', 'Rhombus');
+INSERT INTO kategorien VALUES('KAT_17', 'KRAFT', 'Nacken');
+INSERT INTO kategorien VALUES('KAT_18', 'KRAFT', 'Unterer Rücken');
+INSERT INTO kategorien VALUES('KAT_19', 'KRAFT', 'Schulter');
+INSERT INTO kategorien VALUES('KAT_20', 'KRAFT', 'Vordere Schulter');
+INSERT INTO kategorien VALUES('KAT_21', 'KRAFT', 'Hintere Schulter');
+
+COMMIT;
+
+------------------------------------------------------------------------------------------------------------------------
+-- Populate table ist_definiert_durch
+------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO ist_definiert_durch VALUES ('TE_00', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_01', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_02', 'KAT_19');
+INSERT INTO ist_definiert_durch VALUES ('TE_03', 'KAT_10');
+INSERT INTO ist_definiert_durch VALUES ('TE_04', 'KAT_09');
+INSERT INTO ist_definiert_durch VALUES ('TE_05', 'KAT_16');
+INSERT INTO ist_definiert_durch VALUES ('TE_06', 'KAT_11');
+INSERT INTO ist_definiert_durch VALUES ('TE_07', 'KAT_12');
+INSERT INTO ist_definiert_durch VALUES ('TE_08', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_09', 'KAT_18');
+INSERT INTO ist_definiert_durch VALUES ('TE_10', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_11', 'KAT_09');
+INSERT INTO ist_definiert_durch VALUES ('TE_12', 'KAT_19');
+INSERT INTO ist_definiert_durch VALUES ('TE_13', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_14', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_15', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_16', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_17', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_18', 'KAT_04');
+INSERT INTO ist_definiert_durch VALUES ('TE_19', 'KAT_03');
+INSERT INTO ist_definiert_durch VALUES ('TE_20', 'KAT_19');
+INSERT INTO ist_definiert_durch VALUES ('TE_21', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_22', 'KAT_06');
+INSERT INTO ist_definiert_durch VALUES ('TE_23', 'KAT_19');
+INSERT INTO ist_definiert_durch VALUES ('TE_24', 'KAT_03');
+INSERT INTO ist_definiert_durch VALUES ('TE_25', 'KAT_04');
+INSERT INTO ist_definiert_durch VALUES ('TE_26', 'KAT_09');
+INSERT INTO ist_definiert_durch VALUES ('TE_27', 'KAT_15');
+INSERT INTO ist_definiert_durch VALUES ('TE_28', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_29', 'KAT_16');
+INSERT INTO ist_definiert_durch VALUES ('TE_30', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_31', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_32', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_33', 'KAT_15');
+INSERT INTO ist_definiert_durch VALUES ('TE_34', 'KAT_08');
+INSERT INTO ist_definiert_durch VALUES ('TE_35', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_36', 'KAT_16');
+INSERT INTO ist_definiert_durch VALUES ('TE_37', 'KAT_11');
+INSERT INTO ist_definiert_durch VALUES ('TE_38', 'KAT_12');
+INSERT INTO ist_definiert_durch VALUES ('TE_39', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_40', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_41', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_42', 'KAT_02');
+INSERT INTO ist_definiert_durch VALUES ('TE_43', 'KAT_02');
+INSERT INTO ist_definiert_durch VALUES ('TE_44', 'KAT_00');
+INSERT INTO ist_definiert_durch VALUES ('TE_45', 'KAT_02');
+INSERT INTO ist_definiert_durch VALUES ('TE_46', 'KAT_01');
 
 COMMIT;
 

@@ -21,6 +21,14 @@ From Kurse k, IST_TEILNEHMER it JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUND
 where k.NAME = 'Schnupperkurs' AND kv.VERTRAGSBEGINN < k.ENDE;
 SELECT vs.VERTRAGSABSCHLUESSE as vor_schnupperkurs, ns.VERTRAGSABSCHLUESSE as nach_schnupperkurs
 from ANMELDUNGEN_N_SCHNUPPER nS, ANMELDUNGEN_V_SCHNUPPER vS
+
+--11.Welche Kunden haben das Studio im Monat März am meisten besucht?
+select KUNDE_ID, count(KUNDE_ID) as anzahlBesuche
+from AnzahlBesuche
+group by KUNDE_ID
+order by anzahlBesuche desc
+fetch first 3 rows only;
+
 -- 13.Erstelle ein Ranking mit zehn Kunden, die die meisten Bonuspunkten haben
 select BONUSPUNKTE, vorname, NACHNAME
 from KUNDENKARTEN kk join kunden k on kk.KUNDENKARTE_ID = k.KUNDENKARTE_ID
