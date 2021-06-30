@@ -495,10 +495,8 @@ CREATE TABLE indi_durchfuehrungen
         CONSTRAINT indi_pausen_nn NOT NULL,
     datum                 DATE
         CONSTRAINT indi_datum_nn NOT NULL,
-    individualplan_id CHAR(7)
-        CONSTRAINT individualplan_id_nn NOT NULL,
+    individualplan_id CHAR(7),
     trainingseinheit_id CHAR(5)
-        CONSTRAINT trainingseinheit_id_nn NOT NULL
 );
 
 CREATE UNIQUE INDEX indi_durchfuehrung_id_pk ON
