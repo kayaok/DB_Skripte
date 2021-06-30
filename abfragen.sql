@@ -12,13 +12,15 @@ select SPORTGERAET, count(SPORTGERAET) as count from WOCHE_SPORTI group by SPORT
 
 -- 5. Schnupperkurs Anmeldung
 Create View anmeldungen_n_schnupper as
-Select k.ENDE as Schnupperkurs_Ende,  kv.VERTRAGSBEGINN as Vertragsabschluesse
+Select COUNT(kv.VERTRAGSBEGINN)  as Vertragsabschluesse
 From Kurse k, IST_TEILNEHMER it JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUNDE_ID
 where k.NAME = 'Schnupperkurs' AND kv.VERTRAGSBEGINN > k.ENDE;
 Create View anmeldungen_v_schnupper as
-Select k.ENDE as Schnupperkurs_Ende,  kv.VERTRAGSBEGINN as Vertragsabschluesse
+Select COUNT(kv.VERTRAGSBEGINN) as Vertragsabschluesse
 From Kurse k, IST_TEILNEHMER it JOIN KUNDENVERTRAEGE kv on it.KUNDE_ID = kv.KUNDE_ID
 where k.NAME = 'Schnupperkurs' AND kv.VERTRAGSBEGINN < k.ENDE;
+SELECT vs.VERTRAGSABSCHLUESSE as vor_schnupperkurs, ns.VERTRAGSABSCHLUESSE as nach_schnupperkurs
+from ANMELDUNGEN_N_SCHNUPPER nS, ANMELDUNGEN_V_SCHNUPPER vS
 -- 13.Erstelle ein Ranking mit zehn Kunden, die die meisten Bonuspunkten haben
 select BONUSPUNKTE, vorname, NACHNAME
 from KUNDENKARTEN kk join kunden k on kk.KUNDENKARTE_ID = k.KUNDENKARTE_ID
